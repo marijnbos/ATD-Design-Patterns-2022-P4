@@ -8,4 +8,8 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Sudoku.controler\Sudoku.controler.csproj" />
+    </ItemGroup>
+
 </Project>
