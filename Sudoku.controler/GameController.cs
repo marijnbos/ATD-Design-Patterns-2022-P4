@@ -10,5 +10,10 @@ namespace Sudoku.controler
     public class GameController
     {
         EditorState editorStates { get; set; }
+
+        public GameController()
+        {
+            
+        }
     }
 }

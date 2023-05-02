@@ -1,44 +1,65 @@
+using System;
+using System.Collections.Generic;
 using Sudoku.data;
 
-namespace Sudoku.controller;
-
-public class InputController : IController, IObservable<PlayerInput>
+namespace Sudoku.controller
 {
-    private ICollection<IObserver<PlayerInput>> observers;
-
-    public InputController()
+    public class InputController : IController, IObservable<PlayerInput>
     {
-        observers = new List<IObserver<PlayerInput>>();
-    }
-
-    public IDisposable Subscribe(IObserver<PlayerInput> observer)
-    {
-        observers.Add(observer);
-        return new Unsubscriber.Unsubscriber(observers, observer);
-    }
-
-    private void NotifyObserversOfAction(PlayerInput action)
-    {
-        foreach (IObserver<PlayerInput> observer in observers) observer.OnNext(action);
-    }
-
-    private PlayerInput ProcessInput(ConsoleKeyInfo key)
-    {
-        //only key is used, but could be extended to include modifiers\mouse position etc
-        return key.Key switch
+        private ICollection<IObserver<PlayerInput>> observers;
+        public InputController()
         {
-            ConsoleKey.UpArrow => PlayerInput.up,
-            ConsoleKey.DownArrow => PlayerInput.down,
-            ConsoleKey.LeftArrow => PlayerInput.left,
-            ConsoleKey.RightArrow => PlayerInput.right,
-            // d1 -> nu kan je input voor je square geven
-            ConsoleKey.Escape => PlayerInput.select,
-            ConsoleKey.S => PlayerInput.save,
-            ConsoleKey.L => PlayerInput.load,
-            ConsoleKey.G => PlayerInput.generate,
-            ConsoleKey.O => PlayerInput.solve,
-            ConsoleKey.Q => PlayerInput.quit,
-            _ => PlayerInput.none
-        };
+            observers = new List<IObserver<PlayerInput>>();
+        }
+
+        public IDisposable Subscribe(IObserver<PlayerInput> observer)
+        {
+            observers.Add(observer);
+            return new Unsubscriber.Unsubscriber(observers, observer);
+        }
+
+        private void NotifyObserversOfAction(PlayerInput action)
+        {
+            foreach (IObserver<PlayerInput> observer in observers)
+            {
+                observer.OnNext(action);
+            }
+        }
+
+        public void ProcessInput(ConsoleKeyInfo key)
+        {
+            PlayerInput action = GetPlayerInput(key);
+            NotifyObserversOfAction(action);
+        }
+
+        private PlayerInput GetPlayerInput(ConsoleKeyInfo key)
+        {
+            //only key is used, but could be extended to include modifiers\mouse position etc
+            switch (key.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    return PlayerInput.up;
+                case ConsoleKey.DownArrow:
+                    return PlayerInput.down;
+                case ConsoleKey.LeftArrow:
+                    return PlayerInput.left;
+                case ConsoleKey.RightArrow:
+                    return PlayerInput.right;
+                case ConsoleKey.Escape:
+                    return PlayerInput.select;
+                case ConsoleKey.S:
+                    return PlayerInput.save;
+                case ConsoleKey.L:
+                    return PlayerInput.load;
+                case ConsoleKey.G:
+                    return PlayerInput.generate;
+                case ConsoleKey.O:
+                    return PlayerInput.solve;
+                case ConsoleKey.Q:
+                    return PlayerInput.quit;
+                default:
+                    return PlayerInput.none;
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Sudoku.controler.Strategy;
 
 namespace Sudoku.controler
 {
@@ -10,11 +11,13 @@ namespace Sudoku.controler
     {
         SudokuTypes sudokuTypes { get; set; }
 
-        public BoardController()
+        public BoardController(ConcreteBoardStrategy concreteBoardStrategy)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
-
-        
+        public void solve()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
