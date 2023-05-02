@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sudoku.data.Cells.CellFactory" Collapsed="true">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\CellFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Sudoku.data.Cell">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cell.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Sudoku.data.Boards.SudokuTypes">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAYAAAAAEAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Boards\Enum\SudokuTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sudoku.data.PlayerInput">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAICCAAAAAAAAAAAAAAAICABAQAABAgAAgAA=</HashCode>
+      <FileName>Input\Enum\PlayerInput.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sudoku.data.EditorState">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAACAAAIIAAAAAAAAAAA=</HashCode>
+      <FileName>EditorState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sudoku.data.CellState">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAIAAAEAAAAAAAAACAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>CellState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
