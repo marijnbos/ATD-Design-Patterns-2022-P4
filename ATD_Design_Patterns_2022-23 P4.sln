@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoko", "Sudoko\Sudoko.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.data", "Sudoku.data\Sudoku.data.csproj", "{C0F3E5D4-63BD-40CD-B3BE-A0A733B0E7D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.controler", "Sudoku.controler\Sudoku.controler.csproj", "{B52DF02A-0727-4A35-A254-0A2F1E61D6EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.controller", "Sudoku.controller\Sudoku.controller.csproj", "{B52DF02A-0727-4A35-A254-0A2F1E61D6EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.view", "Sudoku.view\Sudoku.view.csproj", "{50CB9FDB-AE9C-4BC5-8EF9-AC1C287B11DD}"
 EndProject

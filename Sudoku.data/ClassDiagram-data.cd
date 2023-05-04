@@ -1,151 +1,173 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Sudoku.data.Boards.Board" Collapsed="true">
-    <Position X="20" Y="3.5" Width="1.5" />
+  <Class Name="Sudoku.data.Boards.Board">
+    <Position X="9" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAIAAAACAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAAAAgAIAAAAAAAACAAIAAAACABAAAAA=</HashCode>
       <FileName>Boards\Interface\Board.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Sudoku.data.Boards.FourByFour" Collapsed="true">
-    <Position X="22.25" Y="4.75" Width="1.5" />
+  <Class Name="Sudoku.data.Boards.Unsubscriber" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Boards\Interface\Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.data.Boards.FourByFour">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
       <FileName>Boards\FourByFour.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Boards.Jigsaw" Collapsed="true">
-    <Position X="24.5" Y="4.75" Width="1.5" />
+  <Class Name="Sudoku.data.Boards.Jigsaw">
+    <Position X="4.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
       <FileName>Boards\Jigsaw.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Boards.NineByNine" Collapsed="true">
-    <Position X="15.5" Y="4.75" Width="1.5" />
+  <Class Name="Sudoku.data.Boards.NineByNine">
+    <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
       <FileName>Boards\NineByNine.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Boards.Samurai" Collapsed="true">
-    <Position X="17.75" Y="4.75" Width="1.5" />
+  <Class Name="Sudoku.data.Boards.Samurai">
+    <Position X="8.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
       <FileName>Boards\Samurai.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Boards.SixBySix" Collapsed="true">
-    <Position X="20" Y="4.75" Width="1.5" />
+  <Class Name="Sudoku.data.Boards.SixBySix">
+    <Position X="11" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
       <FileName>Boards\SixBySix.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Sudoku.data.Cell">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\abstract\Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Sudoku.data.Cells.CellFactory">
-    <Position X="26.5" Y="5" Width="1.5" />
+    <Position X="4" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Cells\Factory\CellFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sudoku.data.Cells.Creator">
-    <Position X="28.5" Y="5" Width="1.5" />
+    <Position X="6" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Cells\Factory\Creator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cells.EmptyCell" Collapsed="true">
-    <Position X="17.75" Y="1.75" Width="1.5" />
+  <Class Name="Sudoku.data.Cells.EmptyCell">
+    <Position X="6.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Cells\EmptyCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cells.FaultyCell" Collapsed="true">
-    <Position X="20" Y="1.75" Width="1.5" />
+  <Class Name="Sudoku.data.Cells.FaultyCell">
+    <Position X="8.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Cells\FaultyCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cells.FilledSystemCell" Collapsed="true">
-    <Position X="22.25" Y="1.75" Width="1.5" />
+  <Class Name="Sudoku.data.Cells.FilledSystemCell">
+    <Position X="11" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Cells\FilledSystemCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cells.FilledUserCell" Collapsed="true">
-    <Position X="24.5" Y="1.75" Width="1.5" />
+  <Class Name="Sudoku.data.Cells.FilledUserCell">
+    <Position X="13.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Cells\FilledUserCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cells.NotACell" Collapsed="true">
-    <Position X="15.5" Y="1.75" Width="1.5" />
+  <Class Name="Sudoku.data.Cells.NotACell">
+    <Position X="4.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Cells\NotACell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cell" Collapsed="true">
-    <Position X="20" Y="0.5" Width="1.5" />
+  <Class Name="Sudoku.data.Game.Game" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
-      <FileName>Cells\Interface\Cell.cs</FileName>
+      <HashCode>AEAAAAAAAICAAAIAAAABAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Game\Game.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.data.Position.Pos" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Position\Pos.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Sudoku.data.Boards.IBoard" Collapsed="true">
-    <Position X="27" Y="0.5" Width="1.5" />
+  <Interface Name="Sudoku.data.Boards.IBoard">
+    <Position X="17.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAIAAAACAAAAAAA=</HashCode>
       <FileName>Boards\Interface\IBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sudoku.data.Boards.solver" Collapsed="true">
-    <Position X="28.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Boards\solver.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Enum Name="Sudoku.data.Boards.SudokuTypes" Collapsed="true">
-    <Position X="28.75" Y="2.25" Width="1.5" />
+  <Enum Name="Sudoku.data.Boards.SudokuTypes">
+    <Position X="15" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAABBAAAAIAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Boards\Enum\SudokuTypes.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="Sudoku.data.PlayerInput" Collapsed="true">
-    <Position X="27" Y="2.25" Width="1.5" />
+  <Enum Name="Sudoku.data.CellState">
+    <Position X="12.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAICCAAAAAAAAAAAAAAAICABAQAABAgAAgAA=</HashCode>
+      <HashCode>AAICAAAAAAAAAEAAAAAAAAACAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\enum\CellState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sudoku.data.EditorState">
+    <Position X="11.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>EditorStates\EditorState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sudoku.data.PlayerInput">
+    <Position X="13.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAICCAAAAAAAAAAAAAAAICAAAQAABAgAAgAA=</HashCode>
       <FileName>Input\Enum\PlayerInput.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="Sudoku.data.CellState" Collapsed="true">
-    <Position X="27" Y="1.5" Width="1.5" />
+  <Enum Name="Sudoku.data.Color.ColorEnum">
+    <Position X="2.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAICAAAAAAAAAEAAAAAAAAACAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>CellState.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="Sudoku.data.EditorState" Collapsed="true">
-    <Position X="30.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAACAAAIIAAAAAAAAAAA=</HashCode>
-      <FileName>EditorState.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="Sudoku.data.Color.ColorEnum" Collapsed="true">
-    <Position X="28.75" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAgAAAAAAAAAABAAAAEAAAAAAACAAAAA=</HashCode>
       <FileName>Color\ColorEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sudoku.data.Game.Enum.DisplayOptions">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Game\Enum\DisplayOptions.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

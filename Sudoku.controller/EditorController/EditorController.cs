@@ -1,19 +1,17 @@
 ﻿using Sudoku.controller;
 using Sudoku.data;
 
-namespace Sudoku.controler
+namespace Sudoku.controler.EditorController
 {
     public class EditorController : IObserver<PlayerInput>
     {
-        InputController inputController { get; set; }
-
-        public EditorController()
+        InputHandelerController InputHandelerController { get; set; }
+        public EditorController(InputHandelerController inputHandelerController)
         {
-            inputController = new InputController();
-            inputController.Subscribe(this);
+            InputHandelerController = inputHandelerController;
+            InputHandelerController.Subscribe(this);
         }
-
-
+        
         public void OnCompleted()
         {
             throw new NotImplementedException();
@@ -27,7 +25,7 @@ namespace Sudoku.controler
         public void OnNext(PlayerInput value)
         {
           // activate the next step after beeing called by the input controller
-          inputController.WaitForAction();
+        //  InputHandelerController.WaitForAction();
         }
     }
 }

@@ -6,11 +6,10 @@ public enum PlayerInput
     right,
     up,
     down,
-    select,
     save,
     load,
     generate,
     solve,
     quit,
-    none
+    none,
 }

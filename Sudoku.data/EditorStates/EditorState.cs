@@ -7,9 +7,7 @@ namespace Sudoku.data
 {
     public enum EditorState
     {
-        inputHelp,
-        deleteHelp,
-        inputDef,
-        deletDef
+        hulp,
+        defenitive
     }
 }

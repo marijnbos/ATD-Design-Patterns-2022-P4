@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Sudoku.controler\Sudoku.controler.csproj" />
+      <ProjectReference Include="..\Sudoku.controller\Sudoku.controller.csproj" />
     </ItemGroup>
 
 </Project>

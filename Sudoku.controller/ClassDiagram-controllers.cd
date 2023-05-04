@@ -1,82 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sudoku.controler.BoardController">
-    <Position X="9.5" Y="1.25" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAACA=</HashCode>
       <FileName>boardController\BoardController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.controler.EditorController" BaseTypeListCollapsed="true">
-    <Position X="11.75" Y="1.5" Width="1.5" />
+  <Class Name="Sudoku.controler.GameController">
+    <Position X="3" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
-      <FileName>EditorController\EditorController.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAABAAAgAAQAAAAQAAAAAAAA=</HashCode>
+      <FileName>GameController\GameController.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.137" />
   </Class>
-  <Class Name="Sudoku.controler.SetUpController" Collapsed="true">
-    <Position X="2.75" Y="2.5" Width="1.5" />
+  <Class Name="Sudoku.controler.SetUpController">
+    <Position X="5.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>SetupController\SetUpController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.controler.GameController" Collapsed="true">
-    <Position X="2.75" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sudoku.controler.selectionController" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
+  <Class Name="Sudoku.controler.selectionController">
+    <Position X="10.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SelectionController.cs</FileName>
       <NewMemberFileName>selectionController.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.controler.SolverController" Collapsed="true">
-    <Position X="4.5" Y="2.5" Width="1.5" />
+  <Class Name="Sudoku.controler.SolverController">
+    <Position X="7.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SolverController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.controler.Strategy.ConcreteBoardStrategy" Collapsed="true">
-    <Position X="4.5" Y="0.5" Width="1.5" />
+  <Class Name="Sudoku.controler.Strategy.ConcreteBoardStrategy" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>boardController\ConcreteBoardStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Sudoku.controller.Unsubscriber.Unsubscriber" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.25" Y="2.5" Width="1.5" />
+  <Class Name="Sudoku.controler.EditorController.EditorController" BaseTypeListCollapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAACAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EditorController\EditorController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.controller.Unsubscriber.Unsubscriber" BaseTypeListCollapsed="true">
+    <Position X="9" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>InputController\Unsubscriber\Unsubscriber.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Sudoku.controller.InputController" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="1.75" Width="1.5" />
+  <Class Name="Sudoku.controller.InputHandelerController" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAEEAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
-      <FileName>InputController\InputController.cs</FileName>
+      <HashCode>AAAIAAAEAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>InputController\InputHandelerController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Sudoku.controler.Strategy.IBoardStrategy" Collapsed="true">
-    <Position X="4.5" Y="3.75" Width="1.5" />
+  <Interface Name="Sudoku.controler.Strategy.IBoardStrategy">
+    <Position X="5.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>boardController\IBoardStrategy.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sudoku.controller.IController" Collapsed="true">
-    <Position X="2.75" Y="3.75" Width="1.5" />
+  <Interface Name="Sudoku.controller.IController">
+    <Position X="7.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IController.cs</FileName>
