@@ -9,11 +9,11 @@ public class ConcreteBoardStrategy : IBoardStrategy
         switch (board)
         {
             //make builder for each enum
-            case SudokuTypes.fourByFour:
+            case SudokuTypes.FourByFour:
                 throw new NotImplementedException();
-            case SudokuTypes.sixBySix:
+            case SudokuTypes.SixBySix:
                 throw new NotImplementedException();
-            case SudokuTypes.nineByNine:
+            case SudokuTypes.NineByNine:
                 throw new NotImplementedException();
             case SudokuTypes.Samurai:
                 throw new NotImplementedException();

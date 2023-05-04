@@ -1,5 +1,4 @@
 ﻿using Sudoku.data.Color;
-using static Sudoku.data.Color.ColorEnum;
 
 namespace Sudoku.data
 {

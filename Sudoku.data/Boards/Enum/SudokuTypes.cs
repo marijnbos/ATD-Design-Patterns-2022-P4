@@ -2,9 +2,9 @@ namespace Sudoku.data.Boards;
 
 public enum SudokuTypes
 {
-    fourByFour,
-    sixBySix,
-    nineByNine,
+    FourByFour,
+    SixBySix,
+    NineByNine,
     Samurai,
     Jigsaw,
 }
