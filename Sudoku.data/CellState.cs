@@ -7,12 +7,11 @@ namespace Sudoku.data
 {
     public enum CellState
     {
-        faulty,
+        faultyCell,
         filledSystem,
         filledUser,
         empty,
         //todo check this
         notACell
-
     }
 }

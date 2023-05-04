@@ -2,14 +2,21 @@
 {
     internal class CellFactory : Creator
     {
-        public override ICell factorMethod(string type)
+        private Dictionary<CellState, Cell> factory { get; set; }
+
+        CellFactory(Dictionary<CellState, Cell> factory)
         {
-            //TODO finish this logic
-            switch (type)
+            this.factory = factory;
+        }
+
+
+        public override Cell factorMethod()
+        {
+            foreach (CellState cell in CellState.GetValues(typeof(CellState)))
             {
-                default:
-                    return null;
+                //todo dit beter uitschrijven
             }
+            return new EmptyCell(0);
         }
     }
 }

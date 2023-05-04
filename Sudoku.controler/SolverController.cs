@@ -7,6 +7,6 @@ namespace Sudoku.controler
 {
     public class SolverController
     {
-       //board.solve();
+       //board.getSolvedBoard();
     }
 }

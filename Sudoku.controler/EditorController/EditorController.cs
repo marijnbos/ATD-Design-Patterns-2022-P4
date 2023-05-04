@@ -30,7 +30,8 @@ namespace Sudoku.controler
 
         public void OnNext(PlayerInput value)
         {
-          inputController.ProcessInput(value);
+          // activate the next step after beeing called by the input controller
+          inputController.WaitForAction();
         }
     }
 }

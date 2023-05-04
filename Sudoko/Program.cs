@@ -5,3 +5,5 @@ using Sudoku.controler;
 
 Console.WriteLine("Hello, World!");
 /*GameController(new SetUpController("user input"));*/ 
+
+new EditorController();

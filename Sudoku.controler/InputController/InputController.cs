@@ -20,18 +20,15 @@ namespace Sudoku.controller
 
         private void NotifyObserversOfAction(PlayerInput action)
         {
-            foreach (IObserver<PlayerInput> observer in observers)
-            {
-                observer.OnNext(action);
-            }
+            foreach (IObserver<PlayerInput> observer in observers) observer.OnNext(action);
         }
-
-        public void ProcessInput(ConsoleKeyInfo key)
+        public void WaitForAction()
         {
-            PlayerInput action = GetPlayerInput(key);
-            NotifyObserversOfAction(action);
+            ConsoleKeyInfo key = Console.ReadKey();
+            Console.WriteLine(key.KeyChar);
+            NotifyObserversOfAction(GetPlayerInput(key));
         }
-
+        
         private PlayerInput GetPlayerInput(ConsoleKeyInfo key)
         {
             //only key is used, but could be extended to include modifiers\mouse position etc
