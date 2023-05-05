@@ -4,9 +4,8 @@ using Sudoku.data.Game.State;
 
 namespace Sudoku.data.Game;
 
-public class Game : GameState
+public class GamePlayingState : IGameState
 {
-    
     public void Move(PlayerInput input, GameContext _context)
     {
         switch (input)
@@ -23,7 +22,6 @@ public class Game : GameState
                 return;
         }
     }
-
     public  void solve(GameContext _context)
     {
         //switch to soloving state

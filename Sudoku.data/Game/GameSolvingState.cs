@@ -3,10 +3,8 @@ using Sudoku.data.Game.State;
 
 namespace Sudoku.data.Game;
 
-public class GameSolvingState : GameState
+public class GameSolvingState : IGameState
 {
-   
-
     public void Move(PlayerInput input, GameContext _context)
     {
         switch (input)

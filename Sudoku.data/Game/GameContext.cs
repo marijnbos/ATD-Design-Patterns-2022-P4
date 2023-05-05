@@ -6,11 +6,11 @@ namespace Sudoku.data.Game;
 
 public class GameContext : IObserver<IBoard>
 {
-    public GameState _state { get; set; }
+    public IGameState _state { get; set; }
     DisplayOptions DisplayOption { get; }
     Board board { get; }
 
-    public GameContext(GameState state, Board board, DisplayOptions displayOption)
+    public GameContext(IGameState state, Board board, DisplayOptions displayOption)
     {
         _state = state;
         this.board = board;
