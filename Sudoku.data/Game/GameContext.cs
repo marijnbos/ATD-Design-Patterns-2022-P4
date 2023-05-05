@@ -1,16 +1,18 @@
 using Sudoku.data.Boards;
 using Sudoku.data.Game.Enum;
+using Sudoku.data.Game.State;
 
 namespace Sudoku.data.Game;
 
-public class Game : IObserver<IBoard>
+public class GameContext : IObserver<IBoard>
 {
+    public GameState _state { get; set; }
     DisplayOptions DisplayOption { get; }
     Board board { get; }
-    
 
-    public Game(Board board, DisplayOptions displayOption)
+    public GameContext(GameState state, Board board, DisplayOptions displayOption)
     {
+        _state = state;
         this.board = board;
         this.board.Subscribe(this);
         DisplayOption = displayOption;
@@ -18,21 +20,13 @@ public class Game : IObserver<IBoard>
 
     public void Move(PlayerInput input)
     {
-        switch (input)
-        {
-            case PlayerInput.up:
-                break;
-            case PlayerInput.right:
-                break;
-            case PlayerInput.down:
-                break;
-            case PlayerInput.left:
-                break;
-            default:
-                return;
-        }
+        _state.Move(input, this);
     }
 
+    public void solve()
+    {
+        _state.solve(this);
+    }
 
     public void OnCompleted()
     {
@@ -46,6 +40,6 @@ public class Game : IObserver<IBoard>
 
     public void OnNext(IBoard value)
     {
-        
+        throw new NotImplementedException();
     }
 }

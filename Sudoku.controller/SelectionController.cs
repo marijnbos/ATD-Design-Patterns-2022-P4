@@ -5,7 +5,4 @@ using System.Text;
 
 namespace Sudoku.controler
 {
-    public class selectionController
-    {
-    }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Sudoku.data.Cells
 {
-    internal class CellFactory : Creator
+    internal class CellFactory : CreatorCell
     {
         private Dictionary<CellState, Cell> factory { get; set; }
 
