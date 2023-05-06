@@ -7,5 +7,6 @@ public interface IBoard
     uint NumberOfGroups { get; set; }
     List<List<Cell>> Cells { get; set; }
     public IBoard copy();
+    public void insert(uint nubmer);
 
 }

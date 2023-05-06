@@ -9,6 +9,8 @@ public class GameContext : IObserver<IBoard>
     public IGameState _state { get; set; }
     DisplayOptions DisplayOption { get; }
     Board board { get; }
+    EditorState EdiitorState { get; }
+    
 
     public GameContext(IGameState state, Board board, DisplayOptions displayOption)
     {
@@ -16,6 +18,7 @@ public class GameContext : IObserver<IBoard>
         this.board = board;
         this.board.Subscribe(this);
         DisplayOption = displayOption;
+        EdiitorState = EditorState.hulp;
     }
 
     public void Move(PlayerInput input)
