@@ -4,24 +4,30 @@ using Sudoku.data.Game.State;
 
 namespace Sudoku.data.Game;
 
-public class GamePlayingState : IGameState
+public class InsertRealNumberState : IGameState
 {
     public void Move(PlayerInput input, GameContext _context)
     {
         switch (input)
         {
-            case PlayerInput.up:
-                break;
-            case PlayerInput.right:
-                break;
-            case PlayerInput.down:
-                break;
-            case PlayerInput.left:
-                break;
+            
+            //hier help gebruikt om naar andere state te gaan
+            case PlayerInput.Help:
+                _context._state = new insertingHelpNumbers();
+                return;
             default:
+                //write a message to the console that the input is not valid and help is only allowed to switch to other state
                 return;
         }
     }
+
+    public void input(string value, GameContext _context)
+    {
+        //if the input is a number
+        //insert the number in the board
+        throw new NotImplementedException();
+    }
+
     public  void solve(GameContext _context)
     {
         //switch to soloving state

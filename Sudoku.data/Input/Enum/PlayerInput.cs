@@ -11,5 +11,6 @@ public enum PlayerInput
     generate,
     solve,
     quit,
+    Help,
     none,
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Sudoku.data;
+using Sudoku.view.GameView;
 
 namespace Sudoku.controller
 {
