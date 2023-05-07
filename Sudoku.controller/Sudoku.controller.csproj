@@ -4,10 +4,12 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Sudoku.controler</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Sudoku.data\Sudoku.data.csproj" />
+      <ProjectReference Include="..\Sudoku.view\Sudoku.view.csproj" />
     </ItemGroup>
 
 </Project>
