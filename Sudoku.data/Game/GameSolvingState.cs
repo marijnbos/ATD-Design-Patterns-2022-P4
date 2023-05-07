@@ -11,7 +11,7 @@ public class GameSolvingState : IGameState
         {
             //stop solving state
             case PlayerInput.quit:
-                _context._state = new InsertRealNumberState();
+                _context.state = new InsertRealNumberState();
                 throw new NotImplementedException();
             default:
                 //write a message to the console that the input is not valid and quit is only allowed
@@ -19,9 +19,9 @@ public class GameSolvingState : IGameState
         }
     }
 
-    public void input(string value, GameContext _context)
+    public void insert(string value, GameContext _context)
     {
-        _context._state = new InsertRealNumberState();
+        _context.state = new InsertRealNumberState();
     }
 
     public void solve(GameContext _context)

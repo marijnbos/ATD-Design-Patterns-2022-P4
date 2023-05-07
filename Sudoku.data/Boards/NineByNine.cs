@@ -4,14 +4,14 @@ namespace Sudoku.data.Boards;
 
 public class NineByNine : Board
 {
-    public NineByNine(List<List<Cell>> Cells) : base(Cells)
+    public NineByNine(List<List<Cell>> Cells, SudokuDisplayMode sudokuDisplayMode) :  base(Cells, SudokuTypes.NineByNine, sudokuDisplayMode)
     {
     }
 
     public override IBoard copy()
     {
         //todo make this return a actual list of 9x9 cells
-        return new NineByNine(new List<List<Cell>>());
+        return new NineByNine(new List<List<Cell>>(), base.SudokuDisplayMode);
     }
 
     public override void move(Pos move)

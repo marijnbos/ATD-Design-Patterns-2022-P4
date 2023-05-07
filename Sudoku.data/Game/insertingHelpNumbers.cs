@@ -9,7 +9,7 @@ public class insertingHelpNumbers : IGameState
         switch (input)
         {
             case PlayerInput.quit:
-                _context._state = new InsertRealNumberState();
+                _context.state = new InsertRealNumberState();
                return;
             default:
                 //write a message to the console that the input is not valid and quit is only allowed to switch to other state
@@ -17,7 +17,7 @@ public class insertingHelpNumbers : IGameState
         }
     }
 
-    public void input(string value, GameContext _context)
+    public void insert(string value, GameContext _context)
     {
         //if the input is a number
         //insert the number in the board
@@ -27,6 +27,6 @@ public class insertingHelpNumbers : IGameState
     public void solve(GameContext _context)
     {
         //switch to soloving state
-        _context._state = new GameSolvingState();
+        _context.state = new GameSolvingState();
     }
 }

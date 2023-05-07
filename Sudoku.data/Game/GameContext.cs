@@ -6,29 +6,32 @@ namespace Sudoku.data.Game;
 
 public class GameContext : IObserver<IBoard>
 {
-    public IGameState _state { get; set; }
-    DisplayOptions DisplayOption { get; }
-    Board board { get; }
-    EditorState EdiitorState { get; }
+    public IGameState state { get; set; }
+    public DisplayOptions displayOption { get; }
+    public Board board { get; }
+    public EditorState editorState { get; }
+    public GameStatus gameStatus { get;}
     
 
-    public GameContext(IGameState state, Board board, DisplayOptions displayOption)
+    public GameContext(IGameState state, Board board, DisplayOptions displayOption, EditorState editorState)
     {
-        _state = state;
+        this.state = state;
         this.board = board;
         this.board.Subscribe(this);
-        DisplayOption = displayOption;
-        EdiitorState = EditorState.hulp;
+        this.displayOption = displayOption;
+        this.editorState = editorState;
+        this.gameStatus = GameStatus.ongoing;
     }
 
     public void Move(PlayerInput input)
     {
-        _state.Move(input, this);
+        state.Move(input, this);
     }
 
     public void solve()
     {
-        _state.solve(this);
+        state.solve(this);
+        //if correct change game state
     }
 
     public void OnCompleted()
@@ -45,4 +48,8 @@ public class GameContext : IObserver<IBoard>
     {
         throw new NotImplementedException();
     }
+
+    public string Serialize(){
+        throw new NotImplementedException();
+    } 
 }

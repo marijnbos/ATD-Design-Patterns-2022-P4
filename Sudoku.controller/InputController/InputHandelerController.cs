@@ -1,25 +1,38 @@
 using System;
 using System.Collections.Generic;
 using Sudoku.data;
-using Sudoku.view.GameView;
+using Sudoku.data.Game;
 
 namespace Sudoku.controller
 {
-    class InputHandlerController{
+    class InputHandlerController: IController, IObservable<PlayerInput>{
+        public GameContext game {get;} 
+        private ICollection<IObserver<PlayerInput>> observers;
 
-        public InputHandlerController(InputHandler _inputhandler, SudokuGameView _sudokuGameView)
+        public InputHandlerController(GameContext game)
         {
-            this.InputHandler = _inputhandler;
-            this.SudokuGameView = _sudokuGameView;
+            observers = new List<IObserver<PlayerInput>>();
+        }
+        public IDisposable Subscribe(IObserver<PlayerInput> observer)
+        {
+            observers.Add(observer);
+            return new Unsubscriber.Unsubscriber(observers, observer);
         }
 
-        public void gameLoop()
+        private void NotifyObserversOfAction(PlayerInput action)
         {
-            do{
-            //get JSON data from view
-            //inputhandler
-            //game logic takes places all over
-            }while(!game.status.finished)
+            foreach (IObserver<PlayerInput> observer in observers) observer.OnNext(action);
+        }
+
+        
+        public PlayerInput GetPlayerInput(string key)
+        {
+           // here player input is processed
+            switch (key)
+            {
+                default:
+                    return PlayerInput.none;
+            }
         }
     }
 }

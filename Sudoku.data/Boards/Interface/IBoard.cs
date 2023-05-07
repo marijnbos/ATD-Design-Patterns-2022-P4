@@ -8,5 +8,6 @@ public interface IBoard
     List<List<Cell>> Cells { get; set; }
     public IBoard copy();
     public void insert(uint nubmer);
-
+    public SudokuTypes type {get;}
+    public void Accept(ISudokuSolverVisitor visitor);
 }
