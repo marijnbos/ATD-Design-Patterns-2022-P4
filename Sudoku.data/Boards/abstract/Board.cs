@@ -3,9 +3,9 @@ using Sudoku.data.Position;
 namespace Sudoku.data.Boards;
 
 //todo marijn make solver beter >:(
-public abstract class Board : IBoard, ISolver, IObservable<IBoard>
+public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>
 {
-    private ICollection<IObserver<IBoard>> observers;
+    private ICollection<IObserver<IConcreteBoard>> observers;
     public uint NumberOfGroups { get; set; }
     public Pos _pos { get; }
     public List<List<ProductCell>> Cells { get; set; }
@@ -16,17 +16,17 @@ public abstract class Board : IBoard, ISolver, IObservable<IBoard>
     protected Board(List<List<ProductCell>> cells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
     {
         Cells = cells;
-        observers = new List<IObserver<IBoard>>();
+        observers = new List<IObserver<IConcreteBoard>>();
         this.type = type;
         this.SudokuDisplayMode = sudokuDisplayMode;
 
     }
     public abstract Board getSolvedBoard();
     public abstract Board validateBoard();
-    public abstract IBoard copy();
+    public abstract IConcreteBoard copy();
  
     
-    public IDisposable Subscribe(IObserver<IBoard> observer)
+    public IDisposable Subscribe(IObserver<IConcreteBoard> observer)
     {
         observers.Add(observer);
         return new Unsubscriber.Unsubscriber(observers, observer);

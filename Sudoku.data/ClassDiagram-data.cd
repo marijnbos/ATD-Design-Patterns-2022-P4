@@ -168,14 +168,14 @@
       <FileName>Position\Pos.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Sudoku.data.Boards.IBoard" Collapsed="true">
+  <Interface Name="Sudoku.data.Boards.IConcreteBoard" Collapsed="true">
     <Position X="35.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAABAAAAAAAIAAAAAAAABAAIAAAACAAAAAAA=</HashCode>
-      <FileName>Boards\Interface\IBoard.cs</FileName>
+      <FileName>Boards\Interface\IConcreteBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sudoku.data.Boards.solver" Collapsed="true">
+  <Interface Name="Sudoku.data.Boards.ISolver" Collapsed="true">
     <Position X="35.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
