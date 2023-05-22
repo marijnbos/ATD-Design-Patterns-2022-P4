@@ -73,11 +73,11 @@
       <FileName>Boards\Factory\CreatorBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.data.Cell">
+  <Class Name="Sudoku.data.ProductCell">
     <Position X="12" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAA=</HashCode>
-      <FileName>Cells\abstract\Cell.cs</FileName>
+      <FileName>Cells\abstract\ProductCell.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sudoku.data.Cells.CellFactory">

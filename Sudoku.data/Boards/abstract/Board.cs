@@ -3,17 +3,17 @@ using Sudoku.data.Position;
 namespace Sudoku.data.Boards;
 
 //todo marijn make solver beter >:(
-public abstract class Board : IBoard, solver, IObservable<IBoard>
+public abstract class Board : IBoard, ISolver, IObservable<IBoard>
 {
     private ICollection<IObserver<IBoard>> observers;
     public uint NumberOfGroups { get; set; }
     public Pos _pos { get; }
-    public List<List<Cell>> Cells { get; set; }
+    public List<List<ProductCell>> Cells { get; set; }
     public SudokuDisplayMode SudokuDisplayMode {get;}
 
     public SudokuTypes type {get;}
 
-    protected Board(List<List<Cell>> cells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
+    protected Board(List<List<ProductCell>> cells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
     {
         Cells = cells;
         observers = new List<IObserver<IBoard>>();
