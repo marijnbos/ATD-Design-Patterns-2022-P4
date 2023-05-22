@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sudoku.data.Boards.Unsubscriber.Unsubscriber" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Boards\abstract\Unsubscriber\Unsubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.data.Boards.Board">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIAAAAAABAAASAgAIAAAAAAAADAAIABAACABAAAAA=</HashCode>
+      <FileName>Boards\abstract\Board.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.data.Boards.FourByFour">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
+      <FileName>Boards\FourByFour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.data.Boards.Jigsaw">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
+      <FileName>Boards\Jigsaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.data.Boards.NineByNine">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
+      <FileName>Boards\NineByNine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.data.Boards.Samurai">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
+      <FileName>Boards\Samurai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.data.Boards.SixBySix">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAAAAAAAAAAAAIAAAAAABAAAAA=</HashCode>
+      <FileName>Boards\SixBySix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SudokuSolverVisitor" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Boards\SudokuSolverVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.data.Boards.Factory.BoardFactory">
+    <Position X="5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Boards\Factory\BoardFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.data.Boards.Factory.CreatorBoard">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Boards\Factory\CreatorBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Sudoku.data.Boards.IBoard">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAABAAAAAAAIAAAAAAAABAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Boards\Interface\IBoard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Sudoku.data.Boards.solver">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Boards\Interface\solver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ISudokuSolverVisitor">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Boards\Interface\ISudokeSolverVisitor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Sudoku.data.Boards.SudokuTypes">
+    <Position X="17.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAABBAAAAIAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Boards\Enum\SudokuTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SudokuDisplayMode">
+    <Position X="15.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Boards\Enum\SudokuDisplayMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
