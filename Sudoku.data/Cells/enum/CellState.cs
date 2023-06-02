@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Sudoku.data
+﻿namespace Sudoku.data.Cells.@enum
 {
     public enum CellState
     {
-        faultyCell,
-        filledSystem,
-        filledUser,
-        empty,
+        FaultyCell,
+        FilledSystem,
+        FilledUser,
+        Empty,
         //todo check this
-        notACell
+        NotACell
     }
 }

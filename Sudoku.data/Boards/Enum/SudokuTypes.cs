@@ -1,4 +1,4 @@
-namespace Sudoku.data.Boards;
+namespace Sudoku.data.Boards.Enum;
 
 public enum SudokuTypes
 {

@@ -1,24 +1,26 @@
+using Sudoku.data.Boards.Enum;
+using Sudoku.data.Boards.Interface;
+using Sudoku.data.Cells.@abstract;
 using Sudoku.data.Position;
 
-namespace Sudoku.data.Boards;
+namespace Sudoku.data.Boards.@abstract;
 
 //todo marijn make solver beter >:(
 public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>
 {
-    private ICollection<IObserver<IConcreteBoard>> observers;
+    private ICollection<IObserver<IConcreteBoard>> _observers;
     public uint NumberOfGroups { get; set; }
-    public Pos _pos { get; }
     public List<List<ProductCell>> Cells { get; set; }
     public SudokuDisplayMode SudokuDisplayMode {get;}
 
-    public SudokuTypes type {get;}
+    public SudokuTypes Type {get;}
 
     protected Board(List<List<ProductCell>> cells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
     {
         Cells = cells;
-        observers = new List<IObserver<IConcreteBoard>>();
-        this.type = type;
-        this.SudokuDisplayMode = sudokuDisplayMode;
+        _observers = new List<IObserver<IConcreteBoard>>();
+        Type = type;
+        SudokuDisplayMode = sudokuDisplayMode;
 
     }
     public abstract Board getSolvedBoard();
@@ -28,8 +30,8 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     
     public IDisposable Subscribe(IObserver<IConcreteBoard> observer)
     {
-        observers.Add(observer);
-        return new Unsubscriber.Unsubscriber(observers, observer);
+        _observers.Add(observer);
+        return new Unsubscriber.Unsubscriber(_observers, observer);
     }
     public abstract void move(Pos move);
 

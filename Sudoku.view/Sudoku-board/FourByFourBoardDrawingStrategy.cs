@@ -1,6 +1,6 @@
 using Sudoku.view.Cell;
 
-namespace Sudoku.view
+namespace Sudoku.view.Sudoku_board
 {
     public class FourByFourBoardDrawingStrategy : SudokuBoardView
     {
@@ -8,7 +8,7 @@ namespace Sudoku.view
         {
         }
 
-        public void Draw()
+        public override void Draw()
         {
         }
     }

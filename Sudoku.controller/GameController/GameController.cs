@@ -1,20 +1,19 @@
-﻿using Sudoku.controller;
-using Sudoku.data;
+﻿using Sudoku.controler.InputController;
 using Sudoku.data.Game;
 using Sudoku.view.GameView;
 
-namespace Sudoku.controler
+namespace Sudoku.controler.GameController
 {
     class GameController{
         public InputHandlerController InputHandler {get;}
         public SudokuGameView SudokuGameView {get;}
         public GameContext Game {get;}
 
-        public GameController(InputHandlerController _inputhandler, SudokuGameView _sudokuGameView, GameContext _game)
+        public GameController(InputHandlerController inputhandler, SudokuGameView sudokuGameView, GameContext game)
         {
-            this.InputHandler = _inputhandler;
-            this.SudokuGameView = _sudokuGameView;
-            this.Game = _game;
+            this.InputHandler = inputhandler;
+            this.SudokuGameView = sudokuGameView;
+            this.Game = game;
         }
 
         public void gameLoop()

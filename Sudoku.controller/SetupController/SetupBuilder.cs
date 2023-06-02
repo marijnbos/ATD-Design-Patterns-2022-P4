@@ -1,26 +1,28 @@
-using Sudoku.controler.Builder;
-using Sudoku.data;
+using Sudoku.controler.SetupController.Builder;
 using Sudoku.data.Boards;
+using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Factory;
+using Sudoku.data.Cells.@abstract;
 
-namespace Sudoku.controler;
+namespace Sudoku.controler.SetupController;
 
 public class SetupBuilder : ISetupBuilder
 {
     //generates the board needed
     private BoardFactory _boardFactory = new();
     
-    public ISetupBuilder setUpCells(string Input)
+    public ISetupBuilder setUpCells(string input)
     {
         return this;
     }
 
-    public ISetupBuilder setUpType(string Input)
+    public ISetupBuilder setUpType(string input)
     {
         return this;
     }
 
-    public ISetupBuilder setUpDisplayMode(string Input)
+    public ISetupBuilder setUpDisplayMode(string input)
     {
         return this;
     }

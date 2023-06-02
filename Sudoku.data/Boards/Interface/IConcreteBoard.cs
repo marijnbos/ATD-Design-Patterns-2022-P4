@@ -1,6 +1,7 @@
-using Sudoku.data.Position;
+using Sudoku.data.Boards.Enum;
+using Sudoku.data.Cells.@abstract;
 
-namespace Sudoku.data.Boards;
+namespace Sudoku.data.Boards.Interface;
 
 public interface IConcreteBoard
 {
@@ -8,6 +9,6 @@ public interface IConcreteBoard
     List<List<ProductCell>> Cells { get; set; }
     public IConcreteBoard copy();
     public void insert(uint nubmer);
-    public SudokuTypes type {get;}
+    public SudokuTypes Type {get;}
     public void Accept(ISudokuSolverVisitor visitor);
 } 

@@ -1,4 +1,6 @@
-namespace Sudoku.data.Boards;
+using Sudoku.data.Boards.@abstract;
+
+namespace Sudoku.data.Boards.Interface;
 
 //todo check if I can rewrite this using types
 public interface ISolver

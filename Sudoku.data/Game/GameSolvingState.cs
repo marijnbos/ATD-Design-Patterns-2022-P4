@@ -1,17 +1,17 @@
-using Sudoku.data.Boards;
 using Sudoku.data.Game.State;
+using Sudoku.data.Input.Enum;
 
 namespace Sudoku.data.Game;
 
 public class GameSolvingState : IGameState
 {
-    public void Move(PlayerInput input, GameContext _context)
+    public void Move(PlayerInput input, GameContext context)
     {
         switch (input)
         {
             //stop solving state
-            case PlayerInput.quit:
-                _context.state = new InsertRealNumberState();
+            case PlayerInput.Quit:
+                context.State = new InsertRealNumberState();
                 throw new NotImplementedException();
             default:
                 //write a message to the console that the input is not valid and quit is only allowed
@@ -19,18 +19,18 @@ public class GameSolvingState : IGameState
         }
     }
 
-    public void insert(string value, GameContext _context)
+    public void insert(string value, GameContext context)
     {
-        _context.state = new InsertRealNumberState();
+        context.State = new InsertRealNumberState();
     }
 
-    public void solve(GameContext _context)
+    public void solve(GameContext context)
     {
-        //solve the board
+        //TODO solve the board
         throw new NotImplementedException();
         
-        // set context to playing state
-        
+        //TODO set context to playing state
+        context.State = new InsertRealNumberState();
     }
     
 }

@@ -1,4 +1,4 @@
-namespace Sudoku.view
+namespace Sudoku.view.Sudoku_board
 {
     public interface IBoardDrawingStrategy
     {

@@ -1,36 +1,39 @@
-using Sudoku.data.Boards;
+using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Boards.Interface;
+using Sudoku.data.EditorStates;
 using Sudoku.data.Game.Enum;
 using Sudoku.data.Game.State;
+using Sudoku.data.Input.Enum;
 
 namespace Sudoku.data.Game;
 
 public class GameContext : IObserver<IConcreteBoard>
 {
-    public IGameState state { get; set; }
-    public DisplayOptions displayOption { get; }
-    public Board board { get; }
-    public EditorState editorState { get; }
-    public GameStatus gameStatus { get;}
+    public IGameState State { get; set; }
+    public DisplayOptions DisplayOption { get; }
+    public Board Board { get; }
+    public EditorState EditorState { get; }
+    public GameStatus GameStatus { get;}
     
 
     public GameContext(IGameState state, Board board, DisplayOptions displayOption, EditorState editorState)
     {
-        this.state = state;
-        this.board = board;
-        this.board.Subscribe(this);
-        this.displayOption = displayOption;
-        this.editorState = editorState;
-        this.gameStatus = GameStatus.ongoing;
+        this.State = state;
+        this.Board = board;
+        this.Board.Subscribe(this);
+        this.DisplayOption = displayOption;
+        this.EditorState = editorState;
+        this.GameStatus = GameStatus.Ongoing;
     }
 
     public void Move(PlayerInput input)
     {
-        state.Move(input, this);
+        State.Move(input, this);
     }
 
     public void solve()
     {
-        state.solve(this);
+        State.solve(this);
         //if correct change game state
     }
 

@@ -1,3 +1,4 @@
+using Sudoku.data.Cells.@abstract;
 using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
@@ -6,7 +7,7 @@ public class FaultyCell : ProductCell
 {
     private char _value;
 
-    public override char value
+    public override char Value
     {
         get => _value;
         set => _value = value;

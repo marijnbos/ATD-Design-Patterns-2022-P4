@@ -1,3 +1,5 @@
+using Sudoku.data.Boards.Interface;
+
 namespace Sudoku.data.Boards.Unsubscriber;
 
 public class Unsubscriber : IDisposable
