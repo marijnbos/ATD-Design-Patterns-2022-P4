@@ -7,14 +7,17 @@ namespace Sudoku.data.Cells.Factory
     {
         public CellFactory() : base()
         {
-            
         }
+
         public override ProductCell factorMethod(int group, char cellValue)
         {
-            return new EmptyCell(group, cellValue);
+            switch (cellValue)
+            {
+                case '0':
+                    return new EmptyCell(group, cellValue);
+                default:
+                    return new FilledSystemCell(group, cellValue);
+            }
         }
-
-
-       
     }
 }

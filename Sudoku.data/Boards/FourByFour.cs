@@ -31,7 +31,6 @@ public class FourByFour : Board
             {
                 // Convert each character to integer and add it to the board
                 char cellValue = cells[i * 4 + j];
-                Console.WriteLine(cellValue);
                 row.Add(new CellFactory().factorMethod(group,cellValue));
                 group++;
             }
