@@ -17,7 +17,7 @@ public class NotACell : ProductCell
         return ColorEnum.Black;
     }
 
-    public NotACell(int group) : base(group)
+    public NotACell(int group, char value) : base(group, value)
     {
     }
 }

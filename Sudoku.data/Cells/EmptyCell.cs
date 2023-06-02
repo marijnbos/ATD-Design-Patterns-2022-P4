@@ -6,7 +6,9 @@ namespace Sudoku.data.Cells;
 public class EmptyCell : ProductCell
 {
     private char _value;
-
+    public EmptyCell(int group, char value) : base(group, value)
+    {
+    }
     public override char Value
     {
         get => _value;
@@ -18,7 +20,6 @@ public class EmptyCell : ProductCell
         return ColorEnum.White;
     }
 
-    public EmptyCell(int group) : base(group)
-    {
-    }
+
+
 }

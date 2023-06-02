@@ -6,7 +6,6 @@
         FilledSystem,
         FilledUser,
         Empty,
-        //todo check this
         NotACell
     }
 }

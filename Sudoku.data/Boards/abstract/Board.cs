@@ -15,17 +15,17 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
 
     public SudokuTypes Type {get;}
 
-    protected Board(List<List<ProductCell>> cells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
+    protected Board(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
     {
-        Cells = cells;
         _observers = new List<IObserver<IConcreteBoard>>();
         Type = type;
         SudokuDisplayMode = sudokuDisplayMode;
-
+        Cells = CreateBoard(inputCells);
     }
     public abstract Board getSolvedBoard();
     public abstract Board validateBoard();
     public abstract IConcreteBoard copy();
+    public abstract List<List<ProductCell>> CreateBoard(string cells);
  
     
     public IDisposable Subscribe(IObserver<IConcreteBoard> observer)

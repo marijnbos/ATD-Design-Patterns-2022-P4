@@ -1,7 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+using Sudoku.controler.SetupController;
 
-//TODO start the game
+if (args.Any())
+{
+    var path = args[0];
 
-Console.WriteLine();
-// InputHandelerController inputHandelerController = new InputHandelerController(); 
-// new SetUpController();
+    if (File.Exists(path))
+    {
+        FileInfo fi = new FileInfo(path);
+        string input = File.ReadAllText(fi.FullName);
+        //TODO start the game
+        new SetupBuilderController(new SetupBuilder()).buildBoard(fi.Extension, input);
+    }
+}
+// lijst files -> lees alle files uit
+// user select file
+// load file

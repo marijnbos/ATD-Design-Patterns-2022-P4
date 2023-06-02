@@ -5,6 +5,10 @@ namespace Sudoku.data.Cells.Factory;
 
 public abstract class CreatorCell
 {
-    private Dictionary<CellState, ProductCell> factory { get; set; }
-    public abstract ProductCell factorMethod();
+    public CreatorCell()
+    {
+       
+    }
+
+    public abstract ProductCell factorMethod(int group, char cellValue);
 }

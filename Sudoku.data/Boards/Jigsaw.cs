@@ -8,13 +8,18 @@ namespace Sudoku.data.Boards;
 
 public class Jigsaw : Board
 {
-    public Jigsaw(List<List<ProductCell>> cells, SudokuDisplayMode sudokuDisplayMode) :  base(cells, SudokuTypes.Jigsaw, sudokuDisplayMode)
+    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) :  base(cells, SudokuTypes.Jigsaw, sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        return new Jigsaw(new List<List<ProductCell>>(), SudokuDisplayMode);
+        throw new NotImplementedException();
+    }
+
+    public override List<List<ProductCell>> CreateBoard(string cells)
+    {
+        throw new NotImplementedException();
     }
 
     public override void move(Pos move)

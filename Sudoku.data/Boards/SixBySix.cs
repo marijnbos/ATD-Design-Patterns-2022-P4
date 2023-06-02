@@ -8,14 +8,19 @@ namespace Sudoku.data.Boards;
 
 public class SixBySix : Board
 {
-    public SixBySix(List<List<ProductCell>> cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.SixBySix, sudokuDisplayMode)
+    public SixBySix(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.SixBySix, sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
         //todo make this return a new sixbysix board
-        return new SixBySix(new List<List<ProductCell>>(), SudokuDisplayMode);
+        throw new NotImplementedException();
+    }
+
+    public override List<List<ProductCell>> CreateBoard(string cells)
+    {
+        throw new NotImplementedException();
     }
 
     public override void move(Pos move)
