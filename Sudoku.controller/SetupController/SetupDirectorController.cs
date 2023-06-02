@@ -1,7 +1,8 @@
-using Sudoku.controler.Builder;
+using Sudoku.controler.SetupController.Builder;
 using Sudoku.data.Boards;
+using Sudoku.data.Boards.@abstract;
 
-namespace Sudoku.controler;
+namespace Sudoku.controler.SetupController;
 
 
 public class SetupBuilderController

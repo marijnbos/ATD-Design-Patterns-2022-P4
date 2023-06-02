@@ -1,15 +1,18 @@
-namespace Sudoku.data.Game.State;
+using Sudoku.data.Game.State;
+using Sudoku.data.Input.Enum;
 
-public class insertingHelpNumbers : IGameState
+namespace Sudoku.data.Game;
+
+public class InsertingHelpNumbers : IGameState
 {
     
  
-    public void Move(PlayerInput input, GameContext _context)
+    public void Move(PlayerInput input, GameContext context)
     {
         switch (input)
         {
-            case PlayerInput.quit:
-                _context.state = new InsertRealNumberState();
+            case PlayerInput.Quit:
+                context.State = new InsertRealNumberState();
                return;
             default:
                 //write a message to the console that the input is not valid and quit is only allowed to switch to other state
@@ -17,16 +20,16 @@ public class insertingHelpNumbers : IGameState
         }
     }
 
-    public void insert(string value, GameContext _context)
+    public void insert(string value, GameContext context)
     {
         //if the input is a number
         //insert the number in the board
         throw new NotImplementedException();
     }
 
-    public void solve(GameContext _context)
+    public void solve(GameContext context)
     {
         //switch to soloving state
-        _context.state = new GameSolvingState();
+        context.State = new GameSolvingState();
     }
 }

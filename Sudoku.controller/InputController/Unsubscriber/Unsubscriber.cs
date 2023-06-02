@@ -1,6 +1,7 @@
 using Sudoku.data;
+using Sudoku.data.Input.Enum;
 
-namespace Sudoku.controller.Unsubscriber;
+namespace Sudoku.controler.InputController.Unsubscriber;
 
 public class Unsubscriber : IDisposable
 {

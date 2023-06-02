@@ -1,4 +1,7 @@
-using Sudoku.data.Boards;
+using Sudoku.data.Boards.@abstract;
+
+namespace Sudoku.data.Boards.Interface;
+
 public interface ISudokuSolverVisitor
 {
     void Visit(Board board);

@@ -1,27 +1,27 @@
-using System;
-using System.Collections.Generic;
 using Sudoku.data;
 using Sudoku.data.Game;
+using Sudoku.data.Input.Enum;
 
-namespace Sudoku.controller
+namespace Sudoku.controler.InputController
 {
     class InputHandlerController: IController, IObservable<PlayerInput>{
-        public GameContext game {get;} 
-        private ICollection<IObserver<PlayerInput>> observers;
+        public GameContext Game {get;} 
+        private readonly ICollection<IObserver<PlayerInput>> _observers;
 
         public InputHandlerController(GameContext game)
         {
-            observers = new List<IObserver<PlayerInput>>();
+            this.Game = game;
+            _observers = new List<IObserver<PlayerInput>>();
         }
         public IDisposable Subscribe(IObserver<PlayerInput> observer)
         {
-            observers.Add(observer);
-            return new Unsubscriber.Unsubscriber(observers, observer);
+            _observers.Add(observer);
+            return new Unsubscriber.Unsubscriber(_observers, observer);
         }
 
         private void NotifyObserversOfAction(PlayerInput action)
         {
-            foreach (IObserver<PlayerInput> observer in observers) observer.OnNext(action);
+            foreach (IObserver<PlayerInput> observer in _observers) observer.OnNext(action);
         }
 
         
@@ -31,7 +31,7 @@ namespace Sudoku.controller
             switch (key)
             {
                 default:
-                    return PlayerInput.none;
+                    return PlayerInput.None;
             }
         }
     }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Sudoku.data
+﻿namespace Sudoku.data.EditorStates
 {
     public enum EditorState
     {
-        help,
-        defenitive
+        Help,
+        Defenitive
     }
 }

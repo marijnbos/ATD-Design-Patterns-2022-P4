@@ -1,6 +1,7 @@
 using Sudoku.view.Cell;
+using Sudoku.view.Sudoku_board.Abstract;
 
-namespace Sudoku.view
+namespace Sudoku.view.Sudoku_board
 {
     public class SamuraiBoardDrawingStrategy : SudokuBoardView
     {
@@ -8,7 +9,7 @@ namespace Sudoku.view
         {
         }
 
-        public void Draw()
+        public override void Draw()
         {
             // Draw the board in the standard way
         }

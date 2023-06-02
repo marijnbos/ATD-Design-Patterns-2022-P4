@@ -1,7 +1,7 @@
 namespace Sudoku.data.Position;
 
-public class Pos
+public abstract class Pos
 {
-    int y { get; set; }
-    int x { get; set; }
+    int Y { get; set; }
+    int X { get; set; }
 }

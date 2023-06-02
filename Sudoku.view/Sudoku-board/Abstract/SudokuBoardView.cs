@@ -1,22 +1,17 @@
 using Sudoku.view.Cell;
-namespace Sudoku.view;
+
+namespace Sudoku.view.Sudoku_board.Abstract;
 
 public abstract class SudokuBoardView : IView
 {
-    List<List<CellView>> cells {get;set;}
+    List<List<CellView>> Cells {get;set;}
     string _displayoptions;
     public SudokuBoardView(string displayoptions, string type, List<List<CellView>> cells)
     {
         _displayoptions = displayoptions;
-        this.cells = cells;
+        Cells = cells;
         //display the board
-    }   
-
-    public void Draw()
-    {
-        // foreach (var cell in _Cells)
-        // {
-        //     cell.Draw();
-        // }
     }
+
+    public abstract void Draw();
 }

@@ -1,10 +1,14 @@
+using Sudoku.view.Sudoku_board;
+using Sudoku.view.Sudoku_board.Abstract;
+
 namespace Sudoku.view.GameView;
 
 public class SudokuGameView : IView
 {
     private readonly SudokuBoardView _sudokuBoardView;
-    public SudokuGameView(string json)
+    public SudokuGameView(string json, SudokuBoardView sudokuBoardView)
     {
+        _sudokuBoardView = sudokuBoardView;
         /*
          if (board is StandardBoard)
             {

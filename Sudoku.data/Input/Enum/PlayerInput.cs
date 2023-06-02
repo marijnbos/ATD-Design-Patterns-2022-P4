@@ -1,16 +1,16 @@
-namespace Sudoku.data;
+namespace Sudoku.data.Input.Enum;
 
 public enum PlayerInput
 {
-    left,
-    right,
-    up,
-    down,
-    save,
-    load,
-    generate,
-    solve,
-    quit,
+    Left,
+    Right,
+    Up,
+    Down,
+    Save,
+    Load,
+    Generate,
+    Solve,
+    Quit,
     Help,
-    none,
+    None,
 }

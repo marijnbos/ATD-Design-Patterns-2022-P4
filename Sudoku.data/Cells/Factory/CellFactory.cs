@@ -1,12 +1,15 @@
-﻿namespace Sudoku.data.Cells
+﻿using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
+
+namespace Sudoku.data.Cells.Factory
 {
     internal class CellFactory : CreatorCell
     {
-        private Dictionary<CellState, ProductCell> factory { get; set; }
+        private Dictionary<CellState, ProductCell> Factory { get; set; }
 
         CellFactory(Dictionary<CellState, ProductCell> factory)
         {
-            this.factory = factory;
+            this.Factory = factory;
         }
 
 
