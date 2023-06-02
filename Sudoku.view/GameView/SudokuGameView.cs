@@ -1,4 +1,5 @@
 using Sudoku.view.Sudoku_board;
+using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.GameView;
 

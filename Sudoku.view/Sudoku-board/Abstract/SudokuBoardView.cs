@@ -1,6 +1,6 @@
 using Sudoku.view.Cell;
 
-namespace Sudoku.view.Sudoku_board;
+namespace Sudoku.view.Sudoku_board.Abstract;
 
 public abstract class SudokuBoardView : IView
 {
