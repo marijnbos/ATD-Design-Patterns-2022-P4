@@ -27,6 +27,6 @@ public class SetupBuilder : ISetupBuilder
 
     public Board buildBoard()
     {
-     return _boardFactory.factorMethod(new List<List<Cell>>(), new SudokuTypes(), new SudokuDisplayMode());
+     return _boardFactory.factorMethod(new List<List<ProductCell>>(), new SudokuTypes(), new SudokuDisplayMode());
     }
 }

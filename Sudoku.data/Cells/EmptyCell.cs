@@ -2,7 +2,7 @@ using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
 
-public class EmptyCell : Cell
+public class EmptyCell : ProductCell
 {
     private char _value;
 

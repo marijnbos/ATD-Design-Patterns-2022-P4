@@ -2,6 +2,6 @@ namespace Sudoku.data.Cells;
 
 public abstract class CreatorCell
 {
-    private Dictionary<CellState, Cell> factory { get; set; }
-    public abstract Cell factorMethod();
+    private Dictionary<CellState, ProductCell> factory { get; set; }
+    public abstract ProductCell factorMethod();
 }

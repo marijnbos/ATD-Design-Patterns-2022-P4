@@ -4,7 +4,7 @@ using Sudoku.data.Game.State;
 
 namespace Sudoku.data.Game;
 
-public class GameContext : IObserver<IBoard>
+public class GameContext : IObserver<IConcreteBoard>
 {
     public IGameState state { get; set; }
     public DisplayOptions displayOption { get; }
@@ -44,7 +44,7 @@ public class GameContext : IObserver<IBoard>
         throw new NotImplementedException();
     }
 
-    public void OnNext(IBoard value)
+    public void OnNext(IConcreteBoard value)
     {
         throw new NotImplementedException();
     }

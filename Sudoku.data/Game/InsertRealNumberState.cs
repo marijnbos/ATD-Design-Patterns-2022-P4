@@ -45,7 +45,7 @@ public class InsertRealNumberState : IGameState
         throw new NotImplementedException();
     }
 
-    public  void OnNext(IBoard value)
+    public  void OnNext(IConcreteBoard value)
     {
         
     }

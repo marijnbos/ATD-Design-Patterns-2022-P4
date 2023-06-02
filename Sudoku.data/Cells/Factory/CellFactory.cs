@@ -2,15 +2,15 @@
 {
     internal class CellFactory : CreatorCell
     {
-        private Dictionary<CellState, Cell> factory { get; set; }
+        private Dictionary<CellState, ProductCell> factory { get; set; }
 
-        CellFactory(Dictionary<CellState, Cell> factory)
+        CellFactory(Dictionary<CellState, ProductCell> factory)
         {
             this.factory = factory;
         }
 
 
-        public override Cell factorMethod()
+        public override ProductCell factorMethod()
         {
             foreach (CellState cell in CellState.GetValues(typeof(CellState)))
             {
