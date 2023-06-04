@@ -1,13 +1,10 @@
-using Sudoku.controler.SetupController.Builder;
-using Sudoku.data.Boards;
-using Sudoku.data.Boards.@abstract;
+using Sudoku.controler.SetupController.Board.Interface;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Factory;
-using Sudoku.data.Cells.@abstract;
 
-namespace Sudoku.controler.SetupController;
+namespace Sudoku.controler.SetupController.Board;
 
-public class SetupBuilder : ISetupBuilder
+public class SetupBuilderBoardBoard : ISetupBuilderBoard
 {
     //generates the board needed
     private BoardFactory _boardFactory = new();
@@ -15,26 +12,27 @@ public class SetupBuilder : ISetupBuilder
     public SudokuTypes type { get; set; }
     public SudokuDisplayMode sudokuDisplayMode { get; set; }
 
-    public ISetupBuilder setUpCells(string input)
+    public ISetupBuilderBoard setUpCells(string input)
     {
-        
+        //TODO -> check if this needs more information at complexer types
         cells = input;
         return this;
     }
 
-    public ISetupBuilder setUpType(string input)
+    public ISetupBuilderBoard setUpType(string input)
     {
         type = SudokuTypes.FourByFour;
         return this;
     }
 
-    public ISetupBuilder setUpDisplayMode(string input)
+    public ISetupBuilderBoard setUpDisplayMode(string input)
     {
+        //default to simple, change to switch statement if needed by the requirements
         sudokuDisplayMode = SudokuDisplayMode.Simple;
         return this;
     }
 
-    public Board buildBoard()
+    public data.Boards.@abstract.Board buildBoard()
     {
      return _boardFactory.factorMethod(cells, type, sudokuDisplayMode);
     }
