@@ -12,9 +12,9 @@ public class GameSolvingState : IGameState
             //stop solving state
             case PlayerInput.Quit:
                 context.State = new InsertRealNumberState();
-                throw new NotImplementedException();
+                return;
             default:
-                //write a message to the console that the input is not valid and quit is only allowed
+                Console.WriteLine("not valid input");
                 return;
         }
     }
@@ -28,9 +28,8 @@ public class GameSolvingState : IGameState
     {
         //TODO solve the board
         throw new NotImplementedException();
-        
+
         //TODO set context to playing state
         context.State = new InsertRealNumberState();
     }
-    
 }

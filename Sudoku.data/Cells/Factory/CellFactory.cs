@@ -3,23 +3,21 @@ using Sudoku.data.Cells.@enum;
 
 namespace Sudoku.data.Cells.Factory
 {
-    internal class CellFactory : CreatorCell
+    class CellFactory : CreatorCell
     {
-        private Dictionary<CellState, ProductCell> Factory { get; set; }
-
-        CellFactory(Dictionary<CellState, ProductCell> factory)
+        public CellFactory() : base()
         {
-            this.Factory = factory;
         }
 
-
-        public override ProductCell factorMethod()
+        public override ProductCell factorMethod(int group, char cellValue)
         {
-            foreach (CellState cell in CellState.GetValues(typeof(CellState)))
+            switch (cellValue)
             {
-                //todo dit beter uitschrijven
+                case '0':
+                    return new EmptyCell(group, cellValue);
+                default:
+                    return new FilledSystemCell(group, cellValue);
             }
-            return new EmptyCell(0);
         }
     }
 }

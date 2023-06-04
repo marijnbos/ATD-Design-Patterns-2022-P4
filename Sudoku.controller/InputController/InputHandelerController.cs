@@ -4,7 +4,7 @@ using Sudoku.data.Input.Enum;
 
 namespace Sudoku.controler.InputController
 {
-    class InputHandlerController: IController, IObservable<PlayerInput>{
+    public class InputHandlerController: IController, IObservable<PlayerInput>{
         public GameContext Game {get;} 
         private readonly ICollection<IObserver<PlayerInput>> _observers;
 
