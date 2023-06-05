@@ -1,3 +1,4 @@
+using Sudoku.data.Cells.Factory;
 using Sudoku.data.Game.State;
 using Sudoku.data.Input.Enum;
 
@@ -22,9 +23,10 @@ public class InsertingHelpNumbers : IGameState
 
     public void insert(string value, GameContext context)
     {
-        //if the input is a number
-        //insert the number in the board
-        throw new NotImplementedException();
+        int row = context.Board.SelectedCell.X;
+        int col = context.Board.SelectedCell.Y;
+        var oldCell = context.Board.Cells[row][col];
+        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse(value) , true);
     }
 
     public void solve(GameContext context)

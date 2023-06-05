@@ -1,18 +1,18 @@
-using Sudoku.data.Boards.Enum;
 using Sudoku.view.Cell;
 using Sudoku.view.Sudoku_board.Abstract;
+using Sudoku.data.Boards.@abstract;
 
 namespace Sudoku.view.Sudoku_board
 {
     public class SamuraiBoardDrawingStrategy : SudokuBoardView
     {
-        public SamuraiBoardDrawingStrategy(SudokuDisplayMode displayoptions, string type, List<List<CellView>> cells) : base(displayoptions, type, cells)
+        public SamuraiBoardDrawingStrategy(Board board) : base(board)
         {
         }
 
         public override void Draw()
         {
-            // Draw the board in the standard way
+            throw new NotImplementedException();
         }
     }
 }

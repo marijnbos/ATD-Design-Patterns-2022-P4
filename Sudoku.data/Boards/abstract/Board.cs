@@ -2,11 +2,13 @@ using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
 using Sudoku.data.Position;
+using Sudoku.data.Input.Enum;
 
 namespace Sudoku.data.Boards.@abstract;
 
 //todo marijn make solver beter >:(
-public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>
+//public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>
+public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>, IObserver<PlayerInput>
 {
     private ICollection<IObserver<IConcreteBoard>> _observers;
     public uint NumberOfGroups { get; set; }
@@ -14,6 +16,9 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     public SudokuDisplayMode SudokuDisplayMode {get;}
 
     public SudokuTypes Type {get;}
+    public Pos SelectedCell {get; set;}
+
+    public int Size { get { return Cells.Count; } }
 
     protected Board(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
     {
@@ -43,5 +48,40 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     {
         visitor.Visit(this);
     }
+    public ProductCell GetCell(int row, int column)
+    {
+        return Cells[row][column];
+    }
+
+    public void OnCompleted()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnError(Exception error)
+    {
+        throw new NotImplementedException();
+    }
+    public void OnNext(PlayerInput value)
+{
+    switch (value)
+    {
+        case PlayerInput.Up:
+            move(new Pos(0, -1));
+            break;
+
+        case PlayerInput.Left:
+            move(new Pos(-1, 0));
+            break;
+
+        case PlayerInput.Down:
+            move(new Pos(0, 1));
+            break;
+
+        case PlayerInput.Right:
+            move(new Pos(1, 0));
+            break;
+    }
+}
 }
 
