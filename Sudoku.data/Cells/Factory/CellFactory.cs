@@ -9,14 +9,14 @@ namespace Sudoku.data.Cells.Factory
         {
         }
 
-        public override ProductCell factorMethod(int group, char cellValue)
+        public override ProductCell factorMethod(int group, char cellValue, bool selected)
         {
             switch (cellValue)
             {
                 case '0':
-                    return new EmptyCell(group, cellValue);
+                    return new EmptyCell(group, cellValue, selected);
                 default:
-                    return new FilledSystemCell(group, cellValue);
+                    return new FilledSystemCell(group, cellValue, selected);
             }
         }
     }

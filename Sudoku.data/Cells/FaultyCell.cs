@@ -18,7 +18,7 @@ public class FaultyCell : ProductCell
         return ColorEnum.Red;
     }
 
-    public FaultyCell(int group, char value) : base(group, value)
+    public FaultyCell(int group, char value, bool selected) : base(group, value, selected)
     {
     }
 }

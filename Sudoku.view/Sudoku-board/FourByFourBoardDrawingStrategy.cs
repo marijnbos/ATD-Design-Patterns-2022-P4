@@ -1,25 +1,41 @@
-using Sudoku.data.Boards.Enum;
+using System;
+using System.Collections.Generic;
 using Sudoku.view.Cell;
 using Sudoku.view.Sudoku_board.Abstract;
+using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Cells;
 
 namespace Sudoku.view.Sudoku_board
 {
     public class FourByFourBoardDrawingStrategy : SudokuBoardView
     {
-        public FourByFourBoardDrawingStrategy(SudokuDisplayMode displayoptions, string type, List<List<CellView>> cells) : base(displayoptions, type, cells)
+        public FourByFourBoardDrawingStrategy(Board board) : base(board)
         {
+            Draw();
         }
 
-        public override void Draw()
+public override void Draw()
+{
+
+    for (int row = 0; row < Size; row++)
+    {
+        for (int col = 0; col < Size; col++)
         {
-            for (var i = 0; i <  Cells.Count; i++)
+            CellView cellView = GetCell(row, col);
+            cellView.Draw();
+
+            if (col == 1 )
             {
-                for (var j = 0; j < Cells[i].Count; j++)
-                {
-                    Console.Write(Cells[i][j].cluster + " ");
-                }
+                Console.Write(" | ");
             }
-           
         }
+        Console.WriteLine();
+
+        if (row == 1)
+        {
+            Console.WriteLine("-------");
+        }
+    }
+} 
     }
 }

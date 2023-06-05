@@ -17,7 +17,7 @@ public class FilledUserCell : ProductCell
         return ColorEnum.White;
     }
 
-    public FilledUserCell(int group, char value) : base(group, value)
+    public FilledUserCell(int group, char value, bool selected) : base(group, value, selected)
     {
     }
 }

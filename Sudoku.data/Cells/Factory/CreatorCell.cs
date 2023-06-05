@@ -10,5 +10,5 @@ public abstract class CreatorCell
        
     }
 
-    public abstract ProductCell factorMethod(int group, char cellValue);
+    public abstract ProductCell factorMethod(int group, char cellValue, bool selectedj);
 }

@@ -1,4 +1,6 @@
 using Sudoku.data.Color;
+using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 
 namespace Sudoku.view.Cell;
 
@@ -9,16 +11,25 @@ public class CellView : IView
     bool _isHighlighted;
     public uint cluster;
     
-    public CellView (char cell, ColorEnum colorEnum, bool isHighlighted, uint cluster)
+    public CellView (ProductCell cell)
     {
-        _cell = cell;
-        _colorEnum = colorEnum;
-        _isHighlighted = isHighlighted;
-        this.cluster = cluster;
+        _cell = cell.Value;
+        _colorEnum = cell.getCollor();
+        _isHighlighted =  cell.Selected;
     }
     public void Draw()
     {
-      //  Console.ForegroundColor(_colorEnum.ToString());
-        Console.Write(_cell);
+    if (_isHighlighted)
+    {
+        Console.BackgroundColor = (ConsoleColor)_colorEnum;
+        Console.ForegroundColor = ConsoleColor.Black;
+    }
+    else
+    {
+        Console.ForegroundColor = (ConsoleColor)_colorEnum;
+    }
+
+    Console.Write(_cell);
+    Console.ResetColor();
     }
 }
