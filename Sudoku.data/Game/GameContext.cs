@@ -19,12 +19,12 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
 
     public GameContext(IGameState state, Board board, DisplayOptions displayOption, EditorState editorState)
     {
-        this.State = state;
-        this.Board = board;
-        this.Board.Subscribe(this);
-        this.DisplayOption = displayOption;
-        this.EditorState = editorState;
-        this.GameStatus = GameStatus.Ongoing;
+        State = state;
+        Board = board;
+        Board.Subscribe(this);
+        DisplayOption = displayOption;
+        EditorState = editorState;
+        GameStatus = GameStatus.Ongoing;
     }
 
     public void Move(PlayerInput input)

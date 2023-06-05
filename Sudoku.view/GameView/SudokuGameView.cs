@@ -14,18 +14,6 @@ public class SudokuGameView : IView
         EditorState = gc.EditorState.ToString();
         Console.CursorVisible = false;
         _sudokuBoardView = sudokuBoardView;
-        /*
-         if (board is StandardBoard)
-            {
-                _sudokuBoardView = new SudokuBoardView(new StandardBoardDrawingStrategy());
-            }
-            else
-            {
-                throw new ArgumentException("Unsupported board type");
-            }
-
-        /etc
-        */
     }
 
     public void ProcessData(GameContext gc)

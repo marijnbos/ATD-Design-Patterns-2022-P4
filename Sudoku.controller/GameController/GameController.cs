@@ -19,13 +19,22 @@ namespace Sudoku.controler.GameController
 
         public void gameLoop()
         {
-            do{
-                InputHandler.SetPlayerInput(SudokuGameView.GetPlayerInput());
-                SudokuGameView.ProcessData(Game);
-                SudokuGameView.Draw();
+            try
+            {
+                do{
+                    InputHandler.SetPlayerInput(SudokuGameView.GetPlayerInput());
+                    SudokuGameView.ProcessData(Game);
+                    SudokuGameView.Draw();
                 
-            //update views
-            }while(Game.GameStatus == GameStatus.Ongoing);
+                    //update views
+                }while(Game.GameStatus == GameStatus.Ongoing);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
     }
 }
