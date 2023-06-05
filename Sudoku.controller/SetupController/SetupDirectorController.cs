@@ -30,9 +30,9 @@ public class SetupBuilderController
     }
 
     public GameController.GameController buildGameController(IGameState state, data.Boards.@abstract.Board board,
-        DisplayOptions displayOption, EditorState editorState, string cells)
+        DisplayOptions displayOption, EditorState editorState)
     {
-        return _setupBuilderGame.setupGameContext(state, board, displayOption, editorState).setupCellView(cells)
+        return _setupBuilderGame.setupGameContext(state, board, displayOption, editorState)
             .setupBoardView().setupGameView().setUpGameInputHandler().buildGameController();
     }
 }

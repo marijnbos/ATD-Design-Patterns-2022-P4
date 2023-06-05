@@ -6,8 +6,6 @@ using Sudoku.data.Input.Enum;
 
 namespace Sudoku.data.Boards.@abstract;
 
-//todo marijn make solver beter >:(
-//public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>
 public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>, IObserver<PlayerInput>
 {
     private ICollection<IObserver<IConcreteBoard>> _observers;
@@ -39,11 +37,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
         return new Unsubscriber.Unsubscriber(_observers, observer);
     }
     public abstract void move(Pos move);
-
-    public void insert(uint nubmer)
-    {
-        throw new NotImplementedException();
-    }
+    
     public void Accept(ISudokuSolverVisitor visitor)
     {
         visitor.Visit(this);
@@ -60,7 +54,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
 
     public void OnError(Exception error)
     {
-        throw new NotImplementedException();
+        throw new ArgumentOutOfRangeException(error.ToString());
     }
     public void OnNext(PlayerInput value)
 {
@@ -81,6 +75,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
         case PlayerInput.Right:
             move(new Pos(1, 0));
             break;
+        
     }
 }
 }

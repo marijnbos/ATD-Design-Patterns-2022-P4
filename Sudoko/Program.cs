@@ -19,11 +19,10 @@ if (args.Any())
         var board = new SetupBuilderController(new SetupBuilderBoardBoard()).buildBoard(fi.Extension, input);
 
         //build the context in the same way as the game controller
-
         //make input handler subscribe to board and context
         var gameController =
             new SetupBuilderController(new SetupBuilderGame()).buildGameController(new InsertingHelpNumbers(), board,
-                DisplayOptions.Easy, EditorState.Defenitive, input);
+                DisplayOptions.Easy, EditorState.Defenitive);
         gameController.gameLoop();
     }
     else

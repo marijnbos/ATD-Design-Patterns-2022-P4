@@ -18,7 +18,7 @@ public interface ISetupBuilderGame
     public SudokuBoardView SudokuBoardView { get; set; }
     public List<List<CellView>> Cells { get; set; }
     
-    ISetupBuilderGame setupCellView(string cells);
+
     
     ISetupBuilderGame setupGameContext(IGameState state, data.Boards.@abstract.Board board, DisplayOptions displayOption, EditorState editorState);
     ISetupBuilderGame setupBoardView();

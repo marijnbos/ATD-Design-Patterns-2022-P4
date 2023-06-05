@@ -34,6 +34,7 @@ public class InsertRealNumberState : IGameState
     {
         //switch to soloving state
         context.State = new GameSolvingState();
+        context.solve();
     }
 
 

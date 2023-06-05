@@ -27,8 +27,8 @@ public class GameSolvingState : IGameState
     public void solve(GameContext context)
     {
         //TODO solve the board
-        throw new NotImplementedException();
-        
+        context.Board.getSolvedBoard();
+
         //TODO set context to playing state
         context.State = new InsertRealNumberState();
     }

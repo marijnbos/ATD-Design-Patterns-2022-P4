@@ -64,7 +64,8 @@ public class FourByFour : Board
 
     public override Board getSolvedBoard()
     {
-        throw new NotImplementedException();
+        Accept(new SudokuSolverVisitor());
+        return this;
     }
 
     public override Board validateBoard()

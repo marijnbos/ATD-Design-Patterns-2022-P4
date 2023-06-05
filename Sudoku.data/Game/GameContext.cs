@@ -35,7 +35,6 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
     public void solve()
     {
         State.solve(this);
-        //if correct change game state
     }
 
     public void OnCompleted()
@@ -59,6 +58,9 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
         {
             case PlayerInput.EditorToggle:
                 editorToggle();
+                break;
+            case PlayerInput.Solve:
+                solve();
                 break;
             default:
             if (IsNumberInput(value)) {

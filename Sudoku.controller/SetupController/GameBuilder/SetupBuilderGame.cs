@@ -19,12 +19,7 @@ public class SetupBuilderGame : ISetupBuilderGame
     public SudokuBoardView SudokuBoardView { get; set; }
     public List<List<CellView>> Cells { get; set; }
 
-    public ISetupBuilderGame setupCellView(string cell)
-    {
-        Cells = new List<List<CellView>>();
-        return this;
-    }
-
+    
     public ISetupBuilderGame setupGameContext(IGameState state, data.Boards.@abstract.Board board,
         DisplayOptions displayOption,
         EditorState editorState)
