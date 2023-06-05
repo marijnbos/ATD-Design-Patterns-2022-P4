@@ -1,31 +1,31 @@
 ﻿using Sudoku.controler.InputController;
 using Sudoku.data.Game;
 using Sudoku.view.GameView;
+using Sudoku.data.Game.Enum;
 
 namespace Sudoku.controler.GameController
 {
-   public class GameController{
+    public class GameController{
         public InputHandlerController InputHandler {get;}
         public SudokuGameView SudokuGameView {get;}
         public GameContext Game {get;}
 
         public GameController(InputHandlerController inputhandler, SudokuGameView sudokuGameView, GameContext game)
         {
-            InputHandler = inputhandler;
-            SudokuGameView = sudokuGameView;
-            Game = game;
+            this.InputHandler = inputhandler;
+            this.SudokuGameView = sudokuGameView;
+            this.Game = game;
         }
 
         public void gameLoop()
         {
-            /*
             do{
-            //get JSON data from view
-            //inputhandler
-            //game logic takes places all over
+                InputHandler.SetPlayerInput(SudokuGameView.GetPlayerInput());
+                SudokuGameView.ProcessData(Game);
+                SudokuGameView.Draw();
+                
             //update views
-            }while(!game.status.finished);
-            */
+            }while(Game.GameStatus == GameStatus.Ongoing);
         }
     }
 }
