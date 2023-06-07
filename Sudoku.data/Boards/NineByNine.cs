@@ -43,23 +43,16 @@ public class NineByNine : Board
     }
     public override void move(Pos move)
     {
-        ProductCell? selectedCell = Cells.SelectMany(row => row).FirstOrDefault(cell => cell.Selected);
+        var old = Cells[SelectedCell.X][SelectedCell.Y];
+        int newRow = SelectedCell.X + move.X;
+        int newColumn = SelectedCell.Y + move.Y;
 
-        if (selectedCell != null)
+        if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
         {
-            int currentRow = Cells.FindIndex(row => row.Contains(selectedCell));
-            int currentColumn = Cells[currentRow].FindIndex(cell => cell == selectedCell);
-
-            int newRow = currentRow + move.X;
-            int newColumn = currentColumn + move.Y;
-
-            if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
-            {
-                selectedCell.Selected = false;
-                selectedCell = Cells[newRow][newColumn];
-                SelectedCell = new Pos(newColumn, newRow);
-                selectedCell.Selected = true;
-            }
+            old.Selected = false;
+            var selectedCell = Cells[newRow][newColumn];
+            SelectedCell = new Pos(newColumn, newRow);
+            selectedCell.Selected = true;
         }
     }
 

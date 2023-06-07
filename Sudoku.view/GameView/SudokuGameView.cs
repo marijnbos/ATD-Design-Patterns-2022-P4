@@ -10,8 +10,10 @@ public class SudokuGameView : IView
     public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView)
     {
         EditorState = gc.EditorState.ToString();
-        Console.CursorVisible = false;
+        //Console.CursorVisible = false;
+        Console.Clear();
         _sudokuBoardView = sudokuBoardView;
+        Draw();
     }
 
     public void ProcessData(GameContext gc)
