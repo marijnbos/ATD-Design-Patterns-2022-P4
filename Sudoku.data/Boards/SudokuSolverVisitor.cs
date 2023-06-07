@@ -40,7 +40,6 @@ public class SudokuSolverVisitor : ISudokuSolverVisitor
     {
         throw new NotImplementedException();
     }
-
     
 
     public void Visit(NineByNine nineByNine)

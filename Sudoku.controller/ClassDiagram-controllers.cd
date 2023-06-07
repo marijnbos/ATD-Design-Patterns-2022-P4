@@ -1,55 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Sudoku.controler.GameController">
-    <Position X="4.75" Y="2" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Sudoku.controler.SetupController.Board.SetupBuilderBoardBoard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAACAAAACAEABgACAAACAAAAAAAA=</HashCode>
+      <FileName>SetupController\BoardBuilder\SetupBuilderBoardBoard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.controler.SetupController.GameControllerBuilder.SetupBuilderGame" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAABICAAKAAAAAIAAIEAAAAAAAAAABAAA=</HashCode>
+      <FileName>SetupController\GameBuilder\SetupBuilderGame.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.controler.SetupController.SetupBuilderController" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAICAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>SetupController\SetupDirectorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.controler.InputController.Unsubscriber.Unsubscriber" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputController\Unsubscriber\Unsubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.controler.InputController.InputHandlerController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAgCAAABAAAAAAQAAAA=</HashCode>
+      <FileName>InputController\InputHandelerController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.controler.GameController.GameController" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAAAAAEAAAgAAAAAAAAAAAABAAA=</HashCode>
       <FileName>GameController\GameController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sudoku.controler.SetupBuilder" BaseTypeListCollapsed="true">
-    <Position X="10.5" Y="5" Width="1.5" />
+  <Interface Name="Sudoku.controler.SetupController.Board.Interface.ISetupBuilderBoard" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAACAAAAAAAAAgACAAACAAAAAAAA=</HashCode>
-      <FileName>SetupController\SetupBuilder.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Sudoku.controler.SetupBuilderController">
-    <Position X="12.25" Y="2.75" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACAAAAAAAA=</HashCode>
-      <FileName>SetupController\SetupDirectorController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sudoku.controller.Unsubscriber.Unsubscriber" BaseTypeListCollapsed="true">
-    <Position X="6.5" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>InputController\Unsubscriber\Unsubscriber.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Sudoku.controller.InputHandlerController" BaseTypeListCollapsed="true">
-    <Position X="4.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAEAAAAAAAAAAAAAAAAAAACAAAJAAAAAAAAAAA=</HashCode>
-      <FileName>InputController\InputHandelerController.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Interface Name="Sudoku.controller.IController">
-    <Position X="8.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IController.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAACAEABgACAAACAAAAAAAA=</HashCode>
+      <FileName>SetupController\BoardBuilder\Interface\ISetupBuilderBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sudoku.controler.Builder.ISetupBuilder">
-    <Position X="10.5" Y="2.75" Width="1.5" />
+  <Interface Name="Sudoku.controler.SetupController.GameControllerBuilder.Interface.ISetupBuilderGame" Collapsed="true">
+    <Position X="9" Y="2.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAgACAAACAAAAAAAA=</HashCode>
-      <FileName>SetupController\Builder\ISetupBuilder.cs</FileName>
+      <HashCode>AAAAAAAAAAgAABICAAKAAAAAIAAIEAAAAAAAAAABAAA=</HashCode>
+      <FileName>SetupController\GameBuilder\Interface\ISetupBuilderGame.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
