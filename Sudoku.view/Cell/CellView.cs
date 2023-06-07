@@ -21,6 +21,8 @@ public class CellView : IView
         if (_isHighlighted)
         {
             Console.BackgroundColor = (ConsoleColor)_colorEnum;
+            if(_colorEnum == ColorEnum.Red)
+            throw new Exception("asdfasd");
             Console.ForegroundColor = ConsoleColor.Black;
         }
         else

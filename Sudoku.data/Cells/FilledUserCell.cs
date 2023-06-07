@@ -1,4 +1,5 @@
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
@@ -17,7 +18,7 @@ public class FilledUserCell : ProductCell
         return ColorEnum.White;
     }
 
-    public FilledUserCell(int group, char value, bool selected) : base(group, value, selected)
+    public FilledUserCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
     {
     }
 }

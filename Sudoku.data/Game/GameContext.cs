@@ -11,7 +11,7 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
 {
     public IGameState State { get; set; }
     public DisplayOptions DisplayOption { get; }
-    public Board Board { get; }
+    public Board Board { get; private set; }
     public EditorState EditorState { get; private set; }
     public GameStatus GameStatus { get; private set; }
 
@@ -58,8 +58,8 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
             case PlayerInput.EditorToggle:
                 editorToggle();
                 break;
-            case PlayerInput.Solve:
-                solve();
+            case PlayerInput.Validate:
+                this.Board = Board.validateBoard();
                 break;
             default:
                 if (IsNumberInput(value))

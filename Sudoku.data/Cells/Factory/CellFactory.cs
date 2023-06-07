@@ -1,4 +1,5 @@
 ﻿using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 
 namespace Sudoku.data.Cells.Factory
 {
@@ -8,14 +9,22 @@ namespace Sudoku.data.Cells.Factory
         {
         }
 
-        public override ProductCell factorMethod(int group, char cellValue, bool selected)
+        public override ProductCell factorMethod(int group, char cellValue, bool selected, CellState state)
         {
-            switch (cellValue)
+            switch (state)
             {
-                case '0':
-                    return new EmptyCell(group, cellValue, selected);
+                case CellState.Empty:
+                    return new EmptyCell(group, cellValue, selected, state);
+                case CellState.FilledSystem:
+                    return new FilledSystemCell(group, cellValue, selected, state);
+                case CellState.FilledUser:
+                    return new FilledUserCell(group, cellValue, selected, state);
+                case CellState.FaultyCell:
+                    return new FaultyCell(group, cellValue, selected, state);
+                case CellState.NotACell:
+                    return new NotACell(group, cellValue, selected, state);
                 default:
-                    return new FilledSystemCell(group, cellValue, selected);
+                    throw new ArgumentException("Invalid cell state.");
             }
         }
     }

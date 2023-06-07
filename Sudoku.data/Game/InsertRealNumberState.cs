@@ -27,7 +27,7 @@ public class InsertRealNumberState : IGameState
         int row = context.Board.SelectedCell.X;
         int col = context.Board.SelectedCell.Y;
         var oldCell = context.Board.Cells[row][col];
-        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse(value), true);
+        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse(value), true, Cells.@enum.CellState.FilledUser);
     }
 
     public void solve(GameContext context)
