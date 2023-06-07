@@ -6,5 +6,7 @@ public enum ColorEnum
     Yellow,
     White,
     Red,
+    Orange,
+    Green, 
     Highlight
 }

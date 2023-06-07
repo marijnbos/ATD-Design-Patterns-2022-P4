@@ -16,7 +16,7 @@ public class FaultyCell : ProductCell
 
     public override ColorEnum getCollor()
     {
-        return ColorEnum.Red;
+        return ColorEnum.Orange;
     }
 
     public FaultyCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)

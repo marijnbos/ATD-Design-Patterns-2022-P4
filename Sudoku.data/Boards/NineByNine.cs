@@ -19,6 +19,7 @@ public class NineByNine : Board
         NineByNine clone = (NineByNine) this.MemberwiseClone();
         clone.SudokuDisplayMode = this.SudokuDisplayMode;
         clone.Cells = CopyCells();
+        clone.SolvedBoard = SolvedBoard;
         return clone;
     }
 
@@ -154,21 +155,20 @@ private bool IsSafe(List<List<ProductCell>> cells, int row, int col, char num)
 
     public override Board validateBoard()
     {
-        var board = getSolvedBoard();
             for (int i = 0; i < 9; i++)
                 {
                 for (int j = 0; j < 9; j++)
                 {
                     if (this.Cells[i][j].State == data.Cells.@enum.CellState.FilledUser &&
-                        this.Cells[i][j].Value != board.Cells[i][j].Value)
+                        this.Cells[i][j].Value != SolvedBoard.Cells[i][j].Value)
                     {
-                        var cell = board.Cells[i][j];
+                        var cell = SolvedBoard.Cells[i][j];
                         var factory = new CellFactory();
-                        board.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
+                        this.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
                          cell.Selected, data.Cells.@enum.CellState.FaultyCell);
                     }
                 }
             }
-        return board;
+        return this;
     }
 }

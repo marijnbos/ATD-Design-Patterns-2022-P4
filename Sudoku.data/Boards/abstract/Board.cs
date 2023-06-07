@@ -16,6 +16,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
 
     public SudokuTypes Type { get; }
     public Pos SelectedCell { get; set; }
+    public Board SolvedBoard {get;set;}
 
     public int Size { get { return Cells.Count; } }
 
@@ -26,6 +27,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
         SudokuDisplayMode = sudokuDisplayMode;
         SelectedCell = new Pos(0, 0);
         Cells = CreateBoard(inputCells);
+        SolvedBoard = this.getSolvedBoard();
     }
 
     public abstract Board getSolvedBoard();
