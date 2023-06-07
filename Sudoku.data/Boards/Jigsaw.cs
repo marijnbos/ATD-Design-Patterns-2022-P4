@@ -8,7 +8,7 @@ namespace Sudoku.data.Boards;
 
 public class Jigsaw : Board
 {
-    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) :  base(cells, SudokuTypes.Jigsaw, sudokuDisplayMode)
+    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.Jigsaw, sudokuDisplayMode)
     {
     }
 

@@ -9,11 +9,11 @@ namespace Sudoku.data.Boards;
 
 public class FourByFour : Board
 {
-    
+
     public FourByFour(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, type, sudokuDisplayMode)
     {
     }
-    
+
     public override IConcreteBoard copy()
     {
         //todo make this return a new fourbyfour board
@@ -29,27 +29,43 @@ public class FourByFour : Board
             var row = new List<ProductCell>();
             for (int j = 0; j < 4; j++)
             {
-                // Convert each character to integer and add it to the board
                 char cellValue = cells[i * 4 + j];
-                row.Add(new CellFactory().factorMethod(group,cellValue));
+                bool selected = (i == 0 && j == 0) ? true : false;
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected));
                 group++;
             }
             board.Add(row);
         }
-
-       
         return board;
     }
 
-
     public override void move(Pos move)
     {
-        throw new NotImplementedException();
+        ProductCell? selectedCell = Cells.SelectMany(row => row).FirstOrDefault(cell => cell.Selected);
+
+        if (selectedCell != null)
+        {
+            int currentRow = Cells.FindIndex(row => row.Contains(selectedCell));
+            int currentColumn = Cells[currentRow].FindIndex(cell => cell == selectedCell);
+
+            int newRow = currentRow + move.X;
+            int newColumn = currentColumn + move.Y;
+
+            if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
+            {
+                selectedCell.Selected = false;
+                selectedCell = Cells[newRow][newColumn];
+                SelectedCell = new Pos(newColumn, newRow);
+                selectedCell.Selected = true;
+            }
+        }
     }
+
 
     public override Board getSolvedBoard()
     {
-        throw new NotImplementedException();
+        Accept(new SudokuSolverVisitor());
+        return this;
     }
 
     public override Board validateBoard()
@@ -57,5 +73,5 @@ public class FourByFour : Board
         throw new NotImplementedException();
     }
 
-   
+
 }

@@ -14,14 +14,31 @@ public class SetupBuilderBoardBoard : ISetupBuilderBoard
 
     public ISetupBuilderBoard setUpCells(string input)
     {
-        //TODO -> check if this needs more information at complexer types
         cells = input;
         return this;
     }
 
     public ISetupBuilderBoard setUpType(string input)
     {
-        type = SudokuTypes.FourByFour;
+        switch (input)
+        {
+            case ".4x4":
+                type = SudokuTypes.FourByFour;
+                return this;
+            case ".6x6":
+                type = SudokuTypes.SixBySix;
+                return this;
+            case ".9x9":
+                type = SudokuTypes.NineByNine;
+                return this;
+            case ".samurai":
+                type = SudokuTypes.Samurai;
+                return this;
+            case ".jigsaw":
+                type = SudokuTypes.Jigsaw;
+                return this;
+        }
+
         return this;
     }
 
@@ -34,6 +51,6 @@ public class SetupBuilderBoardBoard : ISetupBuilderBoard
 
     public data.Boards.@abstract.Board buildBoard()
     {
-     return _boardFactory.factorMethod(cells, type, sudokuDisplayMode);
+        return _boardFactory.factorMethod(cells, type, sudokuDisplayMode);
     }
 }

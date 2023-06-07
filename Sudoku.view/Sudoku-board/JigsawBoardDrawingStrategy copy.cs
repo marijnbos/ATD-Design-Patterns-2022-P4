@@ -1,12 +1,11 @@
-using Sudoku.data.Boards.Enum;
-using Sudoku.view.Cell;
+using Sudoku.data.Boards.@abstract;
 using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.Sudoku_board
 {
     public class JigsawBoardDrawingStrategy : SudokuBoardView
     {
-        public JigsawBoardDrawingStrategy(SudokuDisplayMode displayoptions, string type, List<List<CellView>> cells) : base(displayoptions, type, cells)
+        public JigsawBoardDrawingStrategy(Board board) : base(board)
         {
         }
 

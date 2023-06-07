@@ -1,12 +1,13 @@
 using Sudoku.controler.InputController;
-using Sudoku.data.Boards.Enum;
-using Sudoku.data.Color;
+using Sudoku.data.EditorStates;
 using Sudoku.data.Game;
+using Sudoku.data.Game.Enum;
+using Sudoku.data.Game.State;
 using Sudoku.view.Cell;
 using Sudoku.view.GameView;
 using Sudoku.view.Sudoku_board.Abstract;
 
-namespace Sudoku.controler.SetupController.GameViewBuilder.Interface;
+namespace Sudoku.controler.SetupController.GameControllerBuilder.Interface;
 
 public interface ISetupBuilderGame
 {
@@ -15,13 +16,14 @@ public interface ISetupBuilderGame
     public GameContext GameContext { set; get; }
     public SudokuBoardView SudokuBoardView { get; set; }
     public List<List<CellView>> Cells { get; set; }
-    
-    //TODO add uint cluster
-    ISetupBuilderGame setupCellView(string cells);
-    ISetupBuilderGame setupBoardView(SudokuTypes type);
+
+
+
+    ISetupBuilderGame setupGameContext(IGameState state, data.Boards.@abstract.Board board, DisplayOptions displayOption, EditorState editorState);
+    ISetupBuilderGame setupBoardView();
     ISetupBuilderGame setupGameView();
-    ISetupBuilderGame setUpGameInputHandler(GameContext context);
-    
+    ISetupBuilderGame setUpGameInputHandler();
+
     //last method
     GameController.GameController buildGameController();
 }

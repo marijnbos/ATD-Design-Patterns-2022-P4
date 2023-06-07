@@ -1,21 +1,22 @@
+using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
-using Sudoku.view.Cell;
 using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.Sudoku_board.Factory;
 
 public class ViewBoardFactory : CreatorViewBoard
 {
-    public override SudokuBoardView factorMethod(SudokuDisplayMode sudokuDisplayMode, SudokuTypes type, List<List<CellView>> cells)
+    public override SudokuBoardView factorMethod(Board board)
     {
-        return type switch
+        return board.Type switch
         {
-            SudokuTypes.Jigsaw => new JigsawBoardDrawingStrategy(sudokuDisplayMode, type.ToString(), cells),
-            SudokuTypes.Samurai => new SamuraiBoardDrawingStrategy(sudokuDisplayMode, type.ToString(), cells),
-            SudokuTypes.FourByFour => new FourByFourBoardDrawingStrategy(sudokuDisplayMode, type.ToString(), cells),
-            SudokuTypes.SixBySix => new SixBySixDrawingStrategy(sudokuDisplayMode, type.ToString(), cells),
-            SudokuTypes.NineByNine => new NineByNineBoardDrawingStrategy(sudokuDisplayMode, type.ToString(), cells),
+            SudokuTypes.Jigsaw => new JigsawBoardDrawingStrategy(board),
+            SudokuTypes.Samurai => new SamuraiBoardDrawingStrategy(board),
+            SudokuTypes.FourByFour => new FourByFourBoardDrawingStrategy(board),
+            SudokuTypes.SixBySix => new SixBySixDrawingStrategy(board),
+            SudokuTypes.NineByNine => new NineByNineBoardDrawingStrategy(board),
             _ => throw new NotImplementedException()
         };
     }
+
 }

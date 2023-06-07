@@ -1,12 +1,13 @@
-using Sudoku.data;
 using Sudoku.data.Game;
 using Sudoku.data.Input.Enum;
 
 namespace Sudoku.controler.InputController
 {
-    public class InputHandlerController: IController, IObservable<PlayerInput>{
-        public GameContext Game {get;} 
+    public class InputHandlerController : IController, IObservable<PlayerInput>
+    {
+        public GameContext Game { get; }
         private readonly ICollection<IObserver<PlayerInput>> _observers;
+
 
         public InputHandlerController(GameContext game)
         {
@@ -23,16 +24,19 @@ namespace Sudoku.controler.InputController
         {
             foreach (IObserver<PlayerInput> observer in _observers) observer.OnNext(action);
         }
-
-        
-        public PlayerInput GetPlayerInput(string key)
+        public void SetPlayerInput(string key)
         {
-           // here player input is processed
-            switch (key)
+            foreach (PlayerInput input in Enum.GetValues(typeof(PlayerInput)))
             {
-                default:
-                    return PlayerInput.None;
+
+                if (char.ToLower((char)input) == char.ToLower(key[0]))
+                {
+                    NotifyObserversOfAction(input);
+                    return;
+                }
+                NotifyObserversOfAction(PlayerInput.None);
             }
         }
+
     }
 }

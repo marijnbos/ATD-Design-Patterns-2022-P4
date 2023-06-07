@@ -7,14 +7,16 @@ namespace Sudoku.data.Cells.@abstract
     public abstract class ProductCell
     {
         private CellState State { get; set; }
-        private int Group { get; }
+        public int Group { get; }
         public abstract char Value { get; set; }
         public abstract ColorEnum getCollor();
-        
-        protected ProductCell(int group, char value)
+        public bool Selected { get; set; }
+
+        protected ProductCell(int group, char value, bool selected)
         {
             Group = group;
             Value = value;
+            Selected = selected;
         }
     }
 }

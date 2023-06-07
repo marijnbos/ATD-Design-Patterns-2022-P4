@@ -15,10 +15,10 @@ public class FilledSystemCell : ProductCell
 
     public override ColorEnum getCollor()
     {
-       return ColorEnum.Yellow;
+        return ColorEnum.Yellow;
     }
 
-    public FilledSystemCell(int group, char value) : base(group, value)
+    public FilledSystemCell(int group, char value, bool selected) : base(group, value, selected)
     {
     }
 }
