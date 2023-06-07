@@ -1,14 +1,15 @@
 ﻿using Sudoku.controler.InputController;
 using Sudoku.data.Game;
-using Sudoku.view.GameView;
 using Sudoku.data.Game.Enum;
+using Sudoku.view.GameView;
 
 namespace Sudoku.controler.GameController
 {
-    public class GameController{
-        public InputHandlerController InputHandler {get;}
-        public SudokuGameView SudokuGameView {get;}
-        public GameContext Game {get;}
+    public class GameController
+    {
+        public InputHandlerController InputHandler { get; }
+        public SudokuGameView SudokuGameView { get; }
+        public GameContext Game { get; }
 
         public GameController(InputHandlerController inputhandler, SudokuGameView sudokuGameView, GameContext game)
         {
@@ -21,20 +22,21 @@ namespace Sudoku.controler.GameController
         {
             try
             {
-                do{
+                do
+                {
                     InputHandler.SetPlayerInput(SudokuGameView.GetPlayerInput());
                     SudokuGameView.ProcessData(Game);
                     SudokuGameView.Draw();
-                
+
                     //update views
-                }while(Game.GameStatus == GameStatus.Ongoing);
+                } while (Game.GameStatus == GameStatus.Ongoing);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-            
+
         }
     }
 }

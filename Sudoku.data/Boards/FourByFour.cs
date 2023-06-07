@@ -9,11 +9,11 @@ namespace Sudoku.data.Boards;
 
 public class FourByFour : Board
 {
-    
+
     public FourByFour(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, type, sudokuDisplayMode)
     {
     }
-    
+
     public override IConcreteBoard copy()
     {
         //todo make this return a new fourbyfour board
@@ -31,7 +31,7 @@ public class FourByFour : Board
             {
                 char cellValue = cells[i * 4 + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group,cellValue, selected));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected));
                 group++;
             }
             board.Add(row);
@@ -60,7 +60,7 @@ public class FourByFour : Board
             }
         }
     }
- 
+
 
     public override Board getSolvedBoard()
     {
@@ -73,5 +73,5 @@ public class FourByFour : Board
         throw new NotImplementedException();
     }
 
-   
+
 }

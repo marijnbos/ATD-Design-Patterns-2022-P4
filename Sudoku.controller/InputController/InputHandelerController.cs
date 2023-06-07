@@ -1,13 +1,13 @@
-using Sudoku.data;
 using Sudoku.data.Game;
 using Sudoku.data.Input.Enum;
 
 namespace Sudoku.controler.InputController
 {
-    public class InputHandlerController: IController, IObservable<PlayerInput>{
-        public GameContext Game {get;} 
+    public class InputHandlerController : IController, IObservable<PlayerInput>
+    {
+        public GameContext Game { get; }
         private readonly ICollection<IObserver<PlayerInput>> _observers;
-        
+
 
         public InputHandlerController(GameContext game)
         {

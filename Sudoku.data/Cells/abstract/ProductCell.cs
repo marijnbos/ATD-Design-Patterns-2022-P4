@@ -10,8 +10,8 @@ namespace Sudoku.data.Cells.@abstract
         public int Group { get; }
         public abstract char Value { get; set; }
         public abstract ColorEnum getCollor();
-        public bool Selected {get;set;}
-        
+        public bool Selected { get; set; }
+
         protected ProductCell(int group, char value, bool selected)
         {
             Group = group;

@@ -1,13 +1,9 @@
 ﻿using Sudoku.controler.SetupController;
-using Sudoku.controler.InputController;
-using Sudoku.controler.GameController;
 using Sudoku.controler.SetupController.Board;
 using Sudoku.controler.SetupController.GameControllerBuilder;
-using Sudoku.data.Game.Enum;
-using Sudoku.data.Game;
 using Sudoku.data.EditorStates;
-using Sudoku.view.GameView;
-using Sudoku.view.Sudoku_board;
+using Sudoku.data.Game;
+using Sudoku.data.Game.Enum;
 
 if (args.Any())
 {
@@ -30,5 +26,5 @@ if (args.Any())
         Console.WriteLine("unsupported action");
         Environment.Exit(1);
     }
-   
+
 }

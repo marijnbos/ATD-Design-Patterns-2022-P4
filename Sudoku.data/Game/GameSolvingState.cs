@@ -32,5 +32,5 @@ public class GameSolvingState : IGameState
         //TODO set context to playing state
         context.State = new InsertRealNumberState();
     }
-    
+
 }

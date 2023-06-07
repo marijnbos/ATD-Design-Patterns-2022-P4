@@ -8,7 +8,7 @@ namespace Sudoku.data.Boards;
 
 public class Samurai : Board
 {
-    public Samurai(string cells, SudokuDisplayMode sudokuDisplayMode) :  base(cells, SudokuTypes.Samurai, sudokuDisplayMode)
+    public Samurai(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.Samurai, sudokuDisplayMode)
     {
     }
 

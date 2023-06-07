@@ -4,7 +4,6 @@ using Sudoku.data.EditorStates;
 using Sudoku.data.Game.Enum;
 using Sudoku.data.Game.State;
 using Sudoku.data.Input.Enum;
-using System.Text.Json;
 
 namespace Sudoku.data.Game;
 
@@ -15,7 +14,7 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
     public Board Board { get; }
     public EditorState EditorState { get; private set; }
     public GameStatus GameStatus { get; private set; }
-    
+
 
     public GameContext(IGameState state, Board board, DisplayOptions displayOption, EditorState editorState)
     {
@@ -63,11 +62,12 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
                 solve();
                 break;
             default:
-            if (IsNumberInput(value)) {
-                string numberValue = ((int)value - (int)PlayerInput.Num1 + 1).ToString();
-                State.insert(numberValue, this);
-            }
-            break;
+                if (IsNumberInput(value))
+                {
+                    string numberValue = ((int)value - (int)PlayerInput.Num1 + 1).ToString();
+                    State.insert(numberValue, this);
+                }
+                break;
         }
     }
 
@@ -75,8 +75,9 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
     {
         return input >= PlayerInput.Num1 && input <= PlayerInput.Num9;
     }
-    
-    private void editorToggle(){
+
+    private void editorToggle()
+    {
         EditorState = (EditorState == EditorState.Help) ? EditorState.Defenitive : EditorState.Help;
         State = (EditorState == EditorState.Help) ? new InsertingHelpNumbers() : new InsertRealNumberState();
     }

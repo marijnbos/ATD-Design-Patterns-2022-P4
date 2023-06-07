@@ -21,7 +21,7 @@ public class SixBySix : Board
 
     public override List<List<ProductCell>> CreateBoard(string cells)
     {
-         var board = new List<List<ProductCell>>();
+        var board = new List<List<ProductCell>>();
         int group = 0;
         for (int i = 0; i < 6; i++)
         {
@@ -30,12 +30,12 @@ public class SixBySix : Board
             {
                 char cellValue = cells[i * 6 + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group,cellValue, selected));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected));
                 group++;
             }
             board.Add(row);
         }
-        return board;       
+        return board;
     }
 
     public override void move(Pos move)

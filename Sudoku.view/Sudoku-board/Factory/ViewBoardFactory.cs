@@ -1,6 +1,5 @@
 using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
-using Sudoku.view.Cell;
 using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.Sudoku_board.Factory;
@@ -19,5 +18,5 @@ public class ViewBoardFactory : CreatorViewBoard
             _ => throw new NotImplementedException()
         };
     }
-   
+
 }

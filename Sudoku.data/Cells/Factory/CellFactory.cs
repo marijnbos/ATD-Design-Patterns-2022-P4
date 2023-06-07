@@ -1,5 +1,4 @@
 ﻿using Sudoku.data.Cells.@abstract;
-using Sudoku.data.Cells.@enum;
 
 namespace Sudoku.data.Cells.Factory
 {

@@ -1,14 +1,12 @@
 using Sudoku.data.Game;
-using Sudoku.view.Sudoku_board;
 using Sudoku.view.Sudoku_board.Abstract;
-using System.Text.Json;
 
 namespace Sudoku.view.GameView;
 
 public class SudokuGameView : IView
 {
     private readonly SudokuBoardView _sudokuBoardView;
-    public string EditorState {get;set;}
+    public string EditorState { get; set; }
     public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView)
     {
         EditorState = gc.EditorState.ToString();
@@ -21,7 +19,7 @@ public class SudokuGameView : IView
         _sudokuBoardView.ProcessData(gc.Board);
         EditorState = gc.EditorState.ToString();
     }
-    
+
     public void Draw()
     {
         Console.Clear();

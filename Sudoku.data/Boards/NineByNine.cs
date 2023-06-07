@@ -9,7 +9,7 @@ namespace Sudoku.data.Boards;
 
 public class NineByNine : Board
 {
-    public NineByNine(string cells, SudokuDisplayMode sudokuDisplayMode) :  base(cells, SudokuTypes.NineByNine, sudokuDisplayMode)
+    public NineByNine(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.NineByNine, sudokuDisplayMode)
     {
     }
 
@@ -30,7 +30,7 @@ public class NineByNine : Board
             {
                 char cellValue = cells[i * 9 + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group,cellValue, selected));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected));
                 group++;
             }
             board.Add(row);

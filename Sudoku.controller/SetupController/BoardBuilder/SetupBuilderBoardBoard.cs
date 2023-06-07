@@ -38,7 +38,7 @@ public class SetupBuilderBoardBoard : ISetupBuilderBoard
                 type = SudokuTypes.Jigsaw;
                 return this;
         }
-        
+
         return this;
     }
 
@@ -51,6 +51,6 @@ public class SetupBuilderBoardBoard : ISetupBuilderBoard
 
     public data.Boards.@abstract.Board buildBoard()
     {
-     return _boardFactory.factorMethod(cells, type, sudokuDisplayMode);
+        return _boardFactory.factorMethod(cells, type, sudokuDisplayMode);
     }
 }

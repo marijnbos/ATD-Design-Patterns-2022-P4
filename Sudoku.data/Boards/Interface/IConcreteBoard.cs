@@ -8,7 +8,7 @@ public interface IConcreteBoard
     uint NumberOfGroups { get; set; }
     List<List<ProductCell>> Cells { get; set; }
     public IConcreteBoard copy();
-    
-    public SudokuTypes Type {get;}
+
+    public SudokuTypes Type { get; }
     public void Accept(ISudokuSolverVisitor visitor);
-} 
+}

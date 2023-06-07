@@ -1,4 +1,3 @@
-using Sudoku.data;
 using Sudoku.data.Input.Enum;
 
 namespace Sudoku.controler.InputController.Unsubscriber;

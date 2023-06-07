@@ -1,5 +1,5 @@
-using Sudoku.view.Cell;
 using Sudoku.data.Boards.@abstract;
+using Sudoku.view.Cell;
 
 namespace Sudoku.view.Sudoku_board.Abstract;
 
@@ -7,7 +7,7 @@ public abstract class SudokuBoardView : IView
 {
 
     private string _displayOptions;
-    List<List<CellView>> Cells {get;set;}
+    List<List<CellView>> Cells { get; set; }
 
     public int Size => Cells.Count;
 
@@ -25,7 +25,7 @@ public abstract class SudokuBoardView : IView
 
     internal void ProcessData(Board board)
     {
-        _displayOptions = ""; 
+        _displayOptions = "";
         Cells = new List<List<CellView>>();
 
         for (int i = 0; i < board.Size; i++)
@@ -39,6 +39,6 @@ public abstract class SudokuBoardView : IView
                 row.Add(cellView);
             }
             Cells.Add(row);
-        } 
+        }
     }
 }

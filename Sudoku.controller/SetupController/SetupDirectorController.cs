@@ -1,8 +1,6 @@
 using Sudoku.controler.SetupController.Board.Interface;
 using Sudoku.controler.SetupController.GameControllerBuilder.Interface;
-using Sudoku.data.Boards.Enum;
 using Sudoku.data.EditorStates;
-using Sudoku.data.Game;
 using Sudoku.data.Game.Enum;
 using Sudoku.data.Game.State;
 

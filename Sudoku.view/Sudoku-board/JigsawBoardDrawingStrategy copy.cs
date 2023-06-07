@@ -1,6 +1,5 @@
-using Sudoku.view.Cell;
-using Sudoku.view.Sudoku_board.Abstract;
 using Sudoku.data.Boards.@abstract;
+using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.Sudoku_board
 {
