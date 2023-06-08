@@ -7,9 +7,7 @@ namespace Sudoku.data.Cells;
 public class EmptyCell : ProductCell
 {
     private char _value;
-    public EmptyCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
-    {
-    }
+   
     public override char Value
     {
         get => _value;
@@ -22,5 +20,7 @@ public class EmptyCell : ProductCell
     }
 
 
-
+    public EmptyCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
+    {
+    }
 }

@@ -10,5 +10,6 @@ public abstract class CreatorCell
 
     }
 
-    public abstract ProductCell factorMethod(int group, char cellValue, bool selected, CellState state);
+    public abstract ProductCell factorMethod(int group, char cellValue, bool selected, CellState state,
+        List<int> helpernumbers);
 }

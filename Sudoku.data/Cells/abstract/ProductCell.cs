@@ -13,20 +13,14 @@ namespace Sudoku.data.Cells.@abstract
 
         public List<int> HelperNumbers { get; set; } = new();
 
-        protected ProductCell(int group, char value, bool selected, CellState state)
+        protected ProductCell(int group, char value, bool selected, CellState state, List<int> helperNumbers)
         {
             Group = group;
             Value = value;
             Selected = selected;
             State = state;
-            fillHelNumbers();
+            HelperNumbers = helperNumbers;
         }
-
-        public void fillHelNumbers()
-        {
-            HelperNumbers.RemoveAll(x => true);
-            for (var i = 1; i < 10; i++)
-                HelperNumbers.Add(i);
-        }
+        
     }
 }

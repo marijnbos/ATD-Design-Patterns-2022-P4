@@ -14,7 +14,7 @@ public class InsertRealNumberState : IGameState
         {
 
             //hier help gebruikt om naar andere state te gaan
-            case PlayerInput.Help:
+            case PlayerInput.EditorToggle:
                 context.State = new InsertingHelpNumbers();
                 return;
             default:
@@ -28,21 +28,22 @@ public class InsertRealNumberState : IGameState
         int row = context.Board.SelectedCell.X;
         int col = context.Board.SelectedCell.Y;
         var selectedCell = context.Board.Cells[row][col];
+        var buildnumber = context.Board.Cells[row][col].HelperNumbers;
         var cellFactory = new CellFactory();
 
         if (selectedCell.State == CellState.Empty)
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value == char.Parse(value))
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', false, CellState.Empty);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', false, CellState.Empty,buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value != int.Parse(value))
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
         else

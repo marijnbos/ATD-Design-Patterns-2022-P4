@@ -44,7 +44,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
             foreach (var cell in row)
             {
                 CellFactory cellFactory = new CellFactory();
-                ProductCell copiedCell = cellFactory.factorMethod((cell.Group), cell.Value, cell.Selected, cell.State);
+                ProductCell copiedCell = cellFactory.factorMethod((cell.Group), cell.Value, cell.Selected, cell.State, new List<int>());
                 copiedRow.Add(copiedCell);
             }
             copiedCells.Add(copiedRow);

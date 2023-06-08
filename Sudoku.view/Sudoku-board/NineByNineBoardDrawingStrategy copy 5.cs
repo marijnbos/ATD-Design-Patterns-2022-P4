@@ -27,7 +27,7 @@ namespace Sudoku.view.Sudoku_board
 
                 if ((row + 1) % 3 == 0 && row < Size - 1)
                 {
-                    Console.WriteLine(new string('-', 13));
+                    Console.WriteLine(new string('-', Size * 10 + 2));
                 }
             }
         }

@@ -26,39 +26,15 @@ public class HelperNumberLeaf : CellComponent
 
     public override void Draw()
     {
-        int count = 1;
-        for (int i = 0; i < 3; i++)
+        var counter = 0;
+        foreach (var cellComponent in _cells)
         {
-            for (int j = 0; j < 3; j++)
-            {
-                if (_cells.Any(c => c.Value == count))
-                {
-                    // If the helper number exists, draw it.
-                    _cells.First(c => c.Value == count).Draw();
-                }
-                else
-                {
-                    // If the helper number does not exist, draw a blank space.
-                    Console.Write(" ");
-                }
-            
-                if (j < 2) // if it's not the last number in the row, print a space
-                {
-                    Console.Write(" ");
-                }
-
-                count++;
-            }
-        
-            if (i < 2) // if it's not the last row, print a space for separation
-            {
-                Console.Write("  ");
-            }
+            cellComponent.Draw();
+            counter++;
+        }
+        for (int i = counter; i < 9; i++)
+        {
+            Console.Write(" ");
         }
     }
-
-
-
-
-   
 }

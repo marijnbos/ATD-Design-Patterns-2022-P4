@@ -8,7 +8,6 @@ namespace Sudoku.data.Input.Enum
         Down = 'S',
         Right = 'D',
         Quit = 'Q',
-        Help = 'H',
         EditorToggle = 'T',
         Load = 'L',
         Generate = 'G',

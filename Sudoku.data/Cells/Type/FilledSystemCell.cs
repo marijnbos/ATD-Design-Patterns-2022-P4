@@ -19,7 +19,7 @@ public class FilledSystemCell : ProductCell
         return ColorEnum.Yellow;
     }
 
-    public FilledSystemCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
+    public FilledSystemCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
     {
     }
 }

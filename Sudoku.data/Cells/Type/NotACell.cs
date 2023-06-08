@@ -19,7 +19,7 @@ public class NotACell : ProductCell
     }
 
 
-    public NotACell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
+    public NotACell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
     {
     }
 }

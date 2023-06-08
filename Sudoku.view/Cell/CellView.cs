@@ -10,7 +10,7 @@ public class CellView : IView
     ColorEnum _colorEnum;
     bool _isHighlighted;
     HelperNumberLeaf _helperNumberLeaf;
-    
+
 
     public CellView(ProductCell cell)
     {
@@ -22,31 +22,38 @@ public class CellView : IView
         {
             _helperNumberLeaf.Add(new HelperNumberViewComponent(helper));
         }
-        
-       
     }
+
     public void Draw()
     {
         if (_isHighlighted)
         {
-            Console.BackgroundColor = (ConsoleColor)_colorEnum;
+            Console.BackgroundColor = (ConsoleColor) _colorEnum;
             Console.ForegroundColor = ConsoleColor.Black;
         }
         else
         {
-            Console.ForegroundColor = (ConsoleColor)_colorEnum;
+            Console.ForegroundColor = (ConsoleColor) _colorEnum;
         }
 
+        //only show the helper numbers in the right state
         if (_cell == ' ')
         {
+            Console.Write(" ");
             _helperNumberLeaf.Draw();
-            Console.Write(" "); // print space after helper numbers
+            
         }
         else
         {
-            Console.Write(_cell);
+            // _helperNumberLeaf.Draw();
+            for (int i = 0; i < 9; i++)
+            {
+                Console.Write(" ");
+                if (i == 4)
+                    Console.Write(_cell);
+            }
         }
-        
+
         Console.ResetColor();
     }
 }
