@@ -34,7 +34,7 @@ public class NineByNine : Board
             {
                 char cellValue = cells[i * 9 + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group, cellValue, selected, data.Cells.@enum.CellState.FilledSystem, new List<int>()));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected, (cellValue == '0') ? CellState.Empty : CellState.FilledSystem, new List<int>()));
                 group++;
             }
             board.Add(row);
@@ -165,7 +165,7 @@ private bool IsSafe(List<List<ProductCell>> cells, int row, int col, char num)
                         this.Cells[i][j].Value == SolvedBoard.Cells[i][j].Value)
                     {
                         this.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
-                         cell.Selected, CellState.CorrectCell);
+                         cell.Selected, CellState.CorrectCell, new List<int>());
                     }
                 }
             }

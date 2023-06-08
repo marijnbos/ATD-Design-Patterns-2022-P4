@@ -27,7 +27,7 @@ public class InsertingHelpNumbers : IGameState
         int col = context.Board.SelectedCell.Y;
         var oldCell = context.Board.Cells[row][col];
         var buildnumber = context.Board.Cells[row][col].HelperNumbers;
-        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse(" "), true, Cells.@enum.CellState.FilledUser,buildnumber);
+        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse("0"), true, Cells.@enum.CellState.FilledUser,buildnumber);
         context.Board.Cells[row][col].HelperNumbers.Add(int.Parse(value));
     }
 

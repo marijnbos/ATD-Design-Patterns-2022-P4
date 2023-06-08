@@ -19,7 +19,7 @@ public class CorrectCell : ProductCell
         return ColorEnum.Red;
     }
 
-    public CorrectCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
+    public CorrectCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
     {
     }
 }

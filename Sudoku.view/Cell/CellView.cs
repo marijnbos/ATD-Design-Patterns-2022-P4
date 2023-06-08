@@ -37,7 +37,7 @@ public class CellView : IView
         }
 
         //only show the helper numbers in the right state
-        if (_cell == ' ')
+        if (_cell == '0')
         {
             Console.Write(" ");
             _helperNumberLeaf.Draw();
