@@ -3,7 +3,7 @@ using Sudoku.data.Cells.@enum;
 
 namespace Sudoku.data.Cells.Factory
 {
-    class CellFactory : CreatorCell
+   public class CellFactory : CreatorCell
     {
         public CellFactory() : base()
         {

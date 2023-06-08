@@ -3,6 +3,8 @@ using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
+using Sudoku.data.Cells.Factory;
 using Sudoku.data.Position;
 
 namespace UnitTest
@@ -45,26 +47,31 @@ namespace Sudoku.Tests
         }
 
         // Add more unit tests for the NineByNine class as needed
-
     }
+
+    
 
     public class BoardTests
     {
+        public void setup()
+        {
+            
+        }
+        
         [Fact]
         public void CopyCells_ReturnsCopyOfCells()
         {
             // Arrange
-            var cells = new List<List<ProductCell>>
-            {
-                // Initialize cells here
-            };
-            var board = new MockBoard(cells);
+            string cells = "530070000600195000098000060800060003400803001700020006060000280000419005000080079";
+            var sudokuDisplayMode = SudokuDisplayMode.Assist;
+            var nineByNine = new NineByNine(cells, sudokuDisplayMode);
 
             // Act
-            var copiedCells = board.CopyCells();
+            var board = nineByNine.CreateBoard(cells);
+            var copy = nineByNine.CopyCells();
 
             // Assert
-            // Add assertions to verify the correctness of the copied cells
+            Assert.Equivalent(board, copy);
         }
 
         // Add more unit tests for the Board class as needed
@@ -93,7 +100,28 @@ namespace Sudoku.Tests
 
             public override List<List<ProductCell>> CreateBoard(string cells)
             {
-                throw new NotImplementedException();
+                var board = new List<List<ProductCell>>();
+                int group = 0;
+                if (cells.Length != 81)
+                    throw new Exception("Invalid board");
+                
+
+                for (int i = 0; i < 9; i++)
+                {
+                    var row = new List<ProductCell>();
+                    for (int j = 0; j < 9; j++)
+                    {
+                        char cellValue = cells[i * 9 + j];
+                        bool selected = (i == 0 && j == 0) ? true : false;
+                        row.Add(new CellFactory().factorMethod(group, cellValue, selected,
+                            (cellValue == '0') ? CellState.Empty : CellState.FilledSystem, new List<int>()));
+                        group++;
+                    }
+
+                    board.Add(row);
+                }
+
+                return board;
             }
 
             public override void move(Pos move)
