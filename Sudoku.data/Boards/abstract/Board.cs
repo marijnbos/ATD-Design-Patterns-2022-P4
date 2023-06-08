@@ -35,7 +35,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     public abstract Board validateBoard();
     public abstract IConcreteBoard copy();
 
-    protected List<List<ProductCell>> CopyCells()
+    public List<List<ProductCell>> CopyCells()
     {
         var copiedCells = new List<List<ProductCell>>();
 
