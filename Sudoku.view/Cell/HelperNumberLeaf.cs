@@ -11,17 +11,17 @@ public class HelperNumberLeaf : CellComponent
     {
         if (_cells.Count < 9)
         {
+            if(_cells.Find(e=> e.Value == cell.Value) != null) return;
+            
             _cells.Add(cell);
+            
         }
-        else
-        {
-            throw new InvalidOperationException("Cannot add more than 9 helpnumbers to a HelperNumberLeaf.");
-        }
+       
     }
 
     public void Remove(CellComponent cell)
     {
-        _cells.Remove(cell);
+        _cells.Clear();
     }
 
     public override void Draw()
