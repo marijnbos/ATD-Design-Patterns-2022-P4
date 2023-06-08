@@ -16,7 +16,7 @@ if (args.Any())
         //build the context in the same way as the game controller
         //make input handler subscribe to board and context
         var gameController =
-            new SetupBuilderController(new SetupBuilderGame()).buildGameController(new InsertingHelpNumbers(), board,
+            new SetupBuilderController(new SetupBuilderGame()).buildGameController(new InsertRealNumberState(), board,
                 DisplayOptions.Easy, EditorState.Defenitive);
         gameController.gameLoop();
     }

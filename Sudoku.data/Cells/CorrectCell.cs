@@ -4,7 +4,7 @@ using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
 
-public class FilledUserCell : ProductCell
+public class CorrectCell : ProductCell
 {
     private char _value;
 
@@ -13,12 +13,13 @@ public class FilledUserCell : ProductCell
         get => _value;
         set => _value = value;
     }
+
     public override ColorEnum getCollor()
     {
-        return ColorEnum.Pink;
+        return ColorEnum.Red;
     }
 
-    public FilledUserCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
+    public CorrectCell(int group, char value, bool selected, CellState state) : base(group, value, selected, state)
     {
     }
 }

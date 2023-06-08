@@ -15,15 +15,14 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
     public EditorState EditorState { get; private set; }
     public GameStatus GameStatus { get; private set; }
 
-
     public GameContext(IGameState state, Board board, DisplayOptions displayOption, EditorState editorState)
     {
         State = state;
         Board = board;
-        Board.Subscribe(this);
         DisplayOption = displayOption;
         EditorState = editorState;
         GameStatus = GameStatus.Ongoing;
+        Board.Subscribe(this);
     }
 
     public void Move(PlayerInput input)
@@ -80,5 +79,10 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
     {
         EditorState = (EditorState == EditorState.Help) ? EditorState.Defenitive : EditorState.Help;
         State = (EditorState == EditorState.Help) ? new InsertingHelpNumbers() : new InsertRealNumberState();
+    }
+
+    public void UpdateGameStatus()
+    {
+        this.GameStatus = (Board.IsCompleted() == true) ? GameStatus.Finished : GameStatus.Ongoing;
     }
 }
