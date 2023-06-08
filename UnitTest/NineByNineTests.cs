@@ -59,7 +59,7 @@ namespace Sudoku.Tests
         }
         
         [Fact]
-        public void CopyCells_ReturnsCopyOfCells()
+        public void CopyCells_Validinput_ReturnsCopyOfCells()
         {
             // Arrange
             string cells = "530070000600195000098000060800060003400803001700020006060000280000419005000080079";
@@ -73,8 +73,22 @@ namespace Sudoku.Tests
             // Assert
             Assert.Equivalent(board, copy);
         }
+        [Fact]
+        public void CopyCells_ThrowsExecption_ReturnsCopyOfCells()
+        { 
+            // Arrange
+            string cells = "530070000600195000098000060800060003400803001700020006060000280000419005000080079";
+            var sudokuDisplayMode = SudokuDisplayMode.Assist;
+            var nineByNine = new NineByNine(cells, sudokuDisplayMode);
+            
+            // Act
+            var board = nineByNine.CreateBoard(cells);
+            nineByNine.Cells = null;
 
-        // Add more unit tests for the Board class as needed
+            // assert
+            Assert.Throws<Exception>(() => nineByNine.CopyCells());
+        }
+       
 
         private class MockBoard : Board
         {

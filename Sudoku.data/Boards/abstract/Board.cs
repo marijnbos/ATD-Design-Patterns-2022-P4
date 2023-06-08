@@ -38,7 +38,8 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     public List<List<ProductCell>> CopyCells()
     {
         var copiedCells = new List<List<ProductCell>>();
-
+        if (Cells == null)
+            throw new Exception("The board must have 81 cells"); 
         foreach (var row in Cells)
         {
             var copiedRow = new List<ProductCell>();

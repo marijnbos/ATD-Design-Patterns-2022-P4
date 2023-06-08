@@ -27,6 +27,7 @@ public class NineByNine : Board
     {
         var board = new List<List<ProductCell>>();
         int group = 0;
+        if(cells.Length != 81) throw new Exception("The board must have 81 cells");
         for (int i = 0; i < 9; i++)
         {
             var row = new List<ProductCell>();
