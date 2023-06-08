@@ -23,6 +23,8 @@ namespace Sudoku.data.Cells.Factory
                     return new FaultyCell(group, cellValue, selected, state, helpernumbers);
                 case CellState.NotACell:
                     return new NotACell(group, cellValue, selected, state, helpernumbers);
+                case CellState.CorrectCell:
+                    return new CorrectCell(group, cellValue, selected, state, helpernumbers);
                 default:
                     throw new ArgumentException("Invalid cell state.");
             }

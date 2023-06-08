@@ -34,6 +34,11 @@ public class SudokuGameView : IView
         Console.WriteLine("Editor state: " + EditorState);
     }
 
+    public void PrintGameOver()
+    {
+        Console.WriteLine("Game Over...");
+    }
+
     public string GetPlayerInput()
     {
         var key = Console.ReadKey().Key;

@@ -1,6 +1,7 @@
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Cells.Factory;
 using Sudoku.data.Input.Enum;
 using Sudoku.data.Position;
@@ -100,6 +101,15 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
                 move(new Pos(1, 0));
                 break;
         }
+    }
+
+    public bool IsCompleted()
+    {
+        var validCellStates = new[] { CellState.CorrectCell, CellState.FaultyCell, CellState.FilledSystem };
+
+        return Cells.SelectMany(row => row)
+                    .All(cell => validCellStates.Contains(cell.State));
+
     }
 }
 

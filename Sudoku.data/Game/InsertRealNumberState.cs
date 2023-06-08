@@ -12,7 +12,6 @@ public class InsertRealNumberState : IGameState
     {
         switch (input)
         {
-
             //hier help gebruikt om naar andere state te gaan
             case PlayerInput.EditorToggle:
                 context.State = new InsertingHelpNumbers();
@@ -46,10 +45,6 @@ public class InsertRealNumberState : IGameState
             selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
-        else
-        {
-            throw new InvalidDataException();
-        } 
     }
 
     public void solve(GameContext context)

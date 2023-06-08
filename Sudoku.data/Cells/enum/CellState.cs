@@ -6,6 +6,7 @@
         FilledSystem,
         FilledUser,
         Empty,
-        NotACell
+        NotACell,
+        CorrectCell
     }
 }
