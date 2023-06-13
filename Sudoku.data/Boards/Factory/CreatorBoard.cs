@@ -9,21 +9,10 @@ public abstract class CreatorBoard
 
     protected CreatorBoard()
     {
-        
-        //todo refactor this into a loadClasses method
-        // if (boardTypes.Count == 0)
-        // {
-        //     boardTypes.Add(".jigsaw", typeof(Jigsaw));
-        //     boardTypes.Add(".samurai", typeof(Samurai));
-        //     boardTypes.Add(".4x4", typeof(FourByFour));
-        //     boardTypes.Add(".9x9", typeof(NineByNine));
-        //     boardTypes.Add(".6x6", typeof(SixBySix));
-        // }
-        
-        
-            try
+        try
             {
-                LoadClasses("Sudoku.data.Boards");
+                if(boardTypes.Count == 0)
+                    LoadClasses("Sudoku.data.Boards");
             }
             catch (Exception e)
             {

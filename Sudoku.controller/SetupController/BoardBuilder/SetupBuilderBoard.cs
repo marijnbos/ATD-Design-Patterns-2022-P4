@@ -2,9 +2,9 @@ using Sudoku.controler.SetupController.Board.Interface;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Factory;
 
-namespace Sudoku.controler.SetupController.Board;
+namespace Sudoku.controler.SetupController.BoardBuilder;
 
-public class SetupBuilderBoardBoard : ISetupBuilderBoard
+public class SetupBuilderBoard : ISetupBuilderBoard
 {
     //generates the board needed
     private BoardFactory _boardFactory = new();
