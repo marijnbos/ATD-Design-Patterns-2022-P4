@@ -6,12 +6,12 @@ using Sudoku.data.Game.State;
 
 namespace Sudoku.controler.SetupController;
 
-public class SetupBuilderController
+public class SetupDirectorControllerBoard
 {
     private readonly ISetupBuilderBoard _setupBuilderBoard;
    
 
-    public SetupBuilderController(ISetupBuilderBoard setupBuilderBoard)
+    public SetupDirectorControllerBoard(ISetupBuilderBoard setupBuilderBoard)
     {
         _setupBuilderBoard = setupBuilderBoard;
     }

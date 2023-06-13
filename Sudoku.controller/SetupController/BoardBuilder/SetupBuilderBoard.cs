@@ -2,7 +2,7 @@ using Sudoku.controler.SetupController.Board.Interface;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Factory;
 
-namespace Sudoku.controler.SetupController.Board;
+namespace Sudoku.controler.SetupController.BoardBuilder;
 
 public class SetupBuilderBoard : ISetupBuilderBoard
 {
