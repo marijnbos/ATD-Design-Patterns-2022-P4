@@ -1,4 +1,5 @@
 using Sudoku.data.Boards.Interface;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Cells.Factory;
 using Sudoku.data.Game.State;
 using Sudoku.data.Input.Enum;
@@ -11,9 +12,8 @@ public class InsertRealNumberState : IGameState
     {
         switch (input)
         {
-
             //hier help gebruikt om naar andere state te gaan
-            case PlayerInput.Help:
+            case PlayerInput.EditorToggle:
                 context.State = new InsertingHelpNumbers();
                 return;
             default:
@@ -26,8 +26,25 @@ public class InsertRealNumberState : IGameState
     {
         int row = context.Board.SelectedCell.X;
         int col = context.Board.SelectedCell.Y;
-        var oldCell = context.Board.Cells[row][col];
-        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse(value), true);
+        var selectedCell = context.Board.Cells[row][col];
+        var buildnumber = context.Board.Cells[row][col].HelperNumbers;
+        var cellFactory = new CellFactory();
+
+        if (selectedCell.State == CellState.Empty)
+        {
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
+            context.Board.Cells[row][col] = selectedCell;
+        }
+        else if (selectedCell.State == CellState.FilledUser && selectedCell.Value == char.Parse(value))
+        {
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', false, CellState.Empty,buildnumber);
+            context.Board.Cells[row][col] = selectedCell;
+        }
+        else if (selectedCell.State == CellState.FilledUser && selectedCell.Value != int.Parse(value))
+        {
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
+            context.Board.Cells[row][col] = selectedCell;
+        }
     }
 
     public void solve(GameContext context)

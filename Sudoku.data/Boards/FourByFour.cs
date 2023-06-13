@@ -31,7 +31,7 @@ public class FourByFour : Board
             {
                 char cellValue = cells[i * 4 + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group, cellValue, selected));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected, data.Cells.@enum.CellState.FilledSystem, new List<int>()));
                 group++;
             }
             board.Add(row);

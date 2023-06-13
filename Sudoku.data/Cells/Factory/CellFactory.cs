@@ -1,21 +1,32 @@
 ﻿using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 
 namespace Sudoku.data.Cells.Factory
 {
-    class CellFactory : CreatorCell
+   public class CellFactory : CreatorCell
     {
         public CellFactory() : base()
         {
         }
 
-        public override ProductCell factorMethod(int group, char cellValue, bool selected)
+        public override ProductCell factorMethod(int group, char cellValue, bool selected, CellState state, List<int> helpernumbers)
         {
-            switch (cellValue)
+            switch (state)
             {
-                case '0':
-                    return new EmptyCell(group, cellValue, selected);
+                case CellState.Empty:
+                    return new EmptyCell(group, cellValue, selected, state, helpernumbers);
+                case CellState.FilledSystem:
+                    return new FilledSystemCell(group, cellValue, selected, state, helpernumbers);
+                case CellState.FilledUser:
+                    return new FilledUserCell(group, cellValue, selected, state, helpernumbers);
+                case CellState.FaultyCell:
+                    return new FaultyCell(group, cellValue, selected, state, helpernumbers);
+                case CellState.NotACell:
+                    return new NotACell(group, cellValue, selected, state, helpernumbers);
+                case CellState.CorrectCell:
+                    return new CorrectCell(group, cellValue, selected, state, helpernumbers);
                 default:
-                    return new FilledSystemCell(group, cellValue, selected);
+                    throw new ArgumentException("Invalid cell state.");
             }
         }
     }

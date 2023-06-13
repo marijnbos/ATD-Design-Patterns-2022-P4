@@ -10,8 +10,10 @@ public class SudokuGameView : IView
     public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView)
     {
         EditorState = gc.EditorState.ToString();
-        Console.CursorVisible = false;
+        //Console.CursorVisible = false;
+        Console.Clear();
         _sudokuBoardView = sudokuBoardView;
+        Draw();
     }
 
     public void ProcessData(GameContext gc)
@@ -30,6 +32,11 @@ public class SudokuGameView : IView
     public void PrintGameInfo()
     {
         Console.WriteLine("Editor state: " + EditorState);
+    }
+
+    public void PrintGameOver()
+    {
+        Console.WriteLine("Game Over...");
     }
 
     public string GetPlayerInput()

@@ -25,18 +25,16 @@ namespace Sudoku.controler.GameController
                 do
                 {
                     InputHandler.SetPlayerInput(SudokuGameView.GetPlayerInput());
+                    Game.UpdateGameStatus();
                     SudokuGameView.ProcessData(Game);
                     SudokuGameView.Draw();
-
-                    //update views
                 } while (Game.GameStatus == GameStatus.Ongoing);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
                 throw;
             }
-
+            SudokuGameView.PrintGameOver();
         }
     }
 }

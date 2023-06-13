@@ -28,7 +28,6 @@ namespace Sudoku.controler.InputController
         {
             foreach (PlayerInput input in Enum.GetValues(typeof(PlayerInput)))
             {
-
                 if (char.ToLower((char)input) == char.ToLower(key[0]))
                 {
                     NotifyObserversOfAction(input);

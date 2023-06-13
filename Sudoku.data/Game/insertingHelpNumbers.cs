@@ -12,7 +12,7 @@ public class InsertingHelpNumbers : IGameState
     {
         switch (input)
         {
-            case PlayerInput.Quit:
+            case PlayerInput.EditorToggle:
                 context.State = new InsertRealNumberState();
                 return;
             default:
@@ -26,7 +26,9 @@ public class InsertingHelpNumbers : IGameState
         int row = context.Board.SelectedCell.X;
         int col = context.Board.SelectedCell.Y;
         var oldCell = context.Board.Cells[row][col];
-        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse(value), true);
+        var buildnumber = context.Board.Cells[row][col].HelperNumbers;
+        context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse("0"), true, Cells.@enum.CellState.FilledUser,buildnumber);
+        context.Board.Cells[row][col].HelperNumbers.Add(int.Parse(value));
     }
 
     public void solve(GameContext context)

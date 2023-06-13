@@ -8,7 +8,6 @@ namespace Sudoku.data.Input.Enum
         Down = 'S',
         Right = 'D',
         Quit = 'Q',
-        Help = 'H',
         EditorToggle = 'T',
         Load = 'L',
         Generate = 'G',
@@ -22,6 +21,7 @@ namespace Sudoku.data.Input.Enum
         Num6 = '6',
         Num7 = '7',
         Num8 = '8',
-        Num9 = '9'
+        Num9 = '9',
+        Validate = 'V'
     }
 }

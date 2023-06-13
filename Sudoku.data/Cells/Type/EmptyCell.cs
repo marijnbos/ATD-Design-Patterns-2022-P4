@@ -1,23 +1,26 @@
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
 
-public class FilledUserCell : ProductCell
+public class EmptyCell : ProductCell
 {
     private char _value;
-
+   
     public override char Value
     {
         get => _value;
-        set => _value = value;
+        set => _value = ' ';
     }
+
     public override ColorEnum getCollor()
     {
         return ColorEnum.White;
     }
 
-    public FilledUserCell(int group, char value, bool selected) : base(group, value, selected)
+
+    public EmptyCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
     {
     }
 }

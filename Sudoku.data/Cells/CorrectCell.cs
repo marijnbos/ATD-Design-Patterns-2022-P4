@@ -1,9 +1,10 @@
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
 
-public class FilledSystemCell : ProductCell
+public class CorrectCell : ProductCell
 {
     private char _value;
 
@@ -15,10 +16,10 @@ public class FilledSystemCell : ProductCell
 
     public override ColorEnum getCollor()
     {
-        return ColorEnum.Yellow;
+        return ColorEnum.Red;
     }
 
-    public FilledSystemCell(int group, char value, bool selected) : base(group, value, selected)
+    public CorrectCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
     {
     }
 }

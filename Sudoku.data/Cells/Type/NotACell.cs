@@ -1,4 +1,5 @@
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Color;
 
 namespace Sudoku.data.Cells;
@@ -17,7 +18,8 @@ public class NotACell : ProductCell
         return ColorEnum.Black;
     }
 
-    public NotACell(int group, char value, bool selected) : base(group, value, selected)
+
+    public NotACell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
     {
     }
 }
