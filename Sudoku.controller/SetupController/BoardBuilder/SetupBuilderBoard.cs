@@ -4,7 +4,7 @@ using Sudoku.data.Boards.Factory;
 
 namespace Sudoku.controler.SetupController.Board;
 
-public class SetupBuilderBoardBoard : ISetupBuilderBoard
+public class SetupBuilderBoard : ISetupBuilderBoard
 {
     //generates the board needed
     private BoardFactory _boardFactory = new();
