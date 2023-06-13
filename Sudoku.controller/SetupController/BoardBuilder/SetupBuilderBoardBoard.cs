@@ -9,7 +9,7 @@ public class SetupBuilderBoardBoard : ISetupBuilderBoard
     //generates the board needed
     private BoardFactory _boardFactory = new();
     public string cells { get; set; }
-    public SudokuTypes type { get; set; }
+    public string type { get; set; }
     public SudokuDisplayMode sudokuDisplayMode { get; set; }
 
     public ISetupBuilderBoard setUpCells(string input)
@@ -20,25 +20,8 @@ public class SetupBuilderBoardBoard : ISetupBuilderBoard
 
     public ISetupBuilderBoard setUpType(string input)
     {
-        switch (input)
-        {
-            case ".4x4":
-                type = SudokuTypes.FourByFour;
-                return this;
-            case ".6x6":
-                type = SudokuTypes.SixBySix;
-                return this;
-            case ".9x9":
-                type = SudokuTypes.NineByNine;
-                return this;
-            case ".samurai":
-                type = SudokuTypes.Samurai;
-                return this;
-            case ".jigsaw":
-                type = SudokuTypes.Jigsaw;
-                return this;
-        }
-
+        
+        type = input.Remove(0, 1);
         return this;
     }
 
