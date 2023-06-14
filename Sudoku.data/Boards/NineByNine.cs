@@ -16,8 +16,8 @@ public class NineByNine : Board
 
     public override IConcreteBoard copy()
     {
-        NineByNine clone = (NineByNine) this.MemberwiseClone();
-        clone.SudokuDisplayMode = this.SudokuDisplayMode;
+        NineByNine clone = (NineByNine) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
         clone.Cells = CopyCells();
         clone.SolvedBoard = SolvedBoard;
         return clone;

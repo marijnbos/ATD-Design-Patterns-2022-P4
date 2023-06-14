@@ -20,7 +20,6 @@ public class SetupBuilderBoard : ISetupBuilderBoard
 
     public ISetupBuilderBoard setUpType(string input)
     {
-        
         type = input.Remove(0, 1);
         return this;
     }
