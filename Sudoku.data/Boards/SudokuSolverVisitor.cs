@@ -9,23 +9,23 @@ public class SudokuSolverVisitor : ISudokuSolverVisitor
 {
     public void Visit(Board board)
     {
-        switch (board.Type)
+        switch (board.ToString())
         {
-            case SudokuTypes.FourByFour:
-                Visit((FourByFour)board);
-                break;
-            case SudokuTypes.SixBySix:
-                Visit((SixBySix)board);
-                break;
-            case SudokuTypes.NineByNine:
-                Visit((NineByNine)board);
-                break;
-            case SudokuTypes.Jigsaw:
-                Visit((Jigsaw)board);
-                break;
-            case SudokuTypes.Samurai:
-                Visit((Samurai)board);
-                break;
+            // case SudokuTypes.FourByFour:
+            //     Visit((FourByFour)board);
+            //     break;
+            // case SudokuTypes.SixBySix:
+            //     Visit((SixBySix)board);
+            //     break;
+            // case SudokuTypes.NineByNine:
+            //     Visit((NineByNine)board);
+            //     break;
+            // case SudokuTypes.Jigsaw:
+            //     Visit((Jigsaw)board);
+            //     break;
+            // case SudokuTypes.Samurai:
+            //     Visit((Samurai)board);
+            //     break;
             default:
                 throw new ArgumentOutOfRangeException();
         }

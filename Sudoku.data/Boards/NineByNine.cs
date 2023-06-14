@@ -10,7 +10,7 @@ namespace Sudoku.data.Boards;
 
 public class NineByNine : Board
 {
-    public NineByNine(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.NineByNine, sudokuDisplayMode)
+    public NineByNine(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, sudokuDisplayMode)
     {
     }
 
