@@ -1,3 +1,4 @@
+using Sudoku.data.Boards;
 using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
 using Sudoku.view.Sudoku_board.Abstract;
@@ -8,15 +9,16 @@ public class ViewBoardFactory : CreatorViewBoard
 {
     public override SudokuBoardView factorMethod(Board board)
     {
-        return board.Type switch
+        
+        return board switch
         {
-            SudokuTypes.Jigsaw => new JigsawBoardDrawingStrategy(board),
-            SudokuTypes.Samurai => new SamuraiBoardDrawingStrategy(board),
-            SudokuTypes.FourByFour => new FourByFourBoardDrawingStrategy(board),
-            SudokuTypes.SixBySix => new SixBySixDrawingStrategy(board),
-            SudokuTypes.NineByNine => new NineByNineBoardDrawingStrategy(board),
+            NineByNine => new NineByNineBoardDrawingStrategy(board),
+            SixBySix => new SixBySixDrawingStrategy(board),
+            FourByFour => new FourByFourBoardDrawingStrategy(board),
+            Samurai => new SamuraiBoardDrawingStrategy(board),
+            Jigsaw => new JigsawBoardDrawingStrategy(board),
             _ => throw new NotImplementedException()
         };
     }
+    }
 
-}

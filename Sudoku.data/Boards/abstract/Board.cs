@@ -14,17 +14,15 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     public uint NumberOfGroups { get; set; }
     public List<List<ProductCell>> Cells { get; set; }
     public SudokuDisplayMode SudokuDisplayMode { get; set; }
-
-    public SudokuTypes Type { get; }
     public Pos SelectedCell { get; set; }
     public Board SolvedBoard {get;set;}
 
     public int Size { get { return Cells.Count; } }
 
-    protected Board(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
+    protected Board(string inputCells, SudokuDisplayMode sudokuDisplayMode)
     {
         _observers = new List<IObserver<IConcreteBoard>>();
-        Type = type;
+   
         SudokuDisplayMode = sudokuDisplayMode;
         SelectedCell = new Pos(0, 0);
         Cells = CreateBoard(inputCells);
@@ -34,6 +32,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     public abstract Board getSolvedBoard();
     public abstract Board validateBoard();
     public abstract IConcreteBoard copy();
+
 
     public List<List<ProductCell>> CopyCells()
     {

@@ -10,7 +10,7 @@ namespace Sudoku.data.Boards;
 public class FourByFour : Board
 {
 
-    public FourByFour(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, type, sudokuDisplayMode)
+    public FourByFour(string inputCells, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, sudokuDisplayMode)
     {
     }
 
