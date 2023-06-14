@@ -53,8 +53,20 @@ public class GameControllerTest
     }
 
 
-    
-    
-    
-    
+    [Fact]
+    public void gameController_SudokuGameViewIsNotNull()
+    {
+        // Arrange
+        gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board), new ConcreteTestConsoleWrapper()), game);
+        // Assert
+        Assert.NotNull(gameController.SudokuGameView);
+    }
+    [Fact]
+    public void Gamecontroller_InputHandlerIsNotNull()
+    {
+        // Arrange
+        gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board), new ConcreteTestConsoleWrapper()), game);
+        // Assert
+        Assert.NotNull(gameController.InputHandler);
+    }
 }

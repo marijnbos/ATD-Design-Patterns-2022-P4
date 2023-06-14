@@ -16,12 +16,12 @@ namespace UnitTest
 
 namespace Sudoku.Tests
 {
-    public class NineByNineBoard
+    public class NineByNineTest
     {
         public string cells { get; set; }
         public NineByNine nineByNine;
         public SudokuDisplayMode sudokuDisplayMode = SudokuDisplayMode.Assist;
-        public NineByNineBoard()
+        public NineByNineTest()
         {
             cells = "530070000600195000098000060800060003400803001700020006060000280000419005000080079";
         }
