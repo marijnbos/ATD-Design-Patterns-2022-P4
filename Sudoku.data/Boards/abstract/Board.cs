@@ -8,7 +8,7 @@ using Sudoku.data.Position;
 
 namespace Sudoku.data.Boards.@abstract;
 
-public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoard>, IObserver<PlayerInput>
+public abstract class Board : IConcreteBoard, IObserver<PlayerInput> 
 {
     private ICollection<IObserver<IConcreteBoard>> _observers;
     public uint NumberOfGroups { get; set; }
@@ -28,11 +28,10 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
         SudokuDisplayMode = sudokuDisplayMode;
         SelectedCell = new Pos(0, 0);
         Cells = CreateBoard(inputCells);
-        SolvedBoard = this.getSolvedBoard();
+        getSolvedBoard();
     }
 
     public abstract Board getSolvedBoard();
-    public abstract Board validateBoard();
     public abstract IConcreteBoard copy();
 
     public List<List<ProductCell>> CopyCells()
@@ -56,6 +55,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
 
     public abstract List<List<ProductCell>> CreateBoard(string cells);
 
+    public abstract Board validateBoard();
 
     public IDisposable Subscribe(IObserver<IConcreteBoard> observer)
     {
@@ -64,10 +64,8 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
     }
     public abstract void move(Pos move);
 
-    public void Accept(ISudokuSolverVisitor visitor)
-    {
-        visitor.Visit(this);
-    }
+    public abstract void Accept(ISudokuVistor vistor);
+
     public ProductCell GetCell(int row, int column)
     {
         return Cells[row][column];
@@ -75,12 +73,13 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
 
     public void OnCompleted()
     {
-        throw new NotImplementedException();
+        return;
     }
 
     public void OnError(Exception error)
     {
-        throw new ArgumentOutOfRangeException(error.ToString());
+        //throw new ArgumentOutOfRangeException(error.ToString());
+        return;
     }
     public void OnNext(PlayerInput value)
     {

@@ -69,4 +69,9 @@ public class SixBySix : Board
     {
         throw new NotImplementedException();
     }
+
+    public override void Accept(ISudokuVistor vistor)
+    {
+        vistor.Visit(this);
+    }
 }

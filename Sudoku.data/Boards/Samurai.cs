@@ -8,6 +8,7 @@ namespace Sudoku.data.Boards;
 
 public class Samurai : Board
 {
+
     public Samurai(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.Samurai, sudokuDisplayMode)
     {
     }
@@ -35,5 +36,10 @@ public class Samurai : Board
     public override Board validateBoard()
     {
         throw new NotImplementedException();
+    }
+
+    public override void Accept(ISudokuVistor vistor)
+    {
+        vistor.Visit(this);
     }
 }

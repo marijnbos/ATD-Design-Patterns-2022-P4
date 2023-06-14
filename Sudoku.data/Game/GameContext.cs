@@ -7,7 +7,7 @@ using Sudoku.data.Input.Enum;
 
 namespace Sudoku.data.Game;
 
-public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
+public class GameContext : IObserver<PlayerInput>
 {
     public IGameState State { get; set; }
     public DisplayOptions DisplayOption { get; }
@@ -22,17 +22,11 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
         DisplayOption = displayOption;
         EditorState = editorState;
         GameStatus = GameStatus.Ongoing;
-        Board.Subscribe(this);
     }
 
     public void Move(PlayerInput input)
     {
         State.Move(input, this);
-    }
-
-    public void solve()
-    {
-        State.solve(this);
     }
 
     public void OnCompleted()
@@ -41,11 +35,6 @@ public class GameContext : IObserver<IConcreteBoard>, IObserver<PlayerInput>
     }
 
     public void OnError(Exception error)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnNext(IConcreteBoard value)
     {
         throw new NotImplementedException();
     }

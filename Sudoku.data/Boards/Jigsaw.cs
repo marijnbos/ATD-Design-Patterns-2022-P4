@@ -8,6 +8,7 @@ namespace Sudoku.data.Boards;
 
 public class Jigsaw : Board
 {
+
     public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.Jigsaw, sudokuDisplayMode)
     {
     }
@@ -35,6 +36,11 @@ public class Jigsaw : Board
     public override Board validateBoard()
     {
         throw new NotImplementedException();
+    }
+
+    public override void Accept(ISudokuVistor vistor)
+    {
+        vistor.Visit(this);
     }
 }
 

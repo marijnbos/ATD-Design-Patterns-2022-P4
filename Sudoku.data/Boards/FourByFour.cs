@@ -24,12 +24,12 @@ public class FourByFour : Board
     {
         var board = new List<List<ProductCell>>();
         int group = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < Size; i++)
         {
             var row = new List<ProductCell>();
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < Size; j++)
             {
-                char cellValue = cells[i * 4 + j];
+                char cellValue = cells[i * Size + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
                 row.Add(new CellFactory().factorMethod(group, cellValue, selected, data.Cells.@enum.CellState.FilledSystem, new List<int>()));
                 group++;
@@ -68,10 +68,13 @@ public class FourByFour : Board
         return this;
     }
 
+    public override void Accept(ISudokuVistor vistor)
+    {
+        vistor.Visit(this);
+    }
+
     public override Board validateBoard()
     {
         throw new NotImplementedException();
     }
-
-
 }

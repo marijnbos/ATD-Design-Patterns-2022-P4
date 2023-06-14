@@ -10,5 +10,4 @@ public interface IConcreteBoard
     public IConcreteBoard copy();
 
     public SudokuTypes Type { get; }
-    public void Accept(ISudokuSolverVisitor visitor);
 }

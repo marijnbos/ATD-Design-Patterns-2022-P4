@@ -47,14 +47,6 @@ public class InsertRealNumberState : IGameState
         }
     }
 
-    public void solve(GameContext context)
-    {
-        //switch to soloving state
-        context.State = new GameSolvingState();
-        context.solve();
-    }
-
-
     public void OnCompleted()
     {
         throw new NotImplementedException();
