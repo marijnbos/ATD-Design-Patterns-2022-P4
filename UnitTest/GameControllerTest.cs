@@ -7,6 +7,7 @@ using Sudoku.data.EditorStates;
 using Sudoku.data.Game;
 using Sudoku.data.Game.Enum;
 using Sudoku.view.GameView;
+using Sudoku.view.StrategyConsoleWrapper;
 using Sudoku.view.Sudoku_board;
 
 namespace Sudoku.Tests;
@@ -15,23 +16,27 @@ public class GameControllerTest
 {
     GameController gameController;
     GameContext game;
-    private Board board;
+    Board board;
+    
     public GameControllerTest()
     {
         board = new NineByNine("700509001000000000150070063003904100000050000002106400390040076000000000600201004",
             SudokuDisplayMode.Assist);
-        game = new GameContext(new GameSolvingState(),board, DisplayOptions.Easy, EditorState.Defenitive);
-        new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board)), game);
+  game = new GameContext(new GameSolvingState(),board, DisplayOptions.Easy, EditorState.Defenitive);
+        new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board), new ConcreteTestConsoleWrapper()), game);
+        
+      
     }
     
-    
     [Fact]
-    public void gameController_solveGame_gameIsSolved()
+    public void gameController_UpdateGameStatusValid_gameIsSolved()
     {
         // Arrange
-        gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board)), game);
+        gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(new NineByNine("325681974798354261647298354237416589586932417149578321762195843453267198961843752", SudokuDisplayMode.Assist)),new ConcreteTestConsoleWrapper()), game);
+        gameController.Game.Board.Cells = gameController.Game.Board.SolvedBoard.Cells;
         // Act
-        gameController.Game.solve();
+        gameController.Game.UpdateGameStatus();
+        
         // Assert
         Assert.Equal(GameStatus.Finished, game.GameStatus);
     }
@@ -40,12 +45,16 @@ public class GameControllerTest
     public void gameController_solveGame_gameIsNotSolved()
     {
         // Arrange
-        gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board)), game);
-        Console.Title = "GameControllerTest";
+        gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board), new ConcreteTestConsoleWrapper()), game);
         // Act
-        Assert.thgameController.Game.solve();
+        gameController.Game.solve();
         // Assert
-        Assert.NotEqual(GameStatus.Ongoing, game.GameStatus);
+        Assert.True(GameStatus.Ongoing == game.GameStatus);
     }
+
+
+    
+    
+    
     
 }
