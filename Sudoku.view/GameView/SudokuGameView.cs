@@ -1,4 +1,5 @@
 using Sudoku.data.Game;
+using Sudoku.view.StrategyConsoleWrapper;
 using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.GameView;
@@ -6,13 +7,17 @@ namespace Sudoku.view.GameView;
 public class SudokuGameView : IView
 {
     private readonly SudokuBoardView _sudokuBoardView;
+    private readonly IConsoleWrapper _consoleWrapper;
     public string EditorState { get; set; }
-    public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView)
+    public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView, IConsoleWrapper consoleWrapper)
     {
         EditorState = gc.EditorState.ToString();
         //Console.CursorVisible = false;
-        Console.Clear();
+        
+       
         _sudokuBoardView = sudokuBoardView;
+        _consoleWrapper = consoleWrapper;
+        _consoleWrapper.Clear();
         Draw();
     }
 
@@ -24,7 +29,7 @@ public class SudokuGameView : IView
 
     public void Draw()
     {
-        Console.Clear();
+        _consoleWrapper.Clear();
         _sudokuBoardView.Draw();
         PrintGameInfo();
     }
@@ -51,4 +56,6 @@ public class SudokuGameView : IView
 
         return input;
     }
+
+
 }
