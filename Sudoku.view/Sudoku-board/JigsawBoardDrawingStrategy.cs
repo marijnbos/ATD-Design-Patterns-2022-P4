@@ -29,7 +29,6 @@ namespace Sudoku.view.Sudoku_board
         }
         private void SetConsoleBackgroundColor(int group)
         {
-            // Map the first four entries of ColorEnum to corresponding ConsoleColor
             switch (group % 6)
             {
                 case 0:
