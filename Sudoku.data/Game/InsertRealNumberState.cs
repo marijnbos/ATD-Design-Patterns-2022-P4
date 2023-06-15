@@ -24,25 +24,27 @@ public class InsertRealNumberState : IGameState
 
     public void insert(string value, GameContext context)
     {
-        int row = context.Board.SelectedCell.X;
-        int col = context.Board.SelectedCell.Y;
+        var row = context.Board.SelectedCell.X;
+        var col = context.Board.SelectedCell.Y;
         var selectedCell = context.Board.Cells[row][col];
         var buildnumber = context.Board.Cells[row][col].HelperNumbers;
         var cellFactory = new CellFactory();
 
         if (selectedCell.State == CellState.Empty)
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,
+                buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value == char.Parse(value))
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', false, CellState.Empty,buildnumber);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', false, CellState.Empty, buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value != int.Parse(value))
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,buildnumber);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,
+                buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
     }
@@ -59,6 +61,5 @@ public class InsertRealNumberState : IGameState
 
     public void OnNext(IConcreteBoard value)
     {
-
     }
 }

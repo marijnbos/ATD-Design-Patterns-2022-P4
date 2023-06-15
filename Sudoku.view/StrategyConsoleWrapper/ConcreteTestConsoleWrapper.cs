@@ -4,6 +4,6 @@ public class ConcreteTestConsoleWrapper : IConsoleWrapper
 {
     public void Clear()
     {
-      // KEEP EMPTY FOR CONSOLE !
+        // KEEP EMPTY FOR CONSOLE !
     }
 }

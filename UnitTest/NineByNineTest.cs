@@ -21,10 +21,12 @@ namespace Sudoku.Tests
         public string cells { get; set; }
         public NineByNine nineByNine;
         public SudokuDisplayMode sudokuDisplayMode = SudokuDisplayMode.Assist;
+
         public NineByNineTest()
         {
             cells = "530070000600195000098000060800060003400803001700020006060000280000419005000080079";
         }
+
         [Fact]
         public void CreateBoard_ValidInput_ReturnsCorrectBoard()
         {
@@ -55,24 +57,16 @@ namespace Sudoku.Tests
         {
             // Arrange
             nineByNine = new NineByNine(cells, sudokuDisplayMode);
-            var move = new Pos(1,1);
-            
+            var move = new Pos(1, 1);
+
             // Act
             nineByNine.move(move);
-            
+
             // Assert
             Assert.Equal(1, nineByNine.SelectedCell.X);
             Assert.Equal(1, nineByNine.SelectedCell.Y);
         }
-        
-        
-    
 
-    
-
-  
-
-     
 
         [Fact]
         public void CopyCells_Validinput_ReturnsCopyOfCells()
@@ -87,15 +81,15 @@ namespace Sudoku.Tests
             // Assert
             Assert.Equivalent(board, copy);
         }
-    
+
 
         [Fact]
         public void CopyCells_ThrowsExecption_ReturnsCopyOfCells()
-        { 
+        {
             // Arrange
-            
-             nineByNine = new NineByNine(cells, sudokuDisplayMode);
-            
+
+            nineByNine = new NineByNine(cells, sudokuDisplayMode);
+
             // Act
             var board = nineByNine.CreateBoard(cells);
             nineByNine.Cells = null;
@@ -103,23 +97,21 @@ namespace Sudoku.Tests
             // assert
             Assert.Throws<Exception>(() => nineByNine.CopyCells());
         }
-        
-        
+
+
         [Fact]
         public void Solver_ValidInput_ReturnsCorrectMove()
         {
             // Arrange
             nineByNine = new NineByNine(cells, sudokuDisplayMode);
-            
+
             // Act
             var newboard = nineByNine.SolvedBoard;
-            
+
             // Assert
             Assert.NotEqual(newboard.Cells, nineByNine.Cells);
-            Assert.NotEqual(newboard.Cells[0][3].Value , nineByNine.Cells[0][3].Value);
-            Assert.Equal(newboard.Cells[0][0].Value , nineByNine.Cells[0][0].Value);
+            Assert.NotEqual(newboard.Cells[0][3].Value, nineByNine.Cells[0][3].Value);
+            Assert.Equal(newboard.Cells[0][0].Value, nineByNine.Cells[0][0].Value);
         }
-
-       
     }
 }

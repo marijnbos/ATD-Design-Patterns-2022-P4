@@ -9,7 +9,6 @@ public class ViewBoardFactory : CreatorViewBoard
 {
     public override SudokuBoardView factorMethod(Board board)
     {
-        
         return board switch
         {
             NineByNine => new NineByNineBoardDrawingStrategy(board),
@@ -20,5 +19,4 @@ public class ViewBoardFactory : CreatorViewBoard
             _ => throw new NotImplementedException()
         };
     }
-    }
-
+}

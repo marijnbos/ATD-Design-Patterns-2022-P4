@@ -14,6 +14,7 @@ public class BoardFactory : CreatorBoard
             var board = (Board) Activator.CreateInstance(boardTypes[type], cells, sudokuDisplayMode);
             return board ?? throw new InvalidOperationException();
         }
+
         throw new NotImplementedException("unsupported board type");
     }
 }

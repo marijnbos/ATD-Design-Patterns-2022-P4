@@ -11,14 +11,15 @@ namespace Sudoku.data.Boards;
 
 public class Jigsaw : Board
 {
-    public override int Size {get{return 6;}} 
-    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells,  sudokuDisplayMode)
+    public override int Size => 6;
+
+    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        Jigsaw clone = (Jigsaw) MemberwiseClone();
+        var clone = (Jigsaw) MemberwiseClone();
         clone.SudokuDisplayMode = SudokuDisplayMode;
         clone.Cells = CopyCells();
         clone.SolvedBoard = SolvedBoard;
@@ -27,19 +28,18 @@ public class Jigsaw : Board
 
     public override List<List<ProductCell>> CreateBoard(string Inputcells)
     {
-        return new JigsawAdapter().CreateBoard(Inputcells.Remove(0,10));
+        return new JigsawAdapter().CreateBoard(Inputcells.Remove(0, 10));
     }
 
     public override void init()
     {
-        this.SolvedBoard = (Jigsaw)copy();
+        SolvedBoard = (Jigsaw) copy();
         Accept(new SudokuSolverVisitor());
     }
 
 
     public override void Accept(ISudokuVistor vistor)
     {
-      //  vistor.Visit(this);
+        //  vistor.Visit(this);
     }
 }
-

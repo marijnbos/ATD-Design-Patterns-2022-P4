@@ -11,14 +11,14 @@ public class HelperNumberLeaf : CellComponent
     {
         if (_cells.Count <= 9)
         {
-            CellComponent matchCell = _cells.Find(e => e.Value == cell.Value);
-        
+            var matchCell = _cells.Find(e => e.Value == cell.Value);
+
             if (matchCell != null)
             {
                 _cells.Remove(matchCell);
                 return;
             }
-        
+
             _cells.Add(cell);
         }
     }
@@ -37,9 +37,7 @@ public class HelperNumberLeaf : CellComponent
             cellComponent.Draw();
             counter++;
         }
-        for (int i = counter; i < 9; i++)
-        {
-            Console.Write(" ");
-        }
+
+        for (var i = counter; i < 9; i++) Console.Write(" ");
     }
 }

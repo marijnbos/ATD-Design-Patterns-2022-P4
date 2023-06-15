@@ -4,6 +4,6 @@ public class ConcreteConsoleWrapper : IConsoleWrapper
 {
     public void Clear()
     {
-       Console.Clear();
+        Console.Clear();
     }
 }

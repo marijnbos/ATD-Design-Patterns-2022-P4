@@ -4,9 +4,8 @@ namespace Sudoku.Tests;
 
 public class BoardTest
 {
-    
     //TODO (INFO) DIT IS TER DEMONSTRATIE VAN HET NUT VAN ONZE CONSOLEWRAPPER STRATEGY
-    
+
     // [Fact]
     // public void StrategyConsoleWrapper_InvaldidConsoleWrapper_ThrowsErrror()
     // {
@@ -15,5 +14,4 @@ public class BoardTest
     //     //Act & Assert
     //     Assert.Throws<IOException>(() => consoleWrapper.Clear());
     // }
-    
 }

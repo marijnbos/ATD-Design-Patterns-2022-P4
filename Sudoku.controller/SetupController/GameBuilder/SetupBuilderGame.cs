@@ -18,7 +18,7 @@ public class SetupBuilderGame : ISetupBuilderGame
     public SudokuGameView SudokuGameView { get; set; }
     public GameContext GameContext { get; set; }
     public SudokuBoardView SudokuBoardView { get; set; }
-   
+
     public List<List<CellView>> Cells { get; set; }
 
 

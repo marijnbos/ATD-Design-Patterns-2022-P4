@@ -2,37 +2,30 @@ using Sudoku.data.Boards.@abstract;
 using Sudoku.view.Cell;
 using Sudoku.view.Sudoku_board.Abstract;
 
-namespace Sudoku.view.Sudoku_board
+namespace Sudoku.view.Sudoku_board;
+
+public class FourByFourBoardDrawingStrategy : SudokuBoardView
 {
-    public class FourByFourBoardDrawingStrategy : SudokuBoardView
+    public FourByFourBoardDrawingStrategy(Board board) : base(board)
     {
-        public FourByFourBoardDrawingStrategy(Board board) : base(board)
-        {
-            Draw();
-        }
+        Draw();
+    }
 
-        public override void Draw()
+    public override void Draw()
+    {
+        for (var row = 0; row < Size; row++)
         {
-
-            for (int row = 0; row < Size; row++)
+            for (var col = 0; col < Size; col++)
             {
-                for (int col = 0; col < Size; col++)
-                {
-                    CellView cellView = GetCell(row, col);
-                    cellView.Draw();
+                var cellView = GetCell(row, col);
+                cellView.Draw();
 
-                    if (col == 1)
-                    {
-                        Console.Write(" | ");
-                    }
-                }
-                Console.WriteLine();
-
-                if (row == 1)
-                {
-                    Console.WriteLine("-------");
-                }
+                if (col == 1) Console.Write(" | ");
             }
+
+            Console.WriteLine();
+
+            if (row == 1) Console.WriteLine("-------");
         }
     }
 }

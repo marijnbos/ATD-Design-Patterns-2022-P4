@@ -14,11 +14,10 @@ public class SetupDirectorControllerBoard
     {
         _setupBuilderBoard = setupBuilderBoard;
     }
-    
+
     public data.Boards.@abstract.Board buildBoard(string fileExtestion, string input)
     {
         return _setupBuilderBoard.setUpType(fileExtestion).setUpCells(input).setUpDisplayMode(input)
             .buildBoard();
     }
-    
 }

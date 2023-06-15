@@ -4,7 +4,6 @@ namespace Sudoku.controler.SetupController.Board.Interface;
 
 public interface ISetupBuilderBoard
 {
-
     //List<List<Cell>> cells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode
     public string cells { get; set; }
     public string type { get; set; }

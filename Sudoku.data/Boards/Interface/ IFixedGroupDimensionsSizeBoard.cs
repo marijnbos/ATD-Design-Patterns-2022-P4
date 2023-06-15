@@ -5,6 +5,6 @@ namespace Sudoku.data.Boards.Interface;
 
 public interface IFixedGroupDimensionsSizeBoard
 {
-    int GroupHeight { get;}
-    int GroupWidth { get;}
+    int GroupHeight { get; }
+    int GroupWidth { get; }
 }

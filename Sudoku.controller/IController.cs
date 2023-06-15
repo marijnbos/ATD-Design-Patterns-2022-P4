@@ -1,6 +1,5 @@
-namespace Sudoku.controler
+namespace Sudoku.controler;
+
+public interface IController
 {
-    public interface IController
-    {
-    }
 }
