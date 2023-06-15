@@ -60,21 +60,31 @@ public abstract class Board : IConcreteBoard, IObserver<PlayerInput>
     public Board validateBoard()
     {
         var factory = new CellFactory();
-        for (var i = 0; i < Size; i++)
-        for (var j = 0; j < Size; j++)
+        for (var rowIndex = 0; rowIndex < Size; rowIndex++)
         {
-            var cell = SolvedBoard.Cells[i][j];
-            if (Cells[i][j].State == CellState.FilledUser &&
-                Cells[i][j].Value != SolvedBoard.Cells[i][j].Value)
-                Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
-                    cell.Selected, CellState.FaultyCell, new List<int>());
-            else if (Cells[i][j].State == CellState.FilledUser &&
-                     Cells[i][j].Value == SolvedBoard.Cells[i][j].Value)
-                Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
-                    cell.Selected, CellState.CorrectCell, new List<int>());
+            for (var columnIndex = 0; columnIndex < Size; columnIndex++)
+            {
+                var solvedCell = SolvedBoard.Cells[rowIndex][columnIndex];
+                var currentCell = Cells[rowIndex][columnIndex];
+
+                if (currentCell.State == CellState.FilledUser)
+                {
+                    if (currentCell.Value != solvedCell.Value)
+                    {
+                        Cells[rowIndex][columnIndex] = factory.factorMethod(solvedCell.Group, solvedCell.Value,
+                            solvedCell.Selected, CellState.FaultyCell, new List<int>());
+                    }
+                    else
+                    {
+                        Cells[rowIndex][columnIndex] = factory.factorMethod(solvedCell.Group, solvedCell.Value,
+                            solvedCell.Selected, CellState.CorrectCell, new List<int>());
+                    }
+                }
+            }
         }
 
         return this;
+
     }
 
 
