@@ -17,7 +17,6 @@ public class SudokuGameView : IView
        
         _sudokuBoardView = sudokuBoardView;
         _consoleWrapper = consoleWrapper;
-        _consoleWrapper.Clear();
         Draw();
     }
 

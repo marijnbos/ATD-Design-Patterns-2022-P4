@@ -26,7 +26,9 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
         SudokuDisplayMode = sudokuDisplayMode;
         SelectedCell = new Pos(0, 0);
         Cells = CreateBoard(inputCells);
-        SolvedBoard = this.getSolvedBoard();
+        
+        //todo reinstate this! 
+      //  SolvedBoard = this.getSolvedBoard();
     }
 
     public abstract Board getSolvedBoard();
