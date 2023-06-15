@@ -67,7 +67,7 @@ public class Samurai : Board
 
     public override Board getSolvedBoard()
     {
-        throw new NotImplementedException();
+        return this;
     }
 
     public override Board validateBoard()
