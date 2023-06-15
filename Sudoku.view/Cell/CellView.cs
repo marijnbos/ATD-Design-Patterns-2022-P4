@@ -47,7 +47,7 @@ public class CellView : IView
         
         else
         {
-            // _helperNumberLeaf.Draw();
+            
             for (int i = 0; i < 9; i++)
             {
                 Console.Write(" ");
