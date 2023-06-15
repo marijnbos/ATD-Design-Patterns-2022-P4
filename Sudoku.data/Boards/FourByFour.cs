@@ -12,8 +12,8 @@ public class FourByFour : Board, IFixedGroupDimensionsSizeBoard
 {
     public override int Size { get {return 4;}}
 
-    public uint GroupHeight  { get {return 2;}}
-    public uint GroupWidth { get{return 2;}}
+    public int GroupHeight  { get {return 2;}}
+    public int GroupWidth { get{return 2;}}
 
     public FourByFour(string inputCells, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, sudokuDisplayMode)
     {
