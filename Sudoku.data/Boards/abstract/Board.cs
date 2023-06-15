@@ -27,8 +27,7 @@ public abstract class Board : IConcreteBoard, ISolver, IObservable<IConcreteBoar
         SelectedCell = new Pos(0, 0);
         Cells = CreateBoard(inputCells);
         
-        //todo reinstate this! 
-      //  SolvedBoard = this.getSolvedBoard();
+        SolvedBoard = getSolvedBoard();
     }
 
     public abstract Board getSolvedBoard();
