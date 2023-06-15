@@ -37,6 +37,4 @@ public class SetupBuildertest
         // Assert & Act
         Assert.Throws<NotImplementedException>(() => _setupDirectorDirectorBoard.buildBoard(".INVALIDFILEEXTENSION", "530070000600195000098000060800060003400803001700020006060000280000419005000080079"));
     }
-    
-
 }

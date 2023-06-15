@@ -14,25 +14,24 @@ public abstract class Board : IConcreteBoard, IObserver<PlayerInput>
     public uint NumberOfGroups { get; set; }
     public List<List<ProductCell>> Cells { get; set; }
     public SudokuDisplayMode SudokuDisplayMode { get; set; }
-
-    public SudokuTypes Type { get; }
     public Pos SelectedCell { get; set; }
     public Board SolvedBoard {get;set;}
 
-    public int Size { get { return Cells.Count; } }
+    public abstract int Size { get; } 
 
-    protected Board(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode)
+    protected Board(string inputCells, SudokuDisplayMode sudokuDisplayMode)
     {
         _observers = new List<IObserver<IConcreteBoard>>();
-        Type = type;
+   
         SudokuDisplayMode = sudokuDisplayMode;
         SelectedCell = new Pos(0, 0);
         Cells = CreateBoard(inputCells);
-        getSolvedBoard();
+        init();
     }
 
-    public abstract Board getSolvedBoard();
+    public abstract void init();
     public abstract IConcreteBoard copy();
+
 
     public List<List<ProductCell>> CopyCells()
     {
@@ -55,14 +54,61 @@ public abstract class Board : IConcreteBoard, IObserver<PlayerInput>
 
     public abstract List<List<ProductCell>> CreateBoard(string cells);
 
-    public abstract Board validateBoard();
+    public Board validateBoard()
+    {
+        var factory = new CellFactory();
+            for (int i = 0; i < Size; i++)
+                {
+                for (int j = 0; j < Size; j++)
+                {
+
+                    var cell = SolvedBoard.Cells[i][j];
+                    if (this.Cells[i][j].State == data.Cells.@enum.CellState.FilledUser &&
+                        this.Cells[i][j].Value != SolvedBoard.Cells[i][j].Value)
+                    {
+                        this.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
+                         cell.Selected, data.Cells.@enum.CellState.FaultyCell, new List<int>());
+                    }
+                    else if (this.Cells[i][j].State == data.Cells.@enum.CellState.FilledUser &&
+                        this.Cells[i][j].Value == SolvedBoard.Cells[i][j].Value)
+                    {
+                        this.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
+                         cell.Selected, CellState.CorrectCell, new List<int>());
+                    }
+                }
+            }
+        return this;
+    }
+
+
 
     public IDisposable Subscribe(IObserver<IConcreteBoard> observer)
     {
         _observers.Add(observer);
         return new Unsubscriber.Unsubscriber(_observers, observer);
     }
-    public abstract void move(Pos move);
+
+    public void move(Pos move)
+    {
+        ProductCell? selectedCell = Cells.SelectMany(row => row).FirstOrDefault(cell => cell.Selected);
+
+        if (selectedCell != null)
+        {
+            int currentRow = Cells.FindIndex(row => row.Contains(selectedCell));
+            int currentColumn = Cells[currentRow].FindIndex(cell => cell == selectedCell);
+
+            int newRow = currentRow + move.X;
+            int newColumn = currentColumn + move.Y;
+
+            if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
+            {
+                selectedCell.Selected = false;
+                selectedCell = Cells[newRow][newColumn];
+                SelectedCell = new Pos(newColumn, newRow);
+                selectedCell.Selected = true;
+            }
+        }
+    }
 
     public abstract void Accept(ISudokuVistor vistor);
 
@@ -108,8 +154,7 @@ public abstract class Board : IConcreteBoard, IObserver<PlayerInput>
         var validCellStates = new[] { CellState.CorrectCell, CellState.FaultyCell, CellState.FilledSystem };
 
         return Cells.SelectMany(row => row)
-                    .All(cell => validCellStates.Contains(cell.State));
-
+                   .All(cell => validCellStates.Contains(cell.State));
     }
 }
 

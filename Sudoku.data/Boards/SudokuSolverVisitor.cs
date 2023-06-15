@@ -11,12 +11,14 @@ public class SudokuSolverVisitor : ISudokuVistor
 {
     public void Visit(FourByFour fourByFour)
     {
-             // SolveSudoku(fourByFour.Cells);
+        if (SolveNormalBoard(fourByFour.SolvedBoard, fourByFour.GroupWidth, fourByFour.GroupHeight) == false)
+            throw new Exception("Provided board cannot be solved");
+
     }
 
     public void Visit(NineByNine nineByNine)
     {
-        if (SolveNormalBoard(nineByNine.SolvedBoard, 3, 3) == false)
+        if (SolveNormalBoard(nineByNine.SolvedBoard, nineByNine.GroupWidth, nineByNine.GroupHeight) == false)
             throw new Exception("Provided board cannot be solved");
     }
 
@@ -32,11 +34,8 @@ public class SudokuSolverVisitor : ISudokuVistor
 
     public void Visit(SixBySix sixBySix)
     {
-        throw new NotImplementedException();
-    }
-    private void SolveSudoku(List<List<ProductCell>> cells)
-    {
-        throw new NotImplementedException();
+        if (SolveNormalBoard(sixBySix.SolvedBoard, sixBySix.GroupWidth, sixBySix.GroupHeight) == false)
+            throw new Exception("Provided board cannot be solved");
     }
 
 
@@ -45,7 +44,6 @@ private bool SolveNormalBoard(Board board, int groupWidth, int groupHeight)
     int row = -1;
     int col = -1;
     bool isEmpty = true;
-
     for (int i = 0; i < board.Size; i++)
     {
         for (int j = 0; j < board.Size; j++)
@@ -69,7 +67,7 @@ private bool SolveNormalBoard(Board board, int groupWidth, int groupHeight)
         return true;
     }
 
-    for (char num = '1'; num <= Convert.ToChar(board.Size); num++)
+    for (char num = '1'; num <= Convert.ToChar(board.Size.ToString()); num++)
     {
         if (IsSafe(board.Cells, row, col, num, groupHeight, groupWidth, board.Size))
         {
@@ -106,8 +104,10 @@ private bool IsSafe(List<List<ProductCell>> cells, int row, int col, char num, i
         }
     }
 
-    int startRow = groupWidth * (row / groupWidth);
-    int startCol = groupHeight * (col / groupHeight);
+    int startRow = groupHeight * (row / groupHeight);
+    int startCol = groupWidth * (col / groupWidth);
+
+
     for (int i = 0; i < groupHeight; i++)
     {
         for (int j = 0; j < groupWidth; j++)

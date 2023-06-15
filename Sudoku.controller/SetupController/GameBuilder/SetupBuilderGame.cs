@@ -6,6 +6,7 @@ using Sudoku.data.Game.Enum;
 using Sudoku.data.Game.State;
 using Sudoku.view.Cell;
 using Sudoku.view.GameView;
+using Sudoku.view.StrategyConsoleWrapper;
 using Sudoku.view.Sudoku_board.Abstract;
 using Sudoku.view.Sudoku_board.Factory;
 
@@ -17,6 +18,7 @@ public class SetupBuilderGame : ISetupBuilderGame
     public SudokuGameView SudokuGameView { get; set; }
     public GameContext GameContext { get; set; }
     public SudokuBoardView SudokuBoardView { get; set; }
+   
     public List<List<CellView>> Cells { get; set; }
 
 
@@ -36,7 +38,7 @@ public class SetupBuilderGame : ISetupBuilderGame
 
     public ISetupBuilderGame setupGameView()
     {
-        SudokuGameView = new SudokuGameView(GameContext, SudokuBoardView);
+        SudokuGameView = new SudokuGameView(GameContext, SudokuBoardView, new ConcreteConsoleWrapper());
         return this;
     }
 

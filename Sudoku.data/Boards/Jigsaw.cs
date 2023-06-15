@@ -8,14 +8,18 @@ namespace Sudoku.data.Boards;
 
 public class Jigsaw : Board
 {
-
-    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.Jigsaw, sudokuDisplayMode)
+    public override int Size {get{return 6;}} 
+    public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells,  sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        throw new NotImplementedException();
+        Jigsaw clone = (Jigsaw) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
+        clone.Cells = CopyCells();
+        clone.SolvedBoard = SolvedBoard;
+        return clone;
     }
 
     public override List<List<ProductCell>> CreateBoard(string cells)
@@ -23,20 +27,13 @@ public class Jigsaw : Board
         throw new NotImplementedException();
     }
 
-    public override void move(Pos move)
+    public override void init()
     {
-        throw new NotImplementedException();
+        this.SolvedBoard = (Jigsaw)copy();
+        Accept(new SudokuSolverVisitor());
     }
 
-    public override Board getSolvedBoard()
-    {
-        throw new NotImplementedException();
-    }
 
-    public override Board validateBoard()
-    {
-        throw new NotImplementedException();
-    }
 
     public override void Accept(ISudokuVistor vistor)
     {

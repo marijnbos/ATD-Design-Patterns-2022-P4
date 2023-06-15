@@ -2,22 +2,30 @@ using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Cells.Factory;
 using Sudoku.data.Position;
 
 namespace Sudoku.data.Boards;
 
-public class FourByFour : Board
+public class FourByFour : Board, IFixedGroupDimensionsSizeBoard
 {
+    public override int Size { get {return 4;}}
 
-    public FourByFour(string inputCells, SudokuTypes type, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, type, sudokuDisplayMode)
+    public uint GroupHeight  { get {return 2;}}
+    public uint GroupWidth { get{return 2;}}
+
+    public FourByFour(string inputCells, SudokuDisplayMode sudokuDisplayMode) : base(inputCells, sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        //todo make this return a new fourbyfour board
-        throw new NotImplementedException();
+        FourByFour clone = (FourByFour) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
+        clone.Cells = CopyCells();
+        clone.SolvedBoard = SolvedBoard;
+        return clone;
     }
 
     public override List<List<ProductCell>> CreateBoard(string cells)
@@ -31,7 +39,7 @@ public class FourByFour : Board
             {
                 char cellValue = cells[i * Size + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group, cellValue, selected, data.Cells.@enum.CellState.FilledSystem, new List<int>()));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected, (cellValue == '0') ? CellState.Empty : CellState.FilledSystem, new List<int>()));
                 group++;
             }
             board.Add(row);
@@ -39,42 +47,14 @@ public class FourByFour : Board
         return board;
     }
 
-    public override void move(Pos move)
+    public override void init()
     {
-        ProductCell? selectedCell = Cells.SelectMany(row => row).FirstOrDefault(cell => cell.Selected);
-
-        if (selectedCell != null)
-        {
-            int currentRow = Cells.FindIndex(row => row.Contains(selectedCell));
-            int currentColumn = Cells[currentRow].FindIndex(cell => cell == selectedCell);
-
-            int newRow = currentRow + move.X;
-            int newColumn = currentColumn + move.Y;
-
-            if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
-            {
-                selectedCell.Selected = false;
-                selectedCell = Cells[newRow][newColumn];
-                SelectedCell = new Pos(newColumn, newRow);
-                selectedCell.Selected = true;
-            }
-        }
-    }
-
-
-    public override Board getSolvedBoard()
-    {
+        this.SolvedBoard = (FourByFour)copy();
         Accept(new SudokuSolverVisitor());
-        return this;
     }
 
     public override void Accept(ISudokuVistor vistor)
     {
         vistor.Visit(this);
-    }
-
-    public override Board validateBoard()
-    {
-        throw new NotImplementedException();
     }
 }

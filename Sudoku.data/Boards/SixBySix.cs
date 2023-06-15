@@ -2,35 +2,45 @@ using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
 using Sudoku.data.Cells.Factory;
 using Sudoku.data.Position;
 
 namespace Sudoku.data.Boards;
 
-public class SixBySix : Board
+public class SixBySix : Board, IFixedGroupDimensionsSizeBoard
 {
-    public SixBySix(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.SixBySix, sudokuDisplayMode)
+    public override int Size {get {return 6;}}
+
+    public int GroupHeight  { get {return 2;}}
+    public int GroupWidth { get{return 3;}}
+    public SixBySix(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells,  sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        //todo make this return a new sixbysix board
-        throw new NotImplementedException();
+
+        SixBySix clone = (SixBySix) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
+        clone.Cells = CopyCells();
+        clone.SolvedBoard = SolvedBoard;
+        return clone;
     }
+
 
     public override List<List<ProductCell>> CreateBoard(string cells)
     {
         var board = new List<List<ProductCell>>();
         int group = 0;
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < Size; i++)
         {
             var row = new List<ProductCell>();
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < Size; j++)
             {
-                char cellValue = cells[i * 6 + j];
+                char cellValue = cells[i * Size + j];
                 bool selected = (i == 0 && j == 0) ? true : false;
-                row.Add(new CellFactory().factorMethod(group, cellValue, selected, data.Cells.@enum.CellState.FilledSystem, new List<int>()));
+                row.Add(new CellFactory().factorMethod(group, cellValue, selected, (cellValue == '0') ? CellState.Empty : CellState.FilledSystem, new List<int>()));
                 group++;
             }
             board.Add(row);
@@ -38,37 +48,12 @@ public class SixBySix : Board
         return board;
     }
 
-    public override void move(Pos move)
+    public override void init()
     {
-        ProductCell? selectedCell = Cells.SelectMany(row => row).FirstOrDefault(cell => cell.Selected);
-
-        if (selectedCell != null)
-        {
-            int currentRow = Cells.FindIndex(row => row.Contains(selectedCell));
-            int currentColumn = Cells[currentRow].FindIndex(cell => cell == selectedCell);
-
-            int newRow = currentRow + move.X;
-            int newColumn = currentColumn + move.Y;
-
-            if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
-            {
-                selectedCell.Selected = false;
-                selectedCell = Cells[newRow][newColumn];
-                SelectedCell = new Pos(newColumn, newRow);
-                selectedCell.Selected = true;
-            }
-        }
+        this.SolvedBoard = (SixBySix)copy();
+        Accept(new SudokuSolverVisitor());
     }
 
-    public override Board getSolvedBoard()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override Board validateBoard()
-    {
-        throw new NotImplementedException();
-    }
 
     public override void Accept(ISudokuVistor vistor)
     {

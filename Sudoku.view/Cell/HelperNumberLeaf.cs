@@ -9,15 +9,20 @@ public class HelperNumberLeaf : CellComponent
 
     public void Add(CellComponent cell)
     {
-        if (_cells.Count < 9)
+        if (_cells.Count <= 9)
         {
-            if(_cells.Find(e=> e.Value == cell.Value) != null) return;
-            
+            CellComponent matchCell = _cells.Find(e => e.Value == cell.Value);
+        
+            if (matchCell != null)
+            {
+                _cells.Remove(matchCell);
+                return;
+            }
+        
             _cells.Add(cell);
-            
         }
-       
     }
+
 
     public void Remove(CellComponent cell)
     {

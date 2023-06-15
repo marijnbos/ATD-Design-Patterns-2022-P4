@@ -1,4 +1,5 @@
 using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Boards;
 
 namespace Sudoku.data.Boards.Interface;
 

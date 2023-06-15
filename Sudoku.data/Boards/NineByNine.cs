@@ -8,17 +8,22 @@ using Sudoku.data.Position;
 
 namespace Sudoku.data.Boards;
 
-public class NineByNine : Board
+public class NineByNine : Board, IFixedGroupDimensionsSizeBoard
 {
+    public override int Size {get {return 9;}}
 
-    public NineByNine(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, SudokuTypes.NineByNine, sudokuDisplayMode)
+    public int GroupHeight  { get {return 3;}}
+    public int GroupWidth { get{return 3;}}
+
+
+    public NineByNine(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        NineByNine clone = (NineByNine) this.MemberwiseClone();
-        clone.SudokuDisplayMode = this.SudokuDisplayMode;
+        NineByNine clone = (NineByNine) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
         clone.Cells = CopyCells();
         clone.SolvedBoard = SolvedBoard;
         return clone;
@@ -44,58 +49,15 @@ public class NineByNine : Board
         if(cells.Length != 81) throw new Exception("The board must have 81 cells");
         return board;
     }
-    public override void move(Pos move)
-    {
-        var old = Cells[SelectedCell.X][SelectedCell.Y];
-        int newRow = SelectedCell.X + move.X;
-        int newColumn = SelectedCell.Y + move.Y;
 
-        if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
-        {
-            old.Selected = false;
-            var selectedCell = Cells[newRow][newColumn];
-            SelectedCell = new Pos(newColumn, newRow);
-            selectedCell.Selected = true;
-        }
+
+    public override void init()
+    {
+        this.SolvedBoard = (NineByNine)copy();
+        Accept(new SudokuSolverVisitor());
     }
 
-
-//todo rename initSolvedBoard
-//no output
-public override Board getSolvedBoard()
-{
-    this.SolvedBoard = (NineByNine)copy();
-    Accept(new SudokuSolverVisitor());
-    return null;  
-}
-
-    public override Board validateBoard()
-    {
-        var factory = new CellFactory();
-            for (int i = 0; i < Size; i++)
-                {
-                for (int j = 0; j < Size; j++)
-                {
-
-                    var cell = SolvedBoard.Cells[i][j];
-                    if (this.Cells[i][j].State == data.Cells.@enum.CellState.FilledUser &&
-                        this.Cells[i][j].Value != SolvedBoard.Cells[i][j].Value)
-                    {
-                        this.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
-                         cell.Selected, data.Cells.@enum.CellState.FaultyCell, new List<int>());
-                    }
-                    else if (this.Cells[i][j].State == data.Cells.@enum.CellState.FilledUser &&
-                        this.Cells[i][j].Value == SolvedBoard.Cells[i][j].Value)
-                    {
-                        this.Cells[i][j] = factory.factorMethod(cell.Group, cell.Value,
-                         cell.Selected, CellState.CorrectCell, new List<int>());
-                    }
-                }
-            }
-        return this;
-    }
-
-    public override void Accept(ISudokuVistor vistor)
+      public override void Accept(ISudokuVistor vistor)
     {
         vistor.Visit(this);
     }

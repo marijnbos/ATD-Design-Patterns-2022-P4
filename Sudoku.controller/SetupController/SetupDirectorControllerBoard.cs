@@ -9,20 +9,16 @@ namespace Sudoku.controler.SetupController;
 public class SetupDirectorControllerBoard
 {
     private readonly ISetupBuilderBoard _setupBuilderBoard;
-   
 
     public SetupDirectorControllerBoard(ISetupBuilderBoard setupBuilderBoard)
     {
         _setupBuilderBoard = setupBuilderBoard;
     }
-
-
-
+    
     public data.Boards.@abstract.Board buildBoard(string fileExtestion, string input)
     {
         return _setupBuilderBoard.setUpType(fileExtestion).setUpCells(input).setUpDisplayMode(input)
             .buildBoard();
     }
-
-   
+    
 }
