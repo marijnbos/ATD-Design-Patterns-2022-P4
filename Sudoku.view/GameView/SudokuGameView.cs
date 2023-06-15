@@ -12,9 +12,6 @@ public class SudokuGameView : IView
     public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView, IConsoleWrapper consoleWrapper)
     {
         EditorState = gc.EditorState.ToString();
-        //Console.CursorVisible = false;
-        
-       
         _sudokuBoardView = sudokuBoardView;
         _consoleWrapper = consoleWrapper;
         Draw();
@@ -47,12 +44,10 @@ public class SudokuGameView : IView
     {
         var key = Console.ReadKey().Key;
         string input;
-
         if (key >= ConsoleKey.D1 && key <= ConsoleKey.D9)
             input = ((char)key).ToString();
         else
             input = key.ToString().ToUpper();
-
         return input;
     }
 

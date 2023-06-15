@@ -22,7 +22,7 @@ public abstract class SudokuBoardView : IView
     }
 
     public abstract void Draw();
-
+    
     internal void ProcessData(Board board)
     {
         _displayOptions = "";
@@ -40,5 +40,7 @@ public abstract class SudokuBoardView : IView
             }
             Cells.Add(row);
         }
+        
     }
+    
 }

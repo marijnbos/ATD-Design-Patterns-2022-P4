@@ -5,11 +5,12 @@ using Sudoku.view.Cell.Composit;
 namespace Sudoku.view.Cell;
 
 public class CellView : IView
-{
-    public char _cell;
-    ColorEnum _colorEnum;
-    bool _isHighlighted;
-    HelperNumberLeaf _helperNumberLeaf;
+{ 
+    public char _cell { get; set; }
+    public ColorEnum _colorEnum{  get; set; }
+   public bool _isHighlighted{  get; set; }
+   public HelperNumberLeaf _helperNumberLeaf{  get; set; }
+    public int group{  get; set; }
 
 
     public CellView(ProductCell cell)
@@ -22,6 +23,7 @@ public class CellView : IView
         {
             _helperNumberLeaf.Add(new HelperNumberViewComponent(helper));
         }
+        group = cell.Group;
     }
 
     public void Draw()
@@ -43,8 +45,6 @@ public class CellView : IView
             _helperNumberLeaf.Draw();
             
         }
-
-        
         else
         {
             
