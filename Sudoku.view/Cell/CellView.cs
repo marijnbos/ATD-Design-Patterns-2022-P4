@@ -5,11 +5,12 @@ using Sudoku.view.Cell.Composit;
 namespace Sudoku.view.Cell;
 
 public class CellView : IView
-{
-    char _cell;
-    ColorEnum _colorEnum;
-    bool _isHighlighted;
-    HelperNumberLeaf _helperNumberLeaf;
+{ 
+    public char _cell { get; set; }
+    public ColorEnum _colorEnum{  get; set; }
+   public bool _isHighlighted{  get; set; }
+   public HelperNumberLeaf _helperNumberLeaf{  get; set; }
+    public int group{  get; set; }
 
 
     public CellView(ProductCell cell)
@@ -22,6 +23,7 @@ public class CellView : IView
         {
             _helperNumberLeaf.Add(new HelperNumberViewComponent(helper));
         }
+        group = cell.Group;
     }
 
     public void Draw()
@@ -37,7 +39,7 @@ public class CellView : IView
         }
 
         //only show the helper numbers in the right state
-        if (_cell == '0')
+        if (_cell == '0' || _cell == ' ')
         {
             Console.Write(" ");
             _helperNumberLeaf.Draw();
@@ -45,7 +47,7 @@ public class CellView : IView
         }
         else
         {
-            // _helperNumberLeaf.Draw();
+            
             for (int i = 0; i < 9; i++)
             {
                 Console.Write(" ");

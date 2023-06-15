@@ -1,7 +1,10 @@
 using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Boards.Adapter;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
+using Sudoku.data.Cells.Factory;
 using Sudoku.data.Position;
 
 namespace Sudoku.data.Boards;
@@ -22,9 +25,9 @@ public class Jigsaw : Board
         return clone;
     }
 
-    public override List<List<ProductCell>> CreateBoard(string cells)
+    public override List<List<ProductCell>> CreateBoard(string Inputcells)
     {
-        throw new NotImplementedException();
+        return new JigsawAdapter().CreateBoard(Inputcells.Remove(0,10));
     }
 
     public override void init()
@@ -32,7 +35,6 @@ public class Jigsaw : Board
         this.SolvedBoard = (Jigsaw)copy();
         Accept(new SudokuSolverVisitor());
     }
-
 
 
     public override void Accept(ISudokuVistor vistor)

@@ -1,13 +1,19 @@
-namespace Sudoku.data.Color;
-
-public enum ColorEnum
+namespace Sudoku.data.Color
 {
-    Black,
-    Yellow,
-    White,
-    Red,
-    Orange,
-    Green, 
-    Pink,
-    Highlight
+    public enum ColorEnum
+    {
+        Blue,
+        Purple,
+        Cyan,
+        Gray,
+   
+        Black,
+        Yellow,
+        White,
+        Red,
+        Orange,
+        Green,
+        Pink,
+        Highlight,
+    }
 }
