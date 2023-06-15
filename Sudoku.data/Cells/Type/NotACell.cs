@@ -13,13 +13,15 @@ public class NotACell : ProductCell
         get => _value;
         set => _value = 'x';
     }
+
     public override ColorEnum getCollor()
     {
         return ColorEnum.Black;
     }
 
 
-    public NotACell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
+    public NotACell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value,
+        selected, state, helperNumbers)
     {
     }
 }

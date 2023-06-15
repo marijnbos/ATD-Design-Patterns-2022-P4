@@ -11,13 +11,14 @@ if (args.Any())
     var path = args[0];
     if (File.Exists(path))
     {
-        FileInfo fi = new FileInfo(path);
-        string input = File.ReadAllText(fi.FullName);
+        var fi = new FileInfo(path);
+        var input = File.ReadAllText(fi.FullName);
         var board = new SetupDirectorControllerBoard(new SetupBuilderBoard()).buildBoard(fi.Extension, input);
         //build the context in the same way as the game controller
         //make input handler subscribe to board and context
         var gameController =
-            new SetupDirectorControllerGame(new SetupBuilderGame()).buildGameController(new InsertRealNumberState(), board,
+            new SetupDirectorControllerGame(new SetupBuilderGame()).buildGameController(new InsertRealNumberState(),
+                board,
                 DisplayOptions.Easy, EditorState.Defenitive);
         gameController.gameLoop();
     }
@@ -27,5 +28,4 @@ if (args.Any())
         Console.WriteLine("unsupported action");
         Environment.Exit(1);
     }
-
 }

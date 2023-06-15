@@ -18,8 +18,9 @@ public interface ISetupBuilderGame
     public List<List<CellView>> Cells { get; set; }
 
 
+    ISetupBuilderGame setupGameContext(IGameState state, data.Boards.@abstract.Board board,
+        DisplayOptions displayOption, EditorState editorState);
 
-    ISetupBuilderGame setupGameContext(IGameState state, data.Boards.@abstract.Board board, DisplayOptions displayOption, EditorState editorState);
     ISetupBuilderGame setupBoardView();
     ISetupBuilderGame setupGameView();
     ISetupBuilderGame setUpGameInputHandler();

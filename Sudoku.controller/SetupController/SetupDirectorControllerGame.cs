@@ -7,7 +7,7 @@ namespace Sudoku.controler.SetupController;
 
 public class SetupDirectorControllerGame
 {
-    private readonly ISetupBuilderGame _setupBuilderGame ;
+    private readonly ISetupBuilderGame _setupBuilderGame;
 
     public SetupDirectorControllerGame(ISetupBuilderGame setupBuilderGame)
     {
@@ -20,5 +20,4 @@ public class SetupDirectorControllerGame
         return _setupBuilderGame.setupGameContext(state, board, displayOption, editorState)
             .setupBoardView().setupGameView().setUpGameInputHandler().buildGameController();
     }
-    
 }

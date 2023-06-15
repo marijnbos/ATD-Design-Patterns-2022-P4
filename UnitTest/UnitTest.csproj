@@ -23,8 +23,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Sudoku.controller\Sudoku.controller.csproj" />
-      <ProjectReference Include="..\Sudoku.data\Sudoku.data.csproj" />
+        <ProjectReference Include="..\Sudoku.controller\Sudoku.controller.csproj" />
+        <ProjectReference Include="..\Sudoku.data\Sudoku.data.csproj" />
     </ItemGroup>
 
 </Project>

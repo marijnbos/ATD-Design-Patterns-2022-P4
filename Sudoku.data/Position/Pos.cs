@@ -7,7 +7,7 @@ public class Pos
 
     public Pos(int y, int x)
     {
-        this.X = x;
-        this.Y = y;
+        X = x;
+        Y = y;
     }
 }

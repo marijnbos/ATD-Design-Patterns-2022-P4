@@ -47,14 +47,15 @@ public class GameContext : IObserver<PlayerInput>
                 editorToggle();
                 break;
             case PlayerInput.Validate:
-                this.Board = Board.validateBoard();
+                Board = Board.validateBoard();
                 break;
             default:
                 if (IsNumberInput(value))
                 {
-                    string numberValue = ((int)value - (int)PlayerInput.Num1 + 1).ToString();
+                    var numberValue = ((int) value - (int) PlayerInput.Num1 + 1).ToString();
                     State.insert(numberValue, this);
                 }
+
                 break;
         }
     }
@@ -66,12 +67,12 @@ public class GameContext : IObserver<PlayerInput>
 
     private void editorToggle()
     {
-        EditorState = (EditorState == EditorState.Help) ? EditorState.Defenitive : EditorState.Help;
-        State = (EditorState == EditorState.Help) ? new InsertingHelpNumbers() : new InsertRealNumberState();
+        EditorState = EditorState == EditorState.Help ? EditorState.Defenitive : EditorState.Help;
+        State = EditorState == EditorState.Help ? new InsertingHelpNumbers() : new InsertRealNumberState();
     }
 
     public void UpdateGameStatus()
     {
-        this.GameStatus = (Board.IsCompleted() == true) ? GameStatus.Finished : GameStatus.Ongoing;
+        GameStatus = Board.IsCompleted() == true ? GameStatus.Finished : GameStatus.Ongoing;
     }
 }

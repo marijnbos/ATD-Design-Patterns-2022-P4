@@ -7,13 +7,12 @@ using Sudoku.data.Cells.Factory;
 
 namespace Sudoku.data.Boards;
 
-public class SudokuSolverVisitor : ISudokuVistor 
+public class SudokuSolverVisitor : ISudokuVistor
 {
     public void Visit(FourByFour fourByFour)
     {
         if (SolveNormalBoard(fourByFour.SolvedBoard, fourByFour.GroupWidth, fourByFour.GroupHeight) == false)
             throw new Exception("Provided board cannot be solved");
-
     }
 
     public void Visit(NineByNine nineByNine)
@@ -39,86 +38,62 @@ public class SudokuSolverVisitor : ISudokuVistor
     }
 
 
-private bool SolveNormalBoard(Board board, int groupWidth, int groupHeight)
-{
-    int row = -1;
-    int col = -1;
-    bool isEmpty = true;
-    for (int i = 0; i < board.Size; i++)
+    private bool SolveNormalBoard(Board board, int groupWidth, int groupHeight)
     {
-        for (int j = 0; j < board.Size; j++)
+        var row = -1;
+        var col = -1;
+        var isEmpty = true;
+        for (var i = 0; i < board.Size; i++)
         {
-            if (board.Cells[i][j].State != data.Cells.@enum.CellState.FilledSystem)
+            for (var j = 0; j < board.Size; j++)
+                if (board.Cells[i][j].State != CellState.FilledSystem)
+                {
+                    row = i;
+                    col = j;
+                    isEmpty = false;
+                    break;
+                }
+
+            if (!isEmpty) break;
+        }
+
+        if (isEmpty) return true;
+
+        for (var num = '1'; num <= Convert.ToChar(board.Size.ToString()); num++)
+            if (IsSafe(board.Cells, row, col, num, groupHeight, groupWidth, board.Size))
             {
-                row = i;
-                col = j;
-                isEmpty = false;
-                break;
+                var factory = new CellFactory();
+                var c = board.Cells[row][col];
+                board.Cells[row][col] =
+                    factory.factorMethod(c.Group, num, false, CellState.FilledSystem, new List<int>());
+
+                if (SolveNormalBoard(board, groupWidth, groupHeight)) return true;
+                board.Cells[row][col] = c;
             }
-        }
-        if (!isEmpty)
-        {
-            break;
-        }
+
+        return false;
     }
 
-    if (isEmpty)
+    private bool IsSafe(List<List<ProductCell>> cells, int row, int col, char num, int groupHeight, int groupWidth,
+        int Size)
     {
-        return true;
-    }
-
-    for (char num = '1'; num <= Convert.ToChar(board.Size.ToString()); num++)
-    {
-        if (IsSafe(board.Cells, row, col, num, groupHeight, groupWidth, board.Size))
-        {
-            CellFactory factory = new CellFactory();
-            var c = board.Cells[row][col];
-            board.Cells[row][col] = factory.factorMethod(c.Group, num, false, CellState.FilledSystem, new List<int>()); 
-
-            if (SolveNormalBoard(board, groupWidth, groupHeight))
-            {
-                return true;
-            }
-            board.Cells[row][col] = c;
-        }       
-    }
-
-    return false;
-}
-
-private bool IsSafe(List<List<ProductCell>> cells, int row, int col, char num, int groupHeight, int groupWidth, int Size)
-{
-    for (int j = 0; j < Size; j++)
-    {
-        if (cells[row][j].Value == num)
-        {
-            return false;
-        }
-    }
-
-    for (int i = 0; i < Size; i++)
-    {
-        if (cells[i][col].Value == num)
-        {
-            return false;
-        }
-    }
-
-    int startRow = groupHeight * (row / groupHeight);
-    int startCol = groupWidth * (col / groupWidth);
-
-
-    for (int i = 0; i < groupHeight; i++)
-    {
-        for (int j = 0; j < groupWidth; j++)
-        {
-            if (cells[startRow + i][startCol + j].Value == num)
-            {
+        for (var j = 0; j < Size; j++)
+            if (cells[row][j].Value == num)
                 return false;
-            }
-        }
-    }
 
-    return true;
+        for (var i = 0; i < Size; i++)
+            if (cells[i][col].Value == num)
+                return false;
+
+        var startRow = groupHeight * (row / groupHeight);
+        var startCol = groupWidth * (col / groupWidth);
+
+
+        for (var i = 0; i < groupHeight; i++)
+        for (var j = 0; j < groupWidth; j++)
+            if (cells[startRow + i][startCol + j].Value == num)
+                return false;
+
+        return true;
     }
 }

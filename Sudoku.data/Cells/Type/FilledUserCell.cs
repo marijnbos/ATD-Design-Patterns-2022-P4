@@ -13,12 +13,14 @@ public class FilledUserCell : ProductCell
         get => _value;
         set => _value = value;
     }
+
     public override ColorEnum getCollor()
     {
         return ColorEnum.Pink;
     }
 
-    public FilledUserCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group, value, selected, state, helperNumbers)
+    public FilledUserCell(int group, char value, bool selected, CellState state, List<int> helperNumbers) : base(group,
+        value, selected, state, helperNumbers)
     {
     }
 }

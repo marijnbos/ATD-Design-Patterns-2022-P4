@@ -1,8 +1,7 @@
-﻿namespace Sudoku.data.EditorStates
+﻿namespace Sudoku.data.EditorStates;
+
+public enum EditorState
 {
-    public enum EditorState
-    {
-        Help,
-        Defenitive
-    }
+    Help,
+    Defenitive
 }

@@ -6,5 +6,5 @@ public enum SudokuTypes
     SixBySix,
     NineByNine,
     Samurai,
-    Jigsaw,
+    Jigsaw
 }

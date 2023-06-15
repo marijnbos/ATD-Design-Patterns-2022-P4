@@ -1,7 +1,6 @@
-namespace Sudoku.view.Sudoku_board.Interface
+namespace Sudoku.view.Sudoku_board.Interface;
+
+public interface IBoardDrawingStrategy
 {
-    public interface IBoardDrawingStrategy
-    {
-        void Draw();
-    }
+    void Draw();
 }

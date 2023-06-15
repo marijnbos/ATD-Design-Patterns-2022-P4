@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Sudoku.data\Sudoku.data.csproj" />
-      <ProjectReference Include="..\Sudoku.view\Sudoku.view.csproj" />
+        <ProjectReference Include="..\Sudoku.data\Sudoku.data.csproj"/>
+        <ProjectReference Include="..\Sudoku.view\Sudoku.view.csproj"/>
     </ItemGroup>
 
 </Project>

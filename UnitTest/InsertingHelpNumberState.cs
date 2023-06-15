@@ -9,17 +9,20 @@ namespace Sudoku.Tests;
 
 public class InsertingHelpNumberState
 {
-    InsertingHelpNumbers InsertRealNumberState { get; set; }
+    private InsertingHelpNumbers InsertRealNumberState { get; set; }
+
     public InsertingHelpNumberState()
     {
         InsertRealNumberState = new InsertingHelpNumbers();
     }
+
     [Fact]
     public void stateShouldToggle_ValidInput_ShouldToggleState()
     {
         //Arrange
         var context = new GameContext(new InsertingHelpNumbers(),
-            new NineByNine("530070000600195000098000060800060003400803001700020006060000280000419005000080079", SudokuDisplayMode.Assist), DisplayOptions.Easy, EditorState.Defenitive);
+            new NineByNine("530070000600195000098000060800060003400803001700020006060000280000419005000080079",
+                SudokuDisplayMode.Assist), DisplayOptions.Easy, EditorState.Defenitive);
         context.State = InsertRealNumberState;
         //Act
         context.Move(PlayerInput.EditorToggle);
