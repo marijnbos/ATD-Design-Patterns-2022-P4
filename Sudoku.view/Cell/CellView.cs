@@ -6,7 +6,7 @@ namespace Sudoku.view.Cell;
 
 public class CellView : IView
 {
-    char _cell;
+    public char _cell;
     ColorEnum _colorEnum;
     bool _isHighlighted;
     HelperNumberLeaf _helperNumberLeaf;
@@ -37,15 +37,17 @@ public class CellView : IView
         }
 
         //only show the helper numbers in the right state
-        if (_cell == '0')
+        if (_cell == '0' || _cell == ' ')
         {
             Console.Write(" ");
             _helperNumberLeaf.Draw();
             
         }
+
+        
         else
         {
-            // _helperNumberLeaf.Draw();
+            
             for (int i = 0; i < 9; i++)
             {
                 Console.Write(" ");
