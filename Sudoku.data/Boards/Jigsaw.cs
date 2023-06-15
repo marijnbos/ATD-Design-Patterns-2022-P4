@@ -39,7 +39,7 @@ public class Jigsaw : Board
 
     public override void Accept(ISudokuVistor vistor)
     {
-        vistor.Visit(this);
+      //  vistor.Visit(this);
     }
 }
 

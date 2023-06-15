@@ -22,7 +22,7 @@ public class GameControllerTest
     {
         board = new NineByNine("700509001000000000150070063003904100000050000002106400390040076000000000600201004",
             SudokuDisplayMode.Assist);
-  game = new GameContext(new GameSolvingState(),board, DisplayOptions.Easy, EditorState.Defenitive);
+  game = new GameContext(new InsertRealNumberState(),board, DisplayOptions.Easy, EditorState.Defenitive);
         new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board), new ConcreteTestConsoleWrapper()), game);
         
       
@@ -42,12 +42,11 @@ public class GameControllerTest
     }
     
     [Fact]
-    public void gameController_solveGame_gameIsNotSolved()
+    public void gameController_GameStateOnInitalised_gameIsNotSolved()
     {
-        // Arrange
+        // Act & Arrange
         gameController = new GameController(new InputHandlerController(game), new SudokuGameView(game, new NineByNineBoardDrawingStrategy(board), new ConcreteTestConsoleWrapper()), game);
-        // Act
-        gameController.Game.solve();
+        
         // Assert
         Assert.True(GameStatus.Ongoing == game.GameStatus);
     }
