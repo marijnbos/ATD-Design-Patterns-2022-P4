@@ -1,7 +1,10 @@
 using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Boards.Adapter;
 using Sudoku.data.Boards.Enum;
 using Sudoku.data.Boards.Interface;
 using Sudoku.data.Cells.@abstract;
+using Sudoku.data.Cells.@enum;
+using Sudoku.data.Cells.Factory;
 using Sudoku.data.Position;
 
 namespace Sudoku.data.Boards;
@@ -17,19 +20,29 @@ public class Jigsaw : Board
         throw new NotImplementedException();
     }
 
-    public override List<List<ProductCell>> CreateBoard(string cells)
+    public override List<List<ProductCell>> CreateBoard(string Inputcells)
     {
-        throw new NotImplementedException();
+        return new JigsawAdapter().CreateBoard(Inputcells.Remove(0,10));
     }
 
     public override void move(Pos move)
     {
-        throw new NotImplementedException();
+        var old = Cells[SelectedCell.X][SelectedCell.Y];
+        int newRow = SelectedCell.X + move.X;
+        int newColumn = SelectedCell.Y + move.Y;
+
+        if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
+        {
+            old.Selected = false;
+            var selectedCell = Cells[newRow][newColumn];
+            SelectedCell = new Pos(newColumn, newRow);
+            selectedCell.Selected = true;
+        }
     }
 
     public override Board getSolvedBoard()
     {
-        throw new NotImplementedException();
+        return this;
     }
 
     public override Board validateBoard()

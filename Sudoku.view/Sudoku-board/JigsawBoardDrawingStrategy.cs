@@ -1,4 +1,6 @@
 using Sudoku.data.Boards.@abstract;
+using Sudoku.data.Color;
+using Sudoku.view.Cell;
 using Sudoku.view.Sudoku_board.Abstract;
 
 namespace Sudoku.view.Sudoku_board
@@ -11,6 +13,53 @@ namespace Sudoku.view.Sudoku_board
 
         public override void Draw()
         {
+            for (int row = 0; row < Size; row++)
+            {
+                for (int col = 0; col < Size; col++)
+                {
+                    
+                    CellView cellView = GetCell(row, col);
+                    SetConsoleBackgroundColor(cellView.group);
+                    cellView.Draw();
+                }
+                Console.WriteLine();
+
+               
+            }
         }
+        private void SetConsoleBackgroundColor(int group)
+        {
+            // Map the first four entries of ColorEnum to corresponding ConsoleColor
+            switch (group % 6)
+            {
+                case 0:
+                    Console.BackgroundColor = ConsoleColor.White;
+                    break;
+                case 1:
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    break;
+                case 2:
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    break;
+                case 3:
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    break;
+                case 4:
+                    Console.BackgroundColor = ConsoleColor.DarkCyan;
+                    break;
+                case 5:
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    break;
+                default:
+                    ResetConsoleBackgroundColor();
+                    break;
+            }
+        }
+        private void ResetConsoleBackgroundColor()
+        {
+            Console.ResetColor();
+        }
+
     }
+    
 }
