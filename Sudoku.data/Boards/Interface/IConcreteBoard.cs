@@ -9,6 +9,5 @@ public interface IConcreteBoard
     List<List<ProductCell>> Cells { get; set; }
     public IConcreteBoard copy();
 
-
-    public void Accept(ISudokuSolverVisitor visitor);
+    public void Accept(ISudokuVistor vistor);
 }

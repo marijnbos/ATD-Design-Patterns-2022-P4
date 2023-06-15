@@ -32,11 +32,4 @@ public class InsertingHelpNumbers : IGameState
         context.Board.Cells[row][col] = new CellFactory().factorMethod(oldCell.Group, char.Parse("0"), true, Cells.@enum.CellState.FilledUser,buildnumber);
         context.Board.Cells[row][col].HelperNumbers.Add(int.Parse(value));
     }
-
-    public void solve(GameContext context)
-    {
-        //switch to soloving state
-        context.State = new GameSolvingState();
-        context.solve();
-    }
 }

@@ -10,13 +10,19 @@ namespace Sudoku.data.Boards;
 
 public class Samurai : Board
 {
-    public Samurai(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells,  sudokuDisplayMode)
+    public override int Size {get{return 21;}} 
+
+    public Samurai(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells, sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        throw new NotImplementedException();
+        Samurai clone = (Samurai) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
+        clone.Cells = CopyCells();
+        clone.SolvedBoard = SolvedBoard;
+        return clone;
     }
 
     public override List<List<ProductCell>> CreateBoard(string cells)
@@ -57,21 +63,14 @@ public class Samurai : Board
         return board;
     }
 
-
-
-
-    public override void move(Pos move)
+    public override void init()
     {
-        throw new NotImplementedException();
+        this.SolvedBoard = (Samurai)copy();
+        Accept(new SudokuSolverVisitor());
     }
 
-    public override Board getSolvedBoard()
+    public override void Accept(ISudokuVistor vistor)
     {
-        return this;
-    }
-
-    public override Board validateBoard()
-    {
-        throw new NotImplementedException();
+       // vistor.Visit(this);
     }
 }

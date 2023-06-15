@@ -15,7 +15,7 @@ public class InputControllerTest
     private GameContext game;
     public InputControllerTest()
     {
-        inputHandlerController = new InputHandlerController(new GameContext(new GameSolvingState(), new NineByNine("080030709190800000000700002016080000200905003000010920800007000000008095309050060", SudokuDisplayMode.Simple), DisplayOptions.Easy, new EditorState()));
+        inputHandlerController = new InputHandlerController(new GameContext(new InsertingHelpNumbers(), new NineByNine("080030709190800000000700002016080000200905003000010920800007000000008095309050060", SudokuDisplayMode.Simple), DisplayOptions.Easy, new EditorState()));
     }
 
     [Fact]

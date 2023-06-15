@@ -11,13 +11,18 @@ namespace Sudoku.data.Boards;
 
 public class Jigsaw : Board
 {
+    public override int Size {get{return 6;}} 
     public Jigsaw(string cells, SudokuDisplayMode sudokuDisplayMode) : base(cells,  sudokuDisplayMode)
     {
     }
 
     public override IConcreteBoard copy()
     {
-        throw new NotImplementedException();
+        Jigsaw clone = (Jigsaw) MemberwiseClone();
+        clone.SudokuDisplayMode = SudokuDisplayMode;
+        clone.Cells = CopyCells();
+        clone.SolvedBoard = SolvedBoard;
+        return clone;
     }
 
     public override List<List<ProductCell>> CreateBoard(string Inputcells)
@@ -25,29 +30,16 @@ public class Jigsaw : Board
         return new JigsawAdapter().CreateBoard(Inputcells.Remove(0,10));
     }
 
-    public override void move(Pos move)
+    public override void init()
     {
-        var old = Cells[SelectedCell.X][SelectedCell.Y];
-        int newRow = SelectedCell.X + move.X;
-        int newColumn = SelectedCell.Y + move.Y;
-
-        if (newRow >= 0 && newRow < Size && newColumn >= 0 && newColumn < Size)
-        {
-            old.Selected = false;
-            var selectedCell = Cells[newRow][newColumn];
-            SelectedCell = new Pos(newColumn, newRow);
-            selectedCell.Selected = true;
-        }
+        this.SolvedBoard = (Jigsaw)copy();
+        Accept(new SudokuSolverVisitor());
     }
 
-    public override Board getSolvedBoard()
-    {
-        return this;
-    }
 
-    public override Board validateBoard()
+    public override void Accept(ISudokuVistor vistor)
     {
-        throw new NotImplementedException();
+      //  vistor.Visit(this);
     }
 }
 
