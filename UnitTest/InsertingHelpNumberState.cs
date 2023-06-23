@@ -5,7 +5,7 @@ using Sudoku.data.Game;
 using Sudoku.data.Game.Enum;
 using Sudoku.data.Input.Enum;
 
-namespace Sudoku.Tests;
+namespace UnitTest;
 
 public class InsertingHelpNumberState
 {

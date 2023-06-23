@@ -1,4 +1,4 @@
-namespace Sudoku.Tests;
+namespace UnitTest;
 
 public class SixBySixTest
 {
