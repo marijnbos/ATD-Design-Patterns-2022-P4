@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Sudoku.view.Cell.CellView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAIAAAgABAIAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cell\CellView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.view.GameView.SudokuGameView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAQAAEIAAAAgAAAAAAAABAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>GameView\SudokuGameView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.Abstract.SudokuBoardView">
+    <Position X="11.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAAAAAAAggAAAAICAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\Abstract\SudokuBoardView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.Factory.CreatorViewBoard">
+    <Position X="4.25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Sudoku-board\Factory\CreatorViewBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.Factory.ViewBoardFactory">
+    <Position X="4.25" Y="8.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Sudoku-board\Factory\ViewBoardFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.FourByFourBoardDrawingStrategy">
+    <Position X="11.5" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\FourByFourBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.JigsawBoardDrawingStrategy">
+    <Position X="17.75" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAIAAAAA=</HashCode>
+      <FileName>Sudoku-board\JigsawBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.NineByNineBoardDrawingStrategy">
+    <Position X="4.75" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\NineByNineBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.SamuraiBoardDrawingStrategy">
+    <Position X="8.25" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\SamuraiBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.SixBySixDrawingStrategy">
+    <Position X="15" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\SixBySixBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Cell.Composit.CellComponent" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Cell\Composit\CellComponent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.view.Cell.HelperNumberLeaf" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAgABAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cell\HelperNumberLeaf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Cell.HelperNumberViewComponent" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cell\HelperNumberViewComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.StrategyConsoleWrapper.ConcreteConsoleWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>StrategyConsoleWrapper\ConcreteConsoleWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sudoku.view.StrategyConsoleWrapper.ConcreteTestConsoleWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>StrategyConsoleWrapper\ConcreteTestConsoleWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Sudoku.view.Sudoku_board.Interface.IBoardDrawingStrategy" Collapsed="true">
+    <Position X="21" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\Interface\IBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Sudoku.view.IView" Collapsed="true">
+    <Position X="21" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Sudoku.view.StrategyConsoleWrapper.IConsoleWrapper" Collapsed="true">
+    <Position X="22.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>StrategyConsoleWrapper\IConsoleWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

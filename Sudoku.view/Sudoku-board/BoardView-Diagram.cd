@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sudoku.view.Sudoku_board.Abstract.SudokuBoardView">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAAAAAAAggAAAAICAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\Abstract\SudokuBoardView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.Factory.CreatorViewBoard">
+    <Position X="8.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Sudoku-board\Factory\CreatorViewBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.Factory.ViewBoardFactory">
+    <Position X="8.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Sudoku-board\Factory\ViewBoardFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.FourByFourBoardDrawingStrategy">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\FourByFourBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.JigsawBoardDrawingStrategy">
+    <Position X="15.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAIAAAAA=</HashCode>
+      <FileName>Sudoku-board\JigsawBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.NineByNineBoardDrawingStrategy">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\NineByNineBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.SamuraiBoardDrawingStrategy">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\SamuraiBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sudoku.view.Sudoku_board.SixBySixDrawingStrategy">
+    <Position X="17.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\SixBySixBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Sudoku.view.Sudoku_board.Interface.IBoardDrawingStrategy">
+    <Position X="15.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sudoku-board\Interface\IBoardDrawingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
