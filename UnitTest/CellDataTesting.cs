@@ -1,12 +1,10 @@
-using Xunit;
+using Sudoku.data.Cells;
 using Sudoku.data.Cells.@abstract;
 using Sudoku.data.Cells.@enum;
 using Sudoku.data.Cells.Factory;
-using System.Collections.Generic;
-using Sudoku.data.Cells;
 using Sudoku.data.Color;
 
-namespace Sudoku.Tests;
+namespace UnitTest;
 
 public class CellFactoryTests
 {

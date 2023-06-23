@@ -2,11 +2,11 @@
 using Sudoku.data.Boards.@abstract;
 using Sudoku.data.Boards.Enum;
 
-namespace Sudoku.Tests;
+namespace UnitTest;
 
 public class BoardValidationTest
 {
-    List<Board> _board;
+    readonly List<Board> _board;
 
     public BoardValidationTest()
     {

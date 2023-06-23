@@ -1,25 +1,17 @@
 using Sudoku.controler.SetupController;
 using Sudoku.controler.SetupController.BoardBuilder;
 using Sudoku.controler.SetupController.GameControllerBuilder;
-using Sudoku.data.Boards;
-using Sudoku.data.Boards.Enum;
-using Sudoku.data.Boards.Factory;
-using Sudoku.data.Cells.@abstract;
-using Sudoku.data.EditorStates;
-using Sudoku.data.Game;
-using Sudoku.data.Game.Enum;
 
-namespace Sudoku.Tests;
+namespace UnitTest;
 
 public class SetupBuildertest
 {
-    private SetupDirectorControllerBoard _setupDirectorDirectorBoard;
-    private SetupDirectorControllerGame _setupBuilderDirectorGame;
+    private readonly SetupDirectorControllerBoard _setupDirectorDirectorBoard;
 
     public SetupBuildertest()
     {
         _setupDirectorDirectorBoard = new SetupDirectorControllerBoard(new SetupBuilderBoard());
-        _setupBuilderDirectorGame = new SetupDirectorControllerGame(new SetupBuilderGame());
+        new SetupDirectorControllerGame(new SetupBuilderGame());
     }
 
     [Fact]

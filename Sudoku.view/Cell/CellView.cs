@@ -7,39 +7,39 @@ namespace Sudoku.view.Cell;
 public class CellView : IView
 {
     public char _cell { get; set; }
-    public ColorEnum _colorEnum { get; set; }
-    public bool _isHighlighted { get; set; }
-    public HelperNumberLeaf _helperNumberLeaf { get; set; }
-    public int group { get; set; }
+    private ColorEnum ColorEnum { get; set; }
+    private bool IsHighlighted { get; set; }
+    private HelperNumberLeaf HelperNumberLeaf { get; set; }
+    public int Group { get; set; }
 
 
     public CellView(ProductCell cell)
     {
         _cell = cell.Value;
-        _colorEnum = cell.getColor();
-        _isHighlighted = cell.Selected;
-        _helperNumberLeaf = new HelperNumberLeaf();
-        foreach (var helper in cell.HelperNumbers) _helperNumberLeaf.Add(new HelperNumberViewComponent(helper));
-        group = cell.Group;
+        ColorEnum = cell.getColor();
+        IsHighlighted = cell.Selected;
+        HelperNumberLeaf = new HelperNumberLeaf();
+        foreach (var helper in cell.HelperNumbers) HelperNumberLeaf.Add(new HelperNumberViewComponent(helper));
+        Group = cell.Group;
     }
 
     public void Draw()
     {
-        if (_isHighlighted)
+        if (IsHighlighted)
         {
-            Console.BackgroundColor = (ConsoleColor) _colorEnum;
+            Console.BackgroundColor = (ConsoleColor) ColorEnum;
             Console.ForegroundColor = ConsoleColor.Black;
         }
         else
         {
-            Console.ForegroundColor = (ConsoleColor) _colorEnum;
+            Console.ForegroundColor = (ConsoleColor) ColorEnum;
         }
 
         //only show the helper numbers in the right state
         if (_cell == '0' || _cell == ' ')
         {
             Console.Write(" ");
-            _helperNumberLeaf.Draw();
+            HelperNumberLeaf.Draw();
         }
         else
         {

@@ -18,7 +18,7 @@ public class JigsawBoardDrawingStrategy : SudokuBoardView
             for (var col = 0; col < Size; col++)
             {
                 var cellView = GetCell(row, col);
-                SetConsoleBackgroundColor(cellView.group);
+                SetConsoleBackgroundColor(cellView.Group);
                 cellView.Draw();
             }
 

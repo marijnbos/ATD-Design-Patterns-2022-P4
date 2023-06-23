@@ -30,9 +30,16 @@ public class InsertRealNumberState : IGameState
 
         if (selectedCell.State == CellState.Empty)
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, char.Parse(value), true, CellState.FilledUser,
-                buildnumber);
+            selectedCell = cellFactory.factorMethod(
+                selectedCell.Group,
+                char.Parse(value),
+                true,
+                context.Board.SolvedBoard.Cells[row][col].Value.ToString() == value ? CellState.FilledUser : CellState.FaultyCell,
+                buildnumber
+            );
+
             context.Board.Cells[row][col] = selectedCell;
+
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value == char.Parse(value))
         {
