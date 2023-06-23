@@ -25,7 +25,7 @@ public class FourByFourBoardDrawingStrategy : SudokuBoardView
 
             Console.WriteLine();
 
-            if (row == 1) Console.WriteLine("-------");
+            if (row == 1) Console.WriteLine(new string('-', Size * 10 + 2));
         }
     }
 }

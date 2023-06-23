@@ -1,4 +1,3 @@
-using Sudoku.data.Cells.@abstract;
 using Sudoku.view.Cell.Composit;
 
 namespace Sudoku.view.Cell;

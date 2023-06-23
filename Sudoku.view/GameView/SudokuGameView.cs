@@ -8,7 +8,7 @@ public class SudokuGameView : IView
 {
     private readonly SudokuBoardView _sudokuBoardView;
     private readonly IConsoleWrapper _consoleWrapper;
-    public string EditorState { get; set; }
+    private string EditorState { get; set; }
 
     public SudokuGameView(GameContext gc, SudokuBoardView sudokuBoardView, IConsoleWrapper consoleWrapper)
     {
@@ -31,7 +31,7 @@ public class SudokuGameView : IView
         PrintGameInfo();
     }
 
-    public void PrintGameInfo()
+    private void PrintGameInfo()
     {
         Console.WriteLine("Editor state: " + EditorState);
     }

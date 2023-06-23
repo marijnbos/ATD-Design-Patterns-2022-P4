@@ -5,17 +5,17 @@ using Sudoku.data.Game;
 using Sudoku.data.Game.Enum;
 using Sudoku.data.Input.Enum;
 
-namespace Sudoku.Tests;
+namespace UnitTest;
 
 public class InsertingRealNumberState
 {
     private InsertRealNumberState InsertRealNumberState { get; set; }
-    private GameContext context { get; set; }
+    private GameContext Context { get; set; }
 
     public InsertingRealNumberState()
     {
         InsertRealNumberState = new InsertRealNumberState();
-        context = new GameContext(new InsertRealNumberState(),
+        Context = new GameContext(new InsertRealNumberState(),
             new NineByNine("030070000600195000098000060800060003400803001700020006060000280000419005000080079",
                 SudokuDisplayMode.Assist), DisplayOptions.Easy, EditorState.Defenitive);
     }
@@ -24,55 +24,55 @@ public class InsertingRealNumberState
     public void stateShouldToggle_ValidInput_ShouldToggleState()
     {
         //Arrange
-        context.State = InsertRealNumberState;
+        Context.State = InsertRealNumberState;
         //Act
-        context.Move(PlayerInput.EditorToggle);
+        Context.Move(PlayerInput.EditorToggle);
         //Assert
-        Assert.IsType<InsertingHelpNumbers>(context.State);
+        Assert.IsType<InsertingHelpNumbers>(Context.State);
     }
 
     [Fact]
     public void stateShouldAccept_ValidInput_ShouldAcceptInput()
     {
         //Arrange
-        context.State = InsertRealNumberState;
+        Context.State = InsertRealNumberState;
         //Act
-        context.Move(PlayerInput.Down);
+        Context.Move(PlayerInput.Down);
         //Assert
-        Assert.Equal(9, context.Board.GetCell(1, 0).Group);
+        Assert.Equal(9, Context.Board.GetCell(1, 0).Group);
     }
 
     [Fact]
     public void stateShouldNotAccept_InvalidInputOutBoardBounds_ShouldNotChangeSelectedCell()
     {
         //Arrange
-        context.State = InsertRealNumberState;
+        Context.State = InsertRealNumberState;
         //Act
-        context.Move(PlayerInput.Up);
+        Context.Move(PlayerInput.Up);
         //Assert
-        Assert.Equal(0, context.Board.GetCell(0, 0).Group);
+        Assert.Equal(0, Context.Board.GetCell(0, 0).Group);
     }
 
     [Fact]
     public void insert_ValidInput_ChangesCell()
     {
         //Arrange
-        context.State = InsertRealNumberState;
+        Context.State = InsertRealNumberState;
 
         //act
-        context.State.insert("1", context);
+        Context.State.insert("1", Context);
 
         //Assert
-        Assert.True(context.Board.GetCell(0, 0).Value.Equals('1'));
+        Assert.True(Context.Board.GetCell(0, 0).Value.Equals('1'));
     }
 
     [Fact]
     public void insert_InvalidInput_ThrowsFormatExpection()
     {
         //Arrange
-        context.State = InsertRealNumberState;
+        Context.State = InsertRealNumberState;
 
         //act && Assert
-        Assert.Throws<FormatException>(() => context.State.insert("99999", context));
+        Assert.Throws<FormatException>(() => Context.State.insert("99999", Context));
     }
 }
