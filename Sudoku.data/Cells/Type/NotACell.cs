@@ -14,7 +14,7 @@ public class NotACell : ProductCell
         set => _value = 'x';
     }
 
-    public override ColorEnum getCollor()
+    public override ColorEnum getColor()
     {
         return ColorEnum.Black;
     }

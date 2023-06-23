@@ -4,9 +4,6 @@ namespace Sudoku.data.Game.State;
 
 public interface IGameState
 {
-    //used for moving and accesing game elements
     public void Move(PlayerInput input, GameContext context);
-
-    //used for inserting numbers
-    public void insert(string value, GameContext context);
+    public void Insert(string value, GameContext context);
 }

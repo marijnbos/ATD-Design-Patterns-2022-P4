@@ -31,12 +31,10 @@ public class GameContext : IObserver<PlayerInput>
 
     public void OnCompleted()
     {
-        throw new NotImplementedException();
     }
 
     public void OnError(Exception error)
     {
-        throw new NotImplementedException();
     }
 
     public void OnNext(PlayerInput value)
@@ -53,7 +51,7 @@ public class GameContext : IObserver<PlayerInput>
                 if (IsNumberInput(value))
                 {
                     var numberValue = ((int) value - (int) PlayerInput.Num1 + 1).ToString();
-                    State.insert(numberValue, this);
+                    State.Insert(numberValue, this);
                 }
                 break;
         }

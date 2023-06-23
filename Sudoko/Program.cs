@@ -14,8 +14,6 @@ if (args.Any())
         var fi = new FileInfo(path);
         var input = File.ReadAllText(fi.FullName);
         var board = new SetupDirectorControllerBoard(new SetupBuilderBoard()).buildBoard(fi.Extension, input);
-        //build the context in the same way as the game controller
-        //make input handler subscribe to board and context
         var gameController =
             new SetupDirectorControllerGame(new SetupBuilderGame()).buildGameController(new InsertRealNumberState(),
                 board,
@@ -24,7 +22,6 @@ if (args.Any())
     }
     else
     {
-        Console.WriteLine(path);
         Console.WriteLine("unsupported action");
         Environment.Exit(1);
     }

@@ -8,7 +8,7 @@ public abstract class ProductCell
     public CellState State { get; set; }
     public int Group { get; }
     public abstract char Value { get; set; }
-    public abstract ColorEnum getCollor();
+    public abstract ColorEnum getColor();
     public bool Selected { get; set; }
 
     public List<int> HelperNumbers { get; set; } = new();

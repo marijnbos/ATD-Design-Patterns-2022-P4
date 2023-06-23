@@ -6,7 +6,6 @@ public enum ColorEnum
     Purple,
     Cyan,
     Gray,
-
     Black,
     Yellow,
     White,

@@ -16,7 +16,7 @@ public class CellView : IView
     public CellView(ProductCell cell)
     {
         _cell = cell.Value;
-        _colorEnum = cell.getCollor();
+        _colorEnum = cell.getColor();
         _isHighlighted = cell.Selected;
         _helperNumberLeaf = new HelperNumberLeaf();
         foreach (var helper in cell.HelperNumbers) _helperNumberLeaf.Add(new HelperNumberViewComponent(helper));

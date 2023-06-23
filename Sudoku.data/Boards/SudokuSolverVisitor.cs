@@ -23,12 +23,12 @@ public class SudokuSolverVisitor : ISudokuVistor
 
     public void Visit(Jigsaw jigsaw)
     {
-        throw new NotImplementedException();
+        throw new Exception("Provided board cannot be solved");
     }
 
     public void Visit(Samurai samurai)
     {
-        throw new NotImplementedException();
+        throw new Exception("Provided board cannot be solved");
     }
 
     public void Visit(SixBySix sixBySix)

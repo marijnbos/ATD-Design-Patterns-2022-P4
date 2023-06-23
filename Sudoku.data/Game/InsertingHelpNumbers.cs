@@ -14,12 +14,11 @@ public class InsertingHelpNumbers : IGameState
                 context.State = new InsertRealNumberState();
                 return;
             default:
-                //write a message to the console that the input is not valid and quit is only allowed to switch to other state
                 return;
         }
     }
 
-    public void insert(string value, GameContext context)
+    public void Insert(string value, GameContext context)
     {
         var row = context.Board.SelectedCell.X;
         var col = context.Board.SelectedCell.Y;

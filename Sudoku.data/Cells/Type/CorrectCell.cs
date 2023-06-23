@@ -14,7 +14,7 @@ public class CorrectCell : ProductCell
         set => _value = value;
     }
 
-    public override ColorEnum getCollor()
+    public override ColorEnum getColor()
     {
         return ColorEnum.Red;
     }
