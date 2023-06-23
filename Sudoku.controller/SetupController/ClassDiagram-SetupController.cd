@@ -1,77 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="Sudoku.controler.GameController.GameController">
-    <Position X="7.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAEAAAgAAAAAAAAAAAABAAA=</HashCode>
-      <FileName>GameController\GameController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sudoku.controler.InputController.Unsubscriber.Unsubscriber" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>InputController\Unsubscriber\Unsubscriber.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Sudoku.controler.InputController.InputHandlerController" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="1.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAgCAAABAAAAAAQAAAA=</HashCode>
-      <FileName>InputController\InputHandelerController.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sudoku.controler.SetupController.BoardBuilder.SetupBuilderBoard" BaseTypeListCollapsed="true">
-    <Position X="11.5" Y="3" Width="1.75" />
+    <Position X="2.5" Y="1" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAACAAAACAEABgACAAACAAAAAAAA=</HashCode>
       <FileName>SetupController\BoardBuilder\SetupBuilderBoard.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Sudoku.controler.SetupController.GameControllerBuilder.SetupBuilderGame" BaseTypeListCollapsed="true">
-    <Position X="7.25" Y="6.75" Width="1.75" />
+    <Position X="5.25" Y="1" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAABICAAKAAAAAIAAIEAAAAAAAAAABAAA=</HashCode>
       <FileName>SetupController\GameBuilder\SetupBuilderGame.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Sudoku.controler.SetupController.SetupDirectorControllerBoard">
-    <Position X="11" Y="8.5" Width="2.25" />
+    <Position X="2.75" Y="4.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>SetupController\SetupDirectorControllerBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sudoku.controler.SetupController.SetupDirectorControllerGame">
-    <Position X="11" Y="6.5" Width="2.25" />
+    <Position X="7.25" Y="1" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SetupController\SetupDirectorControllerGame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Sudoku.controler.SetupController.Board.Interface.ISetupBuilderBoard">
-    <Position X="4" Y="4.5" Width="1.75" />
+    <Position X="5.5" Y="4.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAACAEABgACAAACAAAAAAAA=</HashCode>
       <FileName>SetupController\BoardBuilder\Interface\ISetupBuilderBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Sudoku.controler.SetupController.GameControllerBuilder.Interface.ISetupBuilderGame">
-    <Position X="4" Y="7.25" Width="1.75" />
+    <Position X="7.75" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAABICAAKAAAAAIAAIEAAAAAAAAAABAAA=</HashCode>
       <FileName>SetupController\GameBuilder\Interface\ISetupBuilderGame.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Sudoku.controler.IController">
-    <Position X="4" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IController.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
