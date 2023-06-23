@@ -12,17 +12,15 @@ public class InsertRealNumberState : IGameState
     {
         switch (input)
         {
-            //hier help gebruikt om naar andere state te gaan
             case PlayerInput.EditorToggle:
                 context.State = new InsertingHelpNumbers();
                 return;
             default:
-                //write a message to the console that the input is not valid and help is only allowed to switch to other state
                 return;
         }
     }
 
-    public void insert(string value, GameContext context)
+    public void Insert(string value, GameContext context)
     {
         var row = context.Board.SelectedCell.X;
         var col = context.Board.SelectedCell.Y;
@@ -45,7 +43,7 @@ public class InsertRealNumberState : IGameState
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value == char.Parse(value))
         {
-            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', false, CellState.Empty, buildnumber);
+            selectedCell = cellFactory.factorMethod(selectedCell.Group, ' ', true, CellState.Empty, buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
         else if (selectedCell.State == CellState.FilledUser && selectedCell.Value != int.Parse(value))
@@ -54,19 +52,5 @@ public class InsertRealNumberState : IGameState
                 buildnumber);
             context.Board.Cells[row][col] = selectedCell;
         }
-    }
-
-    public void OnCompleted()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnError(Exception error)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnNext(IConcreteBoard value)
-    {
     }
 }

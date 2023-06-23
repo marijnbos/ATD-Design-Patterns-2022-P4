@@ -14,7 +14,7 @@ public class EmptyCell : ProductCell
         set => _value = ' ';
     }
 
-    public override ColorEnum getCollor()
+    public override ColorEnum getColor()
     {
         return ColorEnum.White;
     }

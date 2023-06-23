@@ -14,7 +14,7 @@ public class FilledSystemCell : ProductCell
         set => _value = value;
     }
 
-    public override ColorEnum getCollor()
+    public override ColorEnum getColor()
     {
         return ColorEnum.Yellow;
     }

@@ -14,7 +14,7 @@ public class FilledUserCell : ProductCell
         set => _value = value;
     }
 
-    public override ColorEnum getCollor()
+    public override ColorEnum getColor()
     {
         return ColorEnum.Pink;
     }
