@@ -124,9 +124,9 @@ public class CellFactoryTests
         result3 = _cellFactory.factorMethod(_group, _cellValue, _selected, CellState.CorrectCell, _helpernumbers);
         result4 = _cellFactory.factorMethod(_group, _cellValue, _selected, CellState.FilledUser, _helpernumbers);
         //assert
-        Assert.Equal(ColorEnum.Black, result.getCollor());
-        Assert.Equal(ColorEnum.Orange, result2.getCollor());
-        Assert.Equal(ColorEnum.Red, result3.getCollor());
-        Assert.Equal(ColorEnum.Pink, result4.getCollor());
+        Assert.Equal(ColorEnum.Black, result.getColor());
+        Assert.Equal(ColorEnum.Orange, result2.getColor());
+        Assert.Equal(ColorEnum.Red, result3.getColor());
+        Assert.Equal(ColorEnum.Pink, result4.getColor());
     }
 }

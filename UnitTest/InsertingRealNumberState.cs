@@ -60,7 +60,7 @@ public class InsertingRealNumberState
         Context.State = InsertRealNumberState;
 
         //act
-        Context.State.insert("1", Context);
+        Context.State.Insert("1", Context);
 
         //Assert
         Assert.True(Context.Board.GetCell(0, 0).Value.Equals('1'));
@@ -73,6 +73,6 @@ public class InsertingRealNumberState
         Context.State = InsertRealNumberState;
 
         //act && Assert
-        Assert.Throws<FormatException>(() => Context.State.insert("99999", Context));
+        Assert.Throws<FormatException>(() => Context.State.Insert("99999", Context));
     }
 }
