@@ -67,26 +67,20 @@ public abstract class Board : IConcreteBoard, IObserver<PlayerInput>
                 var solvedCell = SolvedBoard.Cells[rowIndex][columnIndex];
                 var currentCell = Cells[rowIndex][columnIndex];
 
-                if (currentCell.State == CellState.FilledUser)
+                if (currentCell.Value != solvedCell.Value)
                 {
-                    if (currentCell.Value != solvedCell.Value)
-                    {
-                        Cells[rowIndex][columnIndex] = factory.factorMethod(solvedCell.Group, solvedCell.Value,
-                            solvedCell.Selected, CellState.FaultyCell, new List<int>());
-                    }
-                    else
-                    {
-                        Cells[rowIndex][columnIndex] = factory.factorMethod(solvedCell.Group, solvedCell.Value,
-                            solvedCell.Selected, CellState.CorrectCell, new List<int>());
-                    }
+                    Cells[rowIndex][columnIndex] = factory.factorMethod(solvedCell.Group, solvedCell.Value,
+                        solvedCell.Selected, CellState.FaultyCell, new List<int>());
+                }
+                else
+                {
+                    Cells[rowIndex][columnIndex] = factory.factorMethod(solvedCell.Group, solvedCell.Value,
+                        solvedCell.Selected, CellState.CorrectCell, new List<int>());
                 }
             }
         }
-
         return this;
-
     }
-
 
     public IDisposable Subscribe(IObserver<IConcreteBoard> observer)
     {

@@ -44,10 +44,10 @@ public class GameContext : IObserver<PlayerInput>
         switch (value)
         {
             case PlayerInput.EditorToggle:
-                editorToggle();
+                    editorToggle();
                 break;
             case PlayerInput.Validate:
-                Board = Board.validateBoard();
+                    Board = Board.validateBoard();
                 break;
             default:
                 if (IsNumberInput(value))
@@ -55,7 +55,6 @@ public class GameContext : IObserver<PlayerInput>
                     var numberValue = ((int) value - (int) PlayerInput.Num1 + 1).ToString();
                     State.insert(numberValue, this);
                 }
-
                 break;
         }
     }
