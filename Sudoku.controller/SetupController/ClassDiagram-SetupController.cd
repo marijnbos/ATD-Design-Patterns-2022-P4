@@ -6,7 +6,7 @@
       <HashCode>AAAABAAAAAAAAAAAAACAAAACAEABgACAAACAAAAAAAA=</HashCode>
       <FileName>SetupController\BoardBuilder\SetupBuilderBoard.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sudoku.controler.SetupController.GameControllerBuilder.SetupBuilderGame" BaseTypeListCollapsed="true">
     <Position X="5.25" Y="1" Width="1.75" />
@@ -14,7 +14,7 @@
       <HashCode>AAAAAAAAAAgAABICAAKAAAAAIAAIEAAAAAAAAAABAAA=</HashCode>
       <FileName>SetupController\GameBuilder\SetupBuilderGame.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sudoku.controler.SetupController.SetupDirectorControllerBoard">
     <Position X="2.75" Y="4.5" Width="2.25" />

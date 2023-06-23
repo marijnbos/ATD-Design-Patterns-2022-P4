@@ -105,15 +105,15 @@
       <FileName>Boards\Interface\IConcreteBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sudoku.data.Boards.Interface.ISudokuVistor" Collapsed="true">
-    <Position X="19" Y="2.75" Width="1.5" />
+  <Interface Name="Sudoku.data.Boards.Interface.ISudokuVistor">
+    <Position X="2.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Boards\Interface\ISudokuVistor.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="IVisitorComponent" Collapsed="true">
-    <Position X="20.75" Y="2.75" Width="1.5" />
+  <Interface Name="IVisitorComponent">
+    <Position X="4.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Boards\Interface\IVisitorComponent.cs</FileName>
